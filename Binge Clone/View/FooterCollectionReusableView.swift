@@ -46,7 +46,7 @@ class FooterCollectionReusableView: UICollectionReusableView {
     
     override func layoutSubviews() {
         footer.frame = bounds
-        loadingIndicator.frame = bounds
+        loadingIndicator.frame = CGRect(x: footer.frame.midX - 18, y: footer.frame.midY, width: 20, height: 20)
     }
     
     func setup(foot: String, indicatorFlag: Bool) {

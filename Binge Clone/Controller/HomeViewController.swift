@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     private var isLoading = false
     private var isLastPage = false //
     
-    private let itemsPerPage = 10 // loads 10 data per page cycle
+    private let itemsPerPage = 5 // loads 10 data per page cycle
     private var currentPage = 0
     
     private var sectionHeadersFooters: [supplementaryDataType] = [supplementaryDataType(header: "", footer: ""),
@@ -56,28 +56,7 @@ class HomeViewController: UIViewController {
                                                 cellDataType(image: "s5", label: "7"),
                                                 cellDataType(image: "s5", label: "8"),
                                                 cellDataType(image: "s5", label: "9"),
-                                                cellDataType(image: "s5", label: "10"),
-                                                cellDataType(image: "s5", label: "11"),
-                                                cellDataType(image: "s5", label: "12"),
-                                                cellDataType(image: "s5", label: "13"),
-                                                cellDataType(image: "s5", label: "14"),
-                                                cellDataType(image: "s5", label: "15"),
-                                                cellDataType(image: "s5", label: "16"),
-                                                cellDataType(image: "s5", label: "17"),
-                                                cellDataType(image: "s5", label: "18"),
-                                                cellDataType(image: "s5", label: "19"),
-                                                cellDataType(image: "s5", label: "20"),
-                                                cellDataType(image: "s5", label: "21"),
-                                                cellDataType(image: "s5", label: "22"),
-                                                cellDataType(image: "s5", label: "23"),
-                                                cellDataType(image: "s5", label: "24"),
-                                                cellDataType(image: "s5", label: "25"),
-                                                cellDataType(image: "s5", label: "26"),
-                                                cellDataType(image: "s5", label: "27"),
-                                                cellDataType(image: "s5", label: "28"),
-                                                cellDataType(image: "s5", label: "29"),
-                                                cellDataType(image: "s5", label: "30"),
-    ]
+                                                cellDataType(image: "s5", label: "10")]
 
     
     var celldata: [cellDataType] = [] {
@@ -119,8 +98,17 @@ class HomeViewController: UIViewController {
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(480)), subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .groupPagingCentered
+                section.orthogonalScrollingBehavior = .groupPaging
                 
+                section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+                    items.forEach { item in
+                        let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
+                        let minScale: CGFloat = 0.8
+                        let maxScale: CGFloat = 1.0 - (distanceFromCenter / environment.container.contentSize.width)
+                        let scale = max(maxScale, minScale)
+                        item.transform = CGAffineTransform(scaleX: scale, y: scale)
+                    }
+                }
                 return section
             }
         
@@ -393,29 +381,6 @@ extension HomeViewController: UICollectionViewDataSource {
 //                print(indexPath.section)
                 return header
                 
-//                if indexPath.section == 1 {
-//                    let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-//                    header.setup(head: "Categories header")
-//                    return header
-//                }
-//
-//                if indexPath.section == 2 {
-//                    let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-//                    header.setup(head: "Latest header")
-//                    return header
-//                }
-//
-//                if indexPath.section == 4 {
-//                    let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-//                    header.setup(head: "Card header")
-//                    return header
-//                }
-//
-//                else {
-//                    let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-//                    header.setup(head: "Header")
-//                    return header
-//                }
                 
             case HomeViewController.footerKind:
                 if indexPath.section == 4 {
@@ -430,30 +395,6 @@ extension HomeViewController: UICollectionViewDataSource {
                 }
                 
                 
-//                if indexPath.section == 1 {
-//                    let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
-//                    footer.setup(foot: "Categories footer", indicatorFlag: false)
-//                    return footer
-//                }
-//
-//                if indexPath.section == 2 {
-//                    let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
-//                    footer.setup(foot: "Latest footer", indicatorFlag: false)
-//                    return footer
-//                }
-////
-//                if indexPath.section == 4 {
-//                    let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
-//                    footer.setup(foot: "", indicatorFlag: isLoading) //Card footer
-//                    return footer
-//                }
-//
-//                else {
-//                    let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
-//                    footer.setup(foot: "Footer", indicatorFlag: false)
-//                    return footer
-//                }
-                
             default :
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
                 header.setup(head: "Default header")
@@ -461,10 +402,6 @@ extension HomeViewController: UICollectionViewDataSource {
         }
     }
         
-        
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        UIEdgeInsets(top: 10, left: 100, bottom: 10, right: 10)
-//    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 //        print("Cell indexPath row, section, item", indexPath.row, indexPath.section, indexPath.item)
@@ -510,34 +447,6 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.backgroundColor = .orange
             return cell
         }
-        
-
-//        if indexPath.section == 0 && indexPath.item == 0 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-//            cell.setup(with: "photo 1 s1", and: "Food")
-//            return cell
-//        }
-//        if indexPath.section == 0 && indexPath.item == 1 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-//            cell.setup(with: "photo 2 s1", and: "Fruit")
-//            return cell
-//        }
-//        if indexPath.section == 0 && indexPath.item == 2 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-//            cell.setup(with: "photo 1 s1", and: "Fresh")
-//            return cell
-//        }
-//        if indexPath.section == 1 && indexPath.item == 0 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-//            cell.setup(with: "burger 1 s2", and: "Burger")
-//            return cell
-//        }
-//        if indexPath.section == 1 && indexPath.item == 1 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-//            cell.setup(with: "burger 2 s2", and: "Burger")
-//            return cell
-//        }
-        
     }
 }
 
