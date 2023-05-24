@@ -65,11 +65,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Binge" id="r7V-qV-dDf">
-                        <barButtonItem key="leftBarButtonItem" title="Action" style="plain" id="Gp9-si-cXX">
+                        <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="Gp9-si-cXX">
                             <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="KWD-um-pUb">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="KWD-um-pUb">
                             <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
                     </navigationItem>
@@ -112,11 +112,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Binge" id="6bh-zq-ap3">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="oLL-Gd-Ixr">
+                        <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="oLL-Gd-Ixr">
                             <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="7ON-hh-h8A">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="7ON-hh-h8A">
                             <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
                     </navigationItem>
@@ -158,7 +158,15 @@
                         <viewLayoutGuide key="safeArea" id="vOs-VI-o61"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Binge" id="dEn-Nv-9hK"/>
+                    <navigationItem key="navigationItem" title="Binge" id="dEn-Nv-9hK">
+                        <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="mY4-Qu-UYj">
+                            <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="ySe-R1-EwZ">
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9z-Xy-TYJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,7 +205,15 @@
                         <viewLayoutGuide key="safeArea" id="llk-FE-tVN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Binge" id="KRu-0Z-tTs"/>
+                    <navigationItem key="navigationItem" title="Binge" id="KRu-0Z-tTs">
+                        <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="TLt-hE-6oK">
+                            <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="tId-83-uOp">
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f49-zw-OuP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,7 +252,15 @@
                         <viewLayoutGuide key="safeArea" id="ZvU-iF-vE4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Binge" id="Api-NG-eL2"/>
+                    <navigationItem key="navigationItem" title="Binge" id="Api-NG-eL2">
+                        <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="1CD-As-stt">
+                            <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="Vuc-Nq-hfo">
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLf-vP-qea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
