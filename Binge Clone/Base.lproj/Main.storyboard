@@ -29,7 +29,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfh-5e-iiY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2059" y="-883"/>
+            <point key="canvasLocation" x="2059" y="-882"/>
         </scene>
         <!--HOME-->
         <scene sceneID="pM4-Fm-r1C">
@@ -68,6 +68,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="Gp9-si-cXX">
                             <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="BYZ-38-t0r" id="dpG-8w-Bqn"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="KWD-um-pUb">
                             <color key="tintColor" systemColor="labelColor"/>
@@ -104,7 +107,7 @@
         <!--Binge-->
         <scene sceneID="6Go-uV-pQQ">
             <objects>
-                <viewController id="W3k-bQ-Wgm" sceneMemberID="viewController">
+                <viewController id="W3k-bQ-Wgm" customClass="LiveTvViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c8X-un-dq3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +118,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="oLL-Gd-Ixr">
                             <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="W3k-bQ-Wgm" id="7zP-8u-Q3E"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="7ON-hh-h8A">
                             <color key="tintColor" systemColor="labelColor"/>
@@ -151,7 +157,7 @@
         <!--Binge-->
         <scene sceneID="g9n-Nv-1LB">
             <objects>
-                <viewController id="DVB-Pk-4QW" sceneMemberID="viewController">
+                <viewController id="DVB-Pk-4QW" customClass="OriginalsViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ncx-99-ae1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,6 +168,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="mY4-Qu-UYj">
                             <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="DVB-Pk-4QW" id="qvn-kN-zHw"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="ySe-R1-EwZ">
                             <color key="tintColor" systemColor="labelColor"/>
@@ -198,7 +207,7 @@
         <!--Binge-->
         <scene sceneID="4j9-Zc-hri">
             <objects>
-                <viewController id="aLo-02-r5g" sceneMemberID="viewController">
+                <viewController id="aLo-02-r5g" customClass="MyListViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="98W-MR-IL8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,6 +218,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="TLt-hE-6oK">
                             <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="aLo-02-r5g" id="mrc-OI-5YP"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="tId-83-uOp">
                             <color key="tintColor" systemColor="labelColor"/>
@@ -245,7 +257,7 @@
         <!--Binge-->
         <scene sceneID="yBH-2u-4fe">
             <objects>
-                <viewController id="Xp3-EP-4CA" sceneMemberID="viewController">
+                <viewController id="Xp3-EP-4CA" customClass="ProfileViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TrE-ux-2Xa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,6 +268,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="1CD-As-stt">
                             <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="Xp3-EP-4CA" id="nPE-QX-wk0"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="Vuc-Nq-hfo">
                             <color key="tintColor" systemColor="labelColor"/>

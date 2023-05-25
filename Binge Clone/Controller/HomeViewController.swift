@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
                                                                   supplementaryDataType(header: "Exclusive Sports", footer: "E"),
                                                                   supplementaryDataType(header: "Recommended For you", footer: "R"),
                                                                   supplementaryDataType(header: "Originals (Free: Robi Data, Mob App)", footer: ""),
+                                                                  supplementaryDataType(header: "Sports", footer: ""),
                                                                   ]
 
     private var sectionData0: [cellDataType] = [cellDataType(image: "s1", label: "1"),
@@ -50,6 +51,11 @@ class HomeViewController: UIViewController {
                                                 cellDataType(image: "s5", label: "8"),
                                                 cellDataType(image: "s5", label: "9"),
                                                 cellDataType(image: "s5", label: "10")]
+    
+    private var sectionData5: [cellDataType] = [cellDataType(image: "s6", label: "1"),
+                                                cellDataType(image: "s6", label: "2"),
+                                                cellDataType(image: "s6", label: "3"),
+                                                cellDataType(image: "s6", label: "4")]
 
     
     struct cellDataType {
@@ -68,6 +74,7 @@ class HomeViewController: UIViewController {
         case third
         case forth
         case fifth
+        case sixth
     }
     
     static let headerKind = "headerKind"
@@ -87,8 +94,8 @@ class HomeViewController: UIViewController {
                 print("first carossel")
                 
                 let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                item.contentInsets.trailing = 2
-                //                item.contentInsets.bottom = 8
+//                item.contentInsets.trailing = 2
+//                item.contentInsets.bottom = 8
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(480)), subitems: [item])
                 
@@ -197,6 +204,29 @@ class HomeViewController: UIViewController {
                 
                 return section
                 
+            case .sixth:
+                print("sixth")
+                
+                let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                item.contentInsets.trailing = 16
+                item.contentInsets.bottom = 8
+                
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(120), heightDimension: .absolute(120)), subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .continuous
+                section.contentInsets.leading = 16
+                
+                let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(40))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: headerKind, alignment: .topLeading)
+//                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
+                
+                section.boundarySupplementaryItems = [header] //, footer
+                
+                return section
+                
+                
+                
             }
         }
         
@@ -226,6 +256,16 @@ class HomeViewController: UIViewController {
         collectionView.frame = view.bounds
     }
     
+    
+    @IBAction func actionButtonPressed(_ sender: UIBarButtonItem) {
+        
+        let vc = UIViewController()
+        vc.view.backgroundColor = .cyan
+        self.navigationController?.pushViewController(vc, animated: true)
+//        self.present(vc, animated: true)
+        
+    }
+    
 }
 
 
@@ -251,6 +291,8 @@ extension HomeViewController: UICollectionViewDataSource {
             return sectionData3.count
         case .fifth:
             return sectionData4.count
+        case .sixth:
+            return sectionData5.count
             
         }
         
@@ -289,31 +331,37 @@ extension HomeViewController: UICollectionViewDataSource {
         case .first:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
             cell.setup(with: sectionData0[indexPath.item].image, and: sectionData0[indexPath.item].label)
-            cell.backgroundColor = .orange
+            cell.backgroundColor = .red
             return cell
             
         case .second:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
             cell.setup(with: sectionData1[indexPath.item].image, and: sectionData1[indexPath.item].label)
-            cell.backgroundColor = .orange
+            cell.backgroundColor = .red
             return cell
             
         case .third:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
             cell.setup(with: sectionData2[indexPath.item].image, and: sectionData2[indexPath.item].label)
-            cell.backgroundColor = .orange
+            cell.backgroundColor = .red
             return cell
             
         case .forth:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
             cell.setup(with: sectionData3[indexPath.item].image, and: sectionData3[indexPath.item].label)
-            cell.backgroundColor = .orange
+            cell.backgroundColor = .red
             return cell
             
         case .fifth:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
             cell.setup(with: sectionData4[indexPath.item].image, and: sectionData4[indexPath.item].label) //dynamic
-            cell.backgroundColor = .orange
+            cell.backgroundColor = .red
+            return cell
+            
+        case .sixth:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
+            cell.setup(with: sectionData5[indexPath.item].image, and: sectionData4[indexPath.item].label) //dynamic
+            cell.backgroundColor = .red
             return cell
         }
         
