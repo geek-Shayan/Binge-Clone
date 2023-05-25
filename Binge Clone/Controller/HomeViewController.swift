@@ -224,9 +224,7 @@ class HomeViewController: UIViewController {
                 section.boundarySupplementaryItems = [header] //, footer
                 
                 return section
-                
-                
-                
+        
             }
         }
         
@@ -242,6 +240,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadCollectionView()
+    }
+        
+    
+    func loadCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -249,6 +252,8 @@ class HomeViewController: UIViewController {
  
         view.addSubview(collectionView)
         
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self, action: #selector(pullDownToRefresh), for: .valueChanged)
     }
     
     
@@ -262,8 +267,19 @@ class HomeViewController: UIViewController {
         let vc = UIViewController()
         vc.view.backgroundColor = .cyan
         self.navigationController?.pushViewController(vc, animated: true)
-//        self.present(vc, animated: true)
         
+    }
+    
+    
+    @objc private func pullDownToRefresh() {
+        print("Refresh")
+        
+//        sectionData0 = []
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            self.collectionView.reloadData()
+            self.collectionView.refreshControl?.endRefreshing()
+        }
     }
     
 }
