@@ -9,6 +9,17 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var actionContainerView: UIView!
+    
+    @IBOutlet weak var actionTableView: UITableView!
+    
+    var actionOpen: Bool = true
+    
+    var titleName = ["Profile", "Edit Profile", "Support", "setting", "Profile", "Edit Profile", "Support", "setting"]
+    var imageName = [UIImage(systemName: "person"), UIImage(systemName: "pencil"), UIImage(systemName: "phone"), UIImage(systemName: "gearshape"), UIImage(systemName: "person"), UIImage(systemName: "pencil"), UIImage(systemName: "phone"), UIImage(systemName: "gearshape")]
+    
+    
+    
     private var sectionHeadersFooters: [supplementaryDataType] = [supplementaryDataType(header: "", footer: ""),
                                                                   supplementaryDataType(header: "Continue Watch", footer: "C"),
                                                                   supplementaryDataType(header: "Exclusive Sports", footer: "E"),
@@ -241,8 +252,25 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         loadCollectionView()
+        
+        loadActionTableview()
+        
     }
         
+    func loadActionTableview() {
+        actionTableView.register(UINib(nibName: "CustomActionTableViewCell", bundle: nil), forCellReuseIdentifier: CustomActionTableViewCell.identifier)
+        view.addSubview(actionContainerView)
+        
+//        actionContainerView.backgroundColor = .gray // blur
+//        actionContainerView.backgroundColor = .clear
+//        actionTableView.backgroundColor = .orange
+
+        
+        actionContainerView.isHidden = true
+        
+        actionOpen = false
+        
+    }
     
     func loadCollectionView() {
         collectionView.delegate = self
@@ -264,9 +292,55 @@ class HomeViewController: UIViewController {
     
     @IBAction func actionButtonPressed(_ sender: UIBarButtonItem) {
         
-        let vc = UIViewController()
-        vc.view.backgroundColor = .cyan
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = UIViewController()
+//        vc.view.addSubview(UIView())
+//        vc.view.backgroundColor = .cyan
+//        vc.view.frame = CGRect(x:0 , y: 0, width: view.frame.size.width - 100, height: view.frame.size.height)
+//        navigationController?.pushViewController(vc, animated: true)
+        
+//        actionContainerView.isHidden = !actionContainerView.isHidden
+        
+//        self.navigationController?.navigationBar.layer.zPosition = -1;
+        
+//        self.navigationController?.navigationBar.toggle()
+//        self.tabBarController?.tabBar.toggle()
+        
+        actionContainerView.isHidden = false
+        actionTableView.isHidden = false
+        
+//        actionContainerView.isHidden = !actionContainerView.isHidden
+//        actionTableView.isHidden = !actionTableView.isHidden
+        
+        if !actionOpen {
+            actionOpen = true
+            
+            actionContainerView.frame = CGRect(x: -self.actionContainerView.bounds.width, y: self.actionContainerView.frame.origin.y , width: self.actionContainerView.bounds.width, height: self.actionContainerView.bounds.height)
+            actionTableView.frame = CGRect(x: -self.actionTableView.bounds.width, y: self.actionTableView.frame.origin.y, width: self.actionTableView.bounds.width, height: self.actionTableView.bounds.height)
+            actionContainerView.alpha = 0.0
+            UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
+                self.actionContainerView.frame = CGRect(x: 0, y: self.actionContainerView.frame.origin.y, width: self.actionContainerView.bounds.width, height: self.actionContainerView.bounds.height)
+                self.actionTableView.frame = CGRect(x: 0, y: self.actionTableView.frame.origin.y, width: self.actionTableView.bounds.width, height: self.actionTableView.bounds.height)
+                self.actionContainerView.alpha = 1.0
+            })
+            
+        }
+        
+        else {
+//            actionContainerView.isHidden = true
+//            actionTableView.isHidden = true
+            actionOpen = false
+            
+            actionContainerView.frame = CGRect(x: 0, y: self.actionContainerView.frame.origin.y, width: self.actionContainerView.bounds.width, height: self.actionContainerView.bounds.height)
+            actionTableView.frame = CGRect(x: 0, y: self.actionTableView.frame.origin.y, width: self.actionTableView.bounds.width, height: self.actionTableView.bounds.height)
+            actionContainerView.alpha = 1.0
+            
+            UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
+                self.actionContainerView.frame = CGRect(x: -self.actionContainerView.bounds.width, y: self.actionContainerView.frame.origin.y, width: self.actionContainerView.bounds.width, height: self.actionContainerView.bounds.height)
+                self.actionTableView.frame = CGRect(x: -self.actionTableView.bounds.width, y: self.actionTableView.frame.origin.y, width: self.actionTableView.bounds.width, height: self.actionTableView.bounds.height)
+                self.actionContainerView.alpha = 0.0
+            })
+
+        }
         
     }
     
@@ -392,5 +466,68 @@ extension HomeViewController: UICollectionViewDelegate {
 //        controller.view.backgroundColor = indexPath.item == 0 ? .yellow : indexPath.item == 1 ? .blue : .red
 //        
 //        self.navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+
+extension HomeViewController: UITableViewDelegate {
+    
+}
+
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titleName.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomActionTableViewCell.identifier, for: indexPath) as! CustomActionTableViewCell
+        cell.actionImage.image = imageName[indexPath.row]
+        cell.actionLabel.text = titleName[indexPath.row]
+//        cell.backgroundColor = .brown
+        return cell
+    }
+}
+
+
+
+extension UINavigationBar {
+    func toggle() {
+        if self.layer.zPosition == -1 {
+            self.layer.zPosition = 0
+            self.isUserInteractionEnabled = true
+        } else {
+            self.layer.zPosition = -1
+            self.isUserInteractionEnabled = false
+        }
+    }
+}
+
+
+extension UITabBar {
+    func toggle() {
+        if self.layer.zPosition == -1 {
+            self.layer.zPosition = 0
+            self.isUserInteractionEnabled = true
+        } else {
+            self.layer.zPosition = -1
+            self.isUserInteractionEnabled = false
+        }
+    }
+}
+
+
+extension UIView {
+   func fadeIn() {
+       // Move our fade out code from earlier
+       UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseIn, animations: {
+           self.alpha = 1.0 // Instead of a specific instance of, say, birdTypeLabel, we simply set [thisInstance] (ie, self)'s alpha
+           }, completion: nil)
+    }
+
+    func fadeOut() {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
+            self.alpha = 0.0
+            }, completion: nil)
     }
 }
