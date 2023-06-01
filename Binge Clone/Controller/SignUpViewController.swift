@@ -65,6 +65,10 @@ class SignUpViewController: UIViewController {
 //        nextButton.setImage(UIImage(named: "Group 229 (3)"), for: .normal)
         
         nextButtonImageView.image = UIImage(named: "Group 229 (3)")
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
