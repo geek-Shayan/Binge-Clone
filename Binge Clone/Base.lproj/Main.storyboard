@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TO8-xW-w4s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W3c-KG-JWm">
     <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -105,11 +105,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="s1w-Iw-8h9" firstAttribute="top" secondItem="yBX-lg-QVs" secondAttribute="bottom" id="4UF-tG-ame"/>
-                            <constraint firstItem="yBX-lg-QVs" firstAttribute="width" secondItem="s1w-Iw-8h9" secondAttribute="width" id="FZR-eB-2Vn"/>
                             <constraint firstItem="s1w-Iw-8h9" firstAttribute="leading" secondItem="jgJ-mQ-Iga" secondAttribute="leading" id="JqW-ui-eWV"/>
+                            <constraint firstItem="yBX-lg-QVs" firstAttribute="width" secondItem="s1w-Iw-8h9" secondAttribute="width" id="Roi-wF-RRZ"/>
                             <constraint firstAttribute="bottom" secondItem="s1w-Iw-8h9" secondAttribute="bottom" id="XiD-Ew-Osr"/>
                             <constraint firstItem="yBX-lg-QVs" firstAttribute="top" secondItem="Oqf-Ut-TAW" secondAttribute="top" id="f1Q-nX-faY"/>
                             <constraint firstItem="yBX-lg-QVs" firstAttribute="leading" secondItem="jgJ-mQ-Iga" secondAttribute="leading" id="nz0-th-cfb"/>
+                            <constraint firstItem="s1w-Iw-8h9" firstAttribute="width" secondItem="Oqf-Ut-TAW" secondAttribute="width" multiplier="0.508906" id="ofu-uy-rZO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -597,7 +598,9 @@
                             <constraint firstItem="d2M-jW-IlX" firstAttribute="trailing" secondItem="cMJ-2P-3R9" secondAttribute="trailing" constant="18" id="vBt-ij-mGp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Uq7-XF-8VY"/>
+                    <navigationItem key="navigationItem" id="Uq7-XF-8VY">
+                        <barButtonItem key="backBarButtonItem" title="tt" id="yqh-cO-eG8"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="conuntryCodeTextField" destination="JP8-C1-7oh" id="Nai-BB-thS"/>
                         <outlet property="nextButton" destination="a8z-F9-guK" id="4SA-gY-sVT"/>
@@ -610,7 +613,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SgB-po-1zJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1405.3435114503816" y="1433.8028169014085"/>
+            <point key="canvasLocation" x="468" y="1434"/>
         </scene>
         <!--OTP View Controller-->
         <scene sceneID="vRx-L7-5Fs">
@@ -681,7 +684,7 @@ resend code after 56 sec.</string>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8ZJ-zs-OVS">
                                 <rect key="frame" x="85.666666666666686" y="414.66666666666669" width="222" height="48"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="ENm-Qf-AU8">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="ENm-Qf-AU8">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                         <color key="backgroundColor" red="0.42747706169999999" green="0.43137052660000003" blue="0.43137264250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -690,7 +693,7 @@ resend code after 56 sec.</string>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
                                         <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="k7Z-rL-7Bg">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="k7Z-rL-7Bg">
                                         <rect key="frame" x="57.999999999999986" y="0.0" width="48" height="48"/>
                                         <color key="backgroundColor" red="0.42747706169999999" green="0.43137052660000003" blue="0.43137264250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -699,7 +702,7 @@ resend code after 56 sec.</string>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="5I2-CW-Wfp">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="5I2-CW-Wfp">
                                         <rect key="frame" x="116" y="0.0" width="48" height="48"/>
                                         <color key="backgroundColor" red="0.42747706169999999" green="0.43137052660000003" blue="0.43137264250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -708,7 +711,7 @@ resend code after 56 sec.</string>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="W10-aF-5ex">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="W10-aF-5ex">
                                         <rect key="frame" x="174" y="0.0" width="48" height="48"/>
                                         <color key="backgroundColor" red="0.42747706169999999" green="0.43137052660000003" blue="0.43137264250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -731,14 +734,16 @@ resend code after 56 sec.</string>
                                 <buttonConfiguration key="configuration" style="plain" title="Resend OTP"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CO-Zr-73y">
-                                <rect key="frame" x="16" y="75" width="44" height="34"/>
+                                <rect key="frame" x="16" y="75" width="34" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="0nk-yL-5u4"/>
                                     <constraint firstAttribute="height" constant="34" id="53a-5M-jrH"/>
+                                    <constraint firstAttribute="width" secondItem="7CO-Zr-73y" secondAttribute="height" multiplier="1:1" id="Dr5-6E-i9N"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="lessthan" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="default"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="backPressed:" destination="cu3-YV-akk" eventType="touchUpInside" id="fm0-nB-aQf"/>
                                 </connections>
@@ -758,6 +763,7 @@ resend code after 56 sec.</string>
                             <constraint firstItem="C25-LK-fys" firstAttribute="leading" secondItem="tJL-7I-awB" secondAttribute="leading" constant="17" id="L2d-75-lYX"/>
                             <constraint firstItem="tJL-7I-awB" firstAttribute="trailing" secondItem="C25-LK-fys" secondAttribute="trailing" constant="16.68" id="M2r-mj-oJ0"/>
                             <constraint firstItem="8ZJ-zs-OVS" firstAttribute="top" secondItem="X2O-Mk-2Xi" secondAttribute="bottom" constant="33" id="M6d-Pj-4Sf"/>
+                            <constraint firstItem="lhr-Xi-BY9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7CO-Zr-73y" secondAttribute="trailing" constant="82" id="OYL-0C-vyU"/>
                             <constraint firstItem="tJL-7I-awB" firstAttribute="trailing" secondItem="4n3-V7-4ew" secondAttribute="trailing" constant="16" id="ReP-BI-jQK"/>
                             <constraint firstItem="X2O-Mk-2Xi" firstAttribute="leading" secondItem="C25-LK-fys" secondAttribute="leading" constant="18" id="Rsh-3R-EPF"/>
                             <constraint firstItem="ElZ-g8-nCl" firstAttribute="leading" secondItem="xBj-8Z-NIp" secondAttribute="leading" id="UWT-cB-ut3"/>
@@ -786,62 +792,24 @@ resend code after 56 sec.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9C-IN-rAW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2321.3740458015268" y="1433.8028169014085"/>
-        </scene>
-        <!--Splash Screen View Controller-->
-        <scene sceneID="y6G-hd-mUO">
-            <objects>
-                <viewController storyboardIdentifier="SplashScreenViewController" id="7mJ-Nj-N60" customClass="SplashScreenViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="htb-s8-WbS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 18" translatesAutoresizingMaskIntoConstraints="NO" id="UHC-A7-dQF">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layer_1" translatesAutoresizingMaskIntoConstraints="NO" id="bzJ-yL-nQT">
-                                <rect key="frame" x="95" y="315" width="203" height="222"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="bzJ-yL-nQT" secondAttribute="height" multiplier="202:221" id="Ve1-TD-0ZW"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="zpQ-gx-KoV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="UHC-A7-dQF" firstAttribute="top" secondItem="htb-s8-WbS" secondAttribute="top" id="CTj-NC-22H"/>
-                            <constraint firstItem="bzJ-yL-nQT" firstAttribute="centerY" secondItem="htb-s8-WbS" secondAttribute="centerY" id="Kzg-mN-3R2"/>
-                            <constraint firstAttribute="trailing" secondItem="UHC-A7-dQF" secondAttribute="trailing" id="Wnz-bX-yQ4"/>
-                            <constraint firstAttribute="bottom" secondItem="UHC-A7-dQF" secondAttribute="bottom" id="dxK-kb-7QI"/>
-                            <constraint firstItem="bzJ-yL-nQT" firstAttribute="centerX" secondItem="htb-s8-WbS" secondAttribute="centerX" id="nFq-Um-5zu"/>
-                            <constraint firstItem="UHC-A7-dQF" firstAttribute="leading" secondItem="htb-s8-WbS" secondAttribute="leading" id="yOe-DI-pke"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="aiB-xJ-R7D"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GXq-fa-HZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="481.67938931297709" y="1433.8028169014085"/>
+            <point key="canvasLocation" x="1247" y="1434"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="8La-pL-090">
+        <scene sceneID="9UZ-tY-3pa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TO8-xW-w4s" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="W3c-KG-JWm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R3X-Ht-YX3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oiY-up-HFL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZTT-GI-JGq">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
-                        <segue destination="7mJ-Nj-N60" kind="relationship" relationship="rootViewController" id="Ima-Pb-HaC"/>
+                        <segue destination="5xr-gC-fhl" kind="relationship" relationship="rootViewController" id="aYe-rj-kYw"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Syl-5h-UA8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ko5-CU-PN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-445.03816793893128" y="1433.8028169014085"/>
+            <point key="canvasLocation" x="-445" y="1434"/>
         </scene>
     </scenes>
     <resources>
@@ -852,16 +820,15 @@ resend code after 56 sec.</string>
         <image name="Group 220 (3)" width="71" height="24"/>
         <image name="Group 229" width="68" height="74"/>
         <image name="Group 267" width="26" height="14"/>
-        <image name="Layer_1" width="202.66667175292969" height="221.66667175292969"/>
         <image name="Rectangle 161" width="359.33334350585938" height="214"/>
         <image name="Rectangle 162" width="156" height="48"/>
         <image name="Rectangle 163" width="156" height="48"/>
         <image name="Rectangle 164" width="156" height="48"/>
         <image name="Rectangle 18" width="393" height="852"/>
         <image name="b.square.fill" catalog="system" width="128" height="114"/>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
-        <image name="lessthan" catalog="system" width="128" height="108"/>
         <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="tv" catalog="system" width="128" height="95"/>

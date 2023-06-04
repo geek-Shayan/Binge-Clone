@@ -12,10 +12,10 @@ class SplashScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
         
     }
     

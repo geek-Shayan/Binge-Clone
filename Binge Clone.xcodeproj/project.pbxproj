@@ -22,6 +22,7 @@
 		1A4CAA8B2A1F282F00B40D0B /* OriginalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA8A2A1F282F00B40D0B /* OriginalsViewController.swift */; };
 		1A4CAA8D2A1F284700B40D0B /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA8C2A1F284700B40D0B /* MyListViewController.swift */; };
 		1A4CAA8F2A1F285C00B40D0B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA8E2A1F285C00B40D0B /* ProfileViewController.swift */; };
+		1A84C07A2A2C60B500070B30 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84C0792A2C60B500070B30 /* Extension.swift */; };
 		1AB207882A246CB000E5026C /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB207872A246CB000E5026C /* ActionViewController.swift */; };
 		1AB207AA2A24C10900E5026C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB207A92A24C10900E5026C /* SignUpViewController.swift */; };
 		1ABDB4E42A21D6BC00946656 /* CustomActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDB4E22A21D6BC00946656 /* CustomActionTableViewCell.swift */; };
@@ -46,6 +47,7 @@
 		1A4CAA8A2A1F282F00B40D0B /* OriginalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalsViewController.swift; sourceTree = "<group>"; };
 		1A4CAA8C2A1F284700B40D0B /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		1A4CAA8E2A1F285C00B40D0B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1A84C0792A2C60B500070B30 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1AB207872A246CB000E5026C /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		1AB207A92A24C10900E5026C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1ABDB4E22A21D6BC00946656 /* CustomActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionTableViewCell.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				1A0E15322A1C841A002A0C22 /* Model */,
 				1A0E15332A1C842E002A0C22 /* View */,
 				1A0E15312A1C8406002A0C22 /* Controller */,
+				1A84C0782A2C607800070B30 /* Extension */,
 				1A0E15232A1C7D6F002A0C22 /* Main.storyboard */,
 				1A0E15262A1C7D71002A0C22 /* Assets.xcassets */,
 				1A0E15282A1C7D71002A0C22 /* LaunchScreen.storyboard */,
@@ -128,6 +131,14 @@
 				1ABDB4E32A21D6BC00946656 /* CustomActionTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1A84C0782A2C607800070B30 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1A84C0792A2C60B500070B30 /* Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				1A4CAA8F2A1F285C00B40D0B /* ProfileViewController.swift in Sources */,
 				1A4CAA892A1F27F100B40D0B /* LiveTvViewController.swift in Sources */,
 				1A0E151E2A1C7D6F002A0C22 /* AppDelegate.swift in Sources */,
+				1A84C07A2A2C60B500070B30 /* Extension.swift in Sources */,
 				1A0E15202A1C7D6F002A0C22 /* SceneDelegate.swift in Sources */,
 				1A2601C42A28B94800F0D710 /* SplashScreenViewController.swift in Sources */,
 				1A0E15372A1C8560002A0C22 /* HeaderCollectionReusableView.swift in Sources */,
@@ -367,7 +379,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Binge Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -395,7 +407,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Binge Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
