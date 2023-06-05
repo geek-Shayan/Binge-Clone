@@ -18,13 +18,19 @@ class GenreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        setupView()
+        
+        loadActionCollection()
+    }
+    
+    func loadActionCollection() {
         genreCollectionView.register(UINib(nibName: "CustomGenreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomGenreCollectionViewCell.identifier)
         
         view.addSubview(genreCollectionView)
-        
-        
+    }
+    
+    private func setupView() {
 //        continueButton.layer.borderWidth = 1
         continueButton.layer.cornerRadius = 10
 //        continueButton.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor
@@ -32,7 +38,6 @@ class GenreViewController: UIViewController {
 //        skipButton.layer.borderWidth = 1
         skipButton.layer.cornerRadius = 10
 //        skipButton.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor
-        
     }
 
 }
