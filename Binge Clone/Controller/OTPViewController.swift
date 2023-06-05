@@ -14,11 +14,12 @@ class OTPViewController: UIViewController {
     @IBOutlet weak var otpTextField3: UITextField!
     @IBOutlet weak var otpTextField4: UITextField!
     
-
+    @IBOutlet weak var nextButtonImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        navigationController?.isNavigationBarHidden = true
+        navigationController?.isNavigationBarHidden = true
 
         setupView()
     
@@ -49,5 +50,17 @@ class OTPViewController: UIViewController {
     @IBAction func backPressed(_ sender: Any) {
         
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func nextPressed(_ sender: Any) {
+        nextButtonImageView.image = UIImage(named: "Group 229 (3)")
+        
+        if nextButtonImageView.image == UIImage(named: "Group 229 (3)") {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "GenreViewController") as! GenreViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            print("disabled")
+        }
     }
 }

@@ -22,6 +22,9 @@
 		1A4CAA8B2A1F282F00B40D0B /* OriginalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA8A2A1F282F00B40D0B /* OriginalsViewController.swift */; };
 		1A4CAA8D2A1F284700B40D0B /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA8C2A1F284700B40D0B /* MyListViewController.swift */; };
 		1A4CAA8F2A1F285C00B40D0B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA8E2A1F285C00B40D0B /* ProfileViewController.swift */; };
+		1A6A961A2A2DCB2800A894DD /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A96192A2DCB2800A894DD /* GenreViewController.swift */; };
+		1A6A961D2A2DCEB200A894DD /* CustomGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A961B2A2DCEB200A894DD /* CustomGenreCollectionViewCell.swift */; };
+		1A6A961E2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6A961C2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib */; };
 		1A84C07A2A2C60B500070B30 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84C0792A2C60B500070B30 /* Extension.swift */; };
 		1AB207882A246CB000E5026C /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB207872A246CB000E5026C /* ActionViewController.swift */; };
 		1AB207AA2A24C10900E5026C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB207A92A24C10900E5026C /* SignUpViewController.swift */; };
@@ -48,6 +51,9 @@
 		1A4CAA8C2A1F284700B40D0B /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		1A4CAA8E2A1F285C00B40D0B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1A6A96182A2DC8FD00A894DD /* Binge Clone.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = "Binge Clone.entitlements"; path = "../../../Binge Clone.entitlements"; sourceTree = "<group>"; };
+		1A6A96192A2DCB2800A894DD /* GenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
+		1A6A961B2A2DCEB200A894DD /* CustomGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		1A6A961C2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomGenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A84C0792A2C60B500070B30 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1AB207872A246CB000E5026C /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		1AB207A92A24C10900E5026C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 				1AB207872A246CB000E5026C /* ActionViewController.swift */,
 				1AB207A92A24C10900E5026C /* SignUpViewController.swift */,
 				1A2601C12A28932A00F0D710 /* OTPViewController.swift */,
+				1A6A96192A2DCB2800A894DD /* GenreViewController.swift */,
 				1A2601C32A28B94800F0D710 /* SplashScreenViewController.swift */,
 			);
 			path = Controller;
@@ -131,6 +138,8 @@
 				1A0E15382A1C85AB002A0C22 /* FooterCollectionReusableView.swift */,
 				1ABDB4E22A21D6BC00946656 /* CustomActionTableViewCell.swift */,
 				1ABDB4E32A21D6BC00946656 /* CustomActionTableViewCell.xib */,
+				1A6A961B2A2DCEB200A894DD /* CustomGenreCollectionViewCell.swift */,
+				1A6A961C2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A0E152A2A1C7D71002A0C22 /* LaunchScreen.storyboard in Resources */,
+				1A6A961E2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib in Resources */,
 				1A0E15272A1C7D71002A0C22 /* Assets.xcassets in Resources */,
 				1ABDB4E52A21D6BC00946656 /* CustomActionTableViewCell.xib in Resources */,
 				1A0E15252A1C7D6F002A0C22 /* Main.storyboard in Resources */,
@@ -224,7 +234,9 @@
 				1A0E151E2A1C7D6F002A0C22 /* AppDelegate.swift in Sources */,
 				1A84C07A2A2C60B500070B30 /* Extension.swift in Sources */,
 				1A0E15202A1C7D6F002A0C22 /* SceneDelegate.swift in Sources */,
+				1A6A961D2A2DCEB200A894DD /* CustomGenreCollectionViewCell.swift in Sources */,
 				1A2601C42A28B94800F0D710 /* SplashScreenViewController.swift in Sources */,
+				1A6A961A2A2DCB2800A894DD /* GenreViewController.swift in Sources */,
 				1A0E15372A1C8560002A0C22 /* HeaderCollectionReusableView.swift in Sources */,
 				1A0E15392A1C85AB002A0C22 /* FooterCollectionReusableView.swift in Sources */,
 				1A0E15352A1C8522002A0C22 /* CustomCollectionViewCell.swift in Sources */,
@@ -379,7 +391,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 29LU69NC29;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Binge Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -410,7 +422,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 29LU69NC29;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Binge Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
