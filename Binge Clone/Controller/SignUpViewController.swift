@@ -6,16 +6,18 @@
 //
 
 import UIKit
+//import AuthenticationServices
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var termSeletionButton: UIButton!
-    @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var nextButtonImageView: UIImageView!
-    @IBOutlet weak var nextButtonView: UIView!
-    @IBOutlet weak var nextButtonViewTopConstant: NSLayoutConstraint!
     @IBOutlet weak var conuntryCodeTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var termSeletionButton: UIButton!
+    @IBOutlet weak var nextButtonView: UIView!
+    @IBOutlet weak var nextButtonImageView: UIImageView!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var nextButtonViewTopConstant: NSLayoutConstraint!
+    @IBOutlet weak var appleSignInButton: UIButton!
     
     
     let MAX_LENGTH_PHONENUMBER = 10
@@ -51,8 +53,16 @@ class SignUpViewController: UIViewController {
     @IBAction func termSeletionPressed(_ sender: Any) {
         termSeletionButton.isSelected = !termSeletionButton.isSelected
         
-        if phoneNumberTextField.text?.count == 10 && termSeletionButton.isSelected {
-            nextButtonImageView.image = UIImage(named: "Group 229 (3)")
+        if phoneNumberTextField.text?.count == 10 {
+//            phoneNumberTextField.resignFirstResponder()
+            self.view.endEditing(true)
+            
+            if termSeletionButton.isSelected {
+                nextButtonImageView.image = UIImage(named: "Group 229 (3)")
+            }
+            else {
+                nextButtonImageView.image = UIImage(named: "Group 229")
+            }
         }
         else {
             nextButtonImageView.image = UIImage(named: "Group 229")
@@ -79,8 +89,16 @@ extension SignUpViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         print("textFieldDidChangeSelection")
         
-        if phoneNumberTextField.text?.count == 10 && termSeletionButton.isSelected {
-            nextButtonImageView.image = UIImage(named: "Group 229 (3)")
+        if phoneNumberTextField.text?.count == 10 {
+//            phoneNumberTextField.resignFirstResponder()
+            self.view.endEditing(true)
+            
+            if termSeletionButton.isSelected {
+                nextButtonImageView.image = UIImage(named: "Group 229 (3)")
+            }
+            else {
+                nextButtonImageView.image = UIImage(named: "Group 229")
+            }
         }
         else {
             nextButtonImageView.image = UIImage(named: "Group 229")
@@ -93,6 +111,19 @@ extension SignUpViewController: UITextFieldDelegate {
         let strValid = string.rangeOfCharacter(from: numberOnly) == nil
         return (strValid && (newLength <= MAX_LENGTH_PHONENUMBER))
     }
+    
+    //03 textfield func for the return key
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        phoneNumberTextField.resignFirstResponder()
+//      return true
+//    }
+
+    //textfield func for the touch on BG
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        phoneNumberTextField.resignFirstResponder()
+        self.view.endEditing(true)
+    }
+ 
 }
 
 
