@@ -19,21 +19,28 @@ class CustomGenreCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-//        genreButton.setTitle("fdsdfds", for: .normal)
-//
-        genreBackgroundView.layer.borderWidth = 1
-        genreBackgroundView.layer.cornerRadius = 8
-        genreBackgroundView.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor
+        setupView()
     }
     
-    func setup( buttonTitle: String) {
-//        genreButton.setTitle(buttonTitle, for: .normal)
-        genreLabel.text = buttonTitle
+    private func setupView() {
+        genreBackgroundView.layer.borderWidth = 1
+        genreBackgroundView.layer.cornerRadius = 8
+        genreBackgroundView.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor //white
+    }
+    
+    func selected() {
+        genreBackgroundView.backgroundColor = UIColor(red: 0.898, green: 0.035, blue: 0.078, alpha: 1) //red
+        genreBackgroundView.layer.borderWidth = 0
+    }
+    
+    func deSelected() {
+        genreBackgroundView.backgroundColor = .black
+        genreBackgroundView.layer.borderWidth = 1
+    }
+    
+    func setup( label: String) {
+        genreLabel.text = label
     }
 
-//    @IBAction func genrePressed(_ sender: Any) {
-//        
-//        
-//    }
     
 }

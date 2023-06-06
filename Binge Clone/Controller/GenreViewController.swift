@@ -14,7 +14,9 @@ class GenreViewController: UIViewController {
     @IBOutlet weak var skipButton: UIButton!
     
     
-    private var titleNames = ["Action", "Comedy", "Fashion", "History", "Horror", "Kids", "Romance", "Fantasy/SCI-FI", "Drama", "Family", "Sports", "Thriller", "Crime", "Pop", "Music", "War", "Educational", "Tragedy", "Game", "Reality Show"]
+    private let genreNames = ["Action", "Comedy", "Fashion", "History", "Horror", "Kids", "Romance", "Fantasy/SCI-FI", "Drama", "Family", "Sports", "Thriller", "Crime", "Pop", "Music", "War", "Educational", "Tragedy", "Game", "Reality Show"]
+    
+    private var finalSelections = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,51 +29,105 @@ class GenreViewController: UIViewController {
     func loadActionCollection() {
         genreCollectionView.register(UINib(nibName: "CustomGenreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomGenreCollectionViewCell.identifier)
         
-        view.addSubview(genreCollectionView)
+        genreCollectionView.allowsMultipleSelection = true
     }
     
     private func setupView() {
-//        continueButton.layer.borderWidth = 1
         continueButton.layer.cornerRadius = 10
-//        continueButton.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor
+        continueButton.isUserInteractionEnabled = false
         
-//        skipButton.layer.borderWidth = 1
         skipButton.layer.cornerRadius = 10
-//        skipButton.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor
     }
+    
+    @IBAction func continuePressed(_ sender: Any) {
+        if continueButton.isUserInteractionEnabled {
+            print("continuePressed")
+            
+            let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController
+            navigationController?.pushViewController(tabBarController, animated: true)
+        }
+        else {
+            print("disabled")
+        }
+    }
+    
+    @IBAction func skipPressed(_ sender: Any) {
+        print("skipPressed")
+        
+        let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController
+        navigationController?.pushViewController(tabBarController, animated: true)
+    }
+    
 
 }
+
 
 
 extension GenreViewController: UICollectionViewDelegate {
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? CustomGenreCollectionViewCell {
-            cell.genreBackgroundView.backgroundColor = .red
-            cell.genreBackgroundView.layer.borderWidth = 0
+        let cell = collectionView.cellForItem(at: indexPath) as! CustomGenreCollectionViewCell
+        
+        if cell.isSelected == true {
+            cell.selected()
+            
+            finalSelections.append(genreNames[indexPath.row])
+            print("append  \(finalSelections)")
+            
+            continueButton.backgroundColor = UIColor(red: 0.898, green: 0.035, blue: 0.078, alpha: 1) //red
+            continueButton.isUserInteractionEnabled = true
+
         }
     }
 
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? CustomGenreCollectionViewCell {
-            cell.genreBackgroundView.backgroundColor = .black
-            cell.genreBackgroundView.layer.borderWidth = 1
+        let cell = collectionView.cellForItem(at: indexPath) as! CustomGenreCollectionViewCell
+        
+        // last deselection, before emptying selection array
+        if cell.isSelected == false && finalSelections.count == 1 {
+            cell.deSelected()
+            
+            finalSelections.removeAll { $0 == genreNames[indexPath.row] } //(genreNames[indexPath.row])
+            print("removed if  \(finalSelections)")
+            
+            continueButton.backgroundColor = UIColor(red: 0.255, green: 0.255, blue: 0.255, alpha: 1) //gray
+            continueButton.isUserInteractionEnabled = false
+        }
+        
+        // normal deselection, selection array not empty
+        else {
+            cell.deSelected()
+            
+            finalSelections.removeAll { $0 == genreNames[indexPath.row] } //(genreNames[indexPath.row])
+            print("removed else  \(finalSelections)")
         }
 
     }
+
 }
+
+
 
 extension GenreViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titleNames.count
+        return genreNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomGenreCollectionViewCell.identifier, for: indexPath) as! CustomGenreCollectionViewCell
         
-        cell.setup(buttonTitle: titleNames[indexPath.row])
-//        cell.backgroundColor = .brown
-        return cell
+        if cell.isSelected == true {
+            cell.selected()
+            cell.setup(label: genreNames[indexPath.row])
+            return cell
+        }
+        
+        else {
+            cell.deSelected()
+            cell.setup(label: genreNames[indexPath.row])
+            return cell
+        }
     }
     
     

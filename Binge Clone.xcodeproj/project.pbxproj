@@ -17,7 +17,6 @@
 		1A0E15372A1C8560002A0C22 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E15362A1C8560002A0C22 /* HeaderCollectionReusableView.swift */; };
 		1A0E15392A1C85AB002A0C22 /* FooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E15382A1C85AB002A0C22 /* FooterCollectionReusableView.swift */; };
 		1A2601C22A28932A00F0D710 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2601C12A28932A00F0D710 /* OTPViewController.swift */; };
-		1A2601C42A28B94800F0D710 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2601C32A28B94800F0D710 /* SplashScreenViewController.swift */; };
 		1A4CAA892A1F27F100B40D0B /* LiveTvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA882A1F27F100B40D0B /* LiveTvViewController.swift */; };
 		1A4CAA8B2A1F282F00B40D0B /* OriginalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA8A2A1F282F00B40D0B /* OriginalsViewController.swift */; };
 		1A4CAA8D2A1F284700B40D0B /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA8C2A1F284700B40D0B /* MyListViewController.swift */; };
@@ -45,7 +44,6 @@
 		1A0E15362A1C8560002A0C22 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		1A0E15382A1C85AB002A0C22 /* FooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		1A2601C12A28932A00F0D710 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
-		1A2601C32A28B94800F0D710 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		1A4CAA882A1F27F100B40D0B /* LiveTvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTvViewController.swift; sourceTree = "<group>"; };
 		1A4CAA8A2A1F282F00B40D0B /* OriginalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalsViewController.swift; sourceTree = "<group>"; };
 		1A4CAA8C2A1F284700B40D0B /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				1AB207A92A24C10900E5026C /* SignUpViewController.swift */,
 				1A2601C12A28932A00F0D710 /* OTPViewController.swift */,
 				1A6A96192A2DCB2800A894DD /* GenreViewController.swift */,
-				1A2601C32A28B94800F0D710 /* SplashScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -235,7 +232,6 @@
 				1A84C07A2A2C60B500070B30 /* Extension.swift in Sources */,
 				1A0E15202A1C7D6F002A0C22 /* SceneDelegate.swift in Sources */,
 				1A6A961D2A2DCEB200A894DD /* CustomGenreCollectionViewCell.swift in Sources */,
-				1A2601C42A28B94800F0D710 /* SplashScreenViewController.swift in Sources */,
 				1A6A961A2A2DCB2800A894DD /* GenreViewController.swift in Sources */,
 				1A0E15372A1C8560002A0C22 /* HeaderCollectionReusableView.swift in Sources */,
 				1A0E15392A1C85AB002A0C22 /* FooterCollectionReusableView.swift in Sources */,
