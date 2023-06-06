@@ -20,8 +20,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var appleSignInButton: UIButton!
     
     
-    let MAX_LENGTH_PHONENUMBER = 10
-    let ACCEPTABLE_NUMBERS     = "0123456789"
+    private let maxLengthPhoneNumber = 10
+    private let acceptableNumbers = "0123456789"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,8 @@ class SignUpViewController: UIViewController {
     }
     
     private func setupView() {
+        nextButton.isUserInteractionEnabled = false
+        
         nextButtonViewTopConstant.constant = -(nextButtonView.frame.height / 2)
         
         phoneNumberTextField.delegate = self
@@ -50,29 +52,37 @@ class SignUpViewController: UIViewController {
         termSeletionButton.setImage(UIImage(named: "Ellipse 5 (3)"), for: .selected)
     }
     
-    @IBAction func termSeletionPressed(_ sender: Any) {
-        termSeletionButton.isSelected = !termSeletionButton.isSelected
-        
-        if phoneNumberTextField.text?.count == 10 {
-//            phoneNumberTextField.resignFirstResponder()
-            self.view.endEditing(true)
+    private func inputValidation() {
+        if phoneNumberTextField.text?.count == maxLengthPhoneNumber {
+//            phoneNumberTextField.resignFirstResponder() //
+//            self.view.endEditing(true)
             
             if termSeletionButton.isSelected {
                 nextButtonImageView.image = UIImage(named: "Group 229 (3)")
+                nextButton.isUserInteractionEnabled = true
             }
             else {
                 nextButtonImageView.image = UIImage(named: "Group 229")
+                nextButton.isUserInteractionEnabled = false
             }
         }
         else {
             nextButtonImageView.image = UIImage(named: "Group 229")
+            nextButton.isUserInteractionEnabled = false
         }
+    }
+    
+    
+    @IBAction func termSeletionPressed(_ sender: Any) {
+        termSeletionButton.isSelected = !termSeletionButton.isSelected
+        
+        inputValidation()
         
     }
 
     
     @IBAction func nextPressed(_ sender: Any) {
-        if nextButtonImageView.image == UIImage(named: "Group 229 (3)") {
+        if nextButton.isUserInteractionEnabled {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -89,34 +99,16 @@ extension SignUpViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         print("textFieldDidChangeSelection")
         
-        if phoneNumberTextField.text?.count == 10 {
-//            phoneNumberTextField.resignFirstResponder()
-            self.view.endEditing(true)
-            
-            if termSeletionButton.isSelected {
-                nextButtonImageView.image = UIImage(named: "Group 229 (3)")
-            }
-            else {
-                nextButtonImageView.image = UIImage(named: "Group 229")
-            }
-        }
-        else {
-            nextButtonImageView.image = UIImage(named: "Group 229")
-        }
+        inputValidation()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newLength: Int = textField.text!.count + string.count - range.length
-        let numberOnly = NSCharacterSet.init(charactersIn: ACCEPTABLE_NUMBERS).inverted
+        let numberOnly = NSCharacterSet.init(charactersIn: acceptableNumbers).inverted
         let strValid = string.rangeOfCharacter(from: numberOnly) == nil
-        return (strValid && (newLength <= MAX_LENGTH_PHONENUMBER))
+        return (strValid && (newLength <= maxLengthPhoneNumber))
     }
     
-    //03 textfield func for the return key
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        phoneNumberTextField.resignFirstResponder()
-//      return true
-//    }
 
     //textfield func for the touch on BG
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -125,6 +117,3 @@ extension SignUpViewController: UITextFieldDelegate {
     }
  
 }
-
-
-
