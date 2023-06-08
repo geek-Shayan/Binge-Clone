@@ -519,12 +519,12 @@
                                     <action selector="termSeletionPressed:" destination="5xr-gC-fhl" eventType="touchUpInside" id="bdE-ic-qBk"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjM-wp-O5w">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjM-wp-O5w">
                                 <rect key="frame" x="131" y="394.66666666666669" width="227.33333333333337" height="40"/>
                                 <color key="backgroundColor" red="0.42747706169999999" green="0.43137052660000003" blue="0.43137264250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" textContentType="tel"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 267" translatesAutoresizingMaskIntoConstraints="NO" id="Lnf-Xp-2Oy">
                                 <rect key="frame" x="46" y="407.66666666666669" width="26" height="14"/>
@@ -676,49 +676,49 @@ resend code after 56 sec.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8ZJ-zs-OVS">
-                                <rect key="frame" x="85.666666666666686" y="414.66666666666669" width="222" height="48"/>
+                                <rect key="frame" x="83.666666666666686" y="414.66666666666669" width="226" height="49"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="ENm-Qf-AU8">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
                                         <color key="backgroundColor" red="0.42747706169999999" green="0.43137052660000003" blue="0.43137264250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ENm-Qf-AU8" secondAttribute="height" multiplier="1:1" id="uta-cr-HmJ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="k7Z-rL-7Bg">
-                                        <rect key="frame" x="57.999999999999986" y="0.0" width="48" height="48"/>
+                                        <rect key="frame" x="58.999999999999986" y="0.0" width="49" height="49"/>
                                         <color key="backgroundColor" red="0.42747706169999999" green="0.43137052660000003" blue="0.43137264250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="k7Z-rL-7Bg" secondAttribute="height" multiplier="1:1" id="UyI-S0-xfe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="5I2-CW-Wfp">
-                                        <rect key="frame" x="116" y="0.0" width="48" height="48"/>
+                                        <rect key="frame" x="118" y="0.0" width="49" height="49"/>
                                         <color key="backgroundColor" red="0.42747706169999999" green="0.43137052660000003" blue="0.43137264250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5I2-CW-Wfp" secondAttribute="height" multiplier="1:1" id="7Ov-Qr-t3Y"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="W10-aF-5ex">
-                                        <rect key="frame" x="174" y="0.0" width="48" height="48"/>
+                                        <rect key="frame" x="177" y="0.0" width="49" height="49"/>
                                         <color key="backgroundColor" red="0.42747706169999999" green="0.43137052660000003" blue="0.43137264250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="W10-aF-5ex" secondAttribute="height" multiplier="1:1" id="lmm-Ry-pfE"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="W10-aF-5ex" firstAttribute="width" secondItem="5I2-CW-Wfp" secondAttribute="width" id="2t0-ey-etc"/>
-                                    <constraint firstItem="k7Z-rL-7Bg" firstAttribute="width" secondItem="ENm-Qf-AU8" secondAttribute="width" id="X68-mG-pZ6"/>
-                                    <constraint firstItem="5I2-CW-Wfp" firstAttribute="width" secondItem="k7Z-rL-7Bg" secondAttribute="width" id="uXb-V8-ZFO"/>
+                                    <constraint firstItem="W10-aF-5ex" firstAttribute="height" secondItem="5I2-CW-Wfp" secondAttribute="height" id="2t0-ey-etc"/>
+                                    <constraint firstItem="k7Z-rL-7Bg" firstAttribute="height" secondItem="ENm-Qf-AU8" secondAttribute="height" id="X68-mG-pZ6"/>
+                                    <constraint firstItem="5I2-CW-Wfp" firstAttribute="height" secondItem="k7Z-rL-7Bg" secondAttribute="height" id="uXb-V8-ZFO"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBV-gc-XSo">
@@ -754,13 +754,13 @@ resend code after 56 sec.</string>
                             <constraint firstItem="lhr-Xi-BY9" firstAttribute="centerX" secondItem="xBj-8Z-NIp" secondAttribute="centerX" id="3FR-Oc-uLg"/>
                             <constraint firstItem="zBV-gc-XSo" firstAttribute="top" secondItem="C25-LK-fys" secondAttribute="bottom" constant="57" id="3JX-se-Sek"/>
                             <constraint firstItem="C25-LK-fys" firstAttribute="top" secondItem="4n3-V7-4ew" secondAttribute="bottom" constant="14" id="4h9-fJ-Fgr"/>
-                            <constraint firstItem="W10-aF-5ex" firstAttribute="width" secondItem="C25-LK-fys" secondAttribute="width" multiplier="0.133581" id="7rt-YM-25w"/>
                             <constraint firstItem="C25-LK-fys" firstAttribute="trailing" secondItem="X2O-Mk-2Xi" secondAttribute="trailing" constant="18" id="8Ca-mE-VQa"/>
                             <constraint firstItem="ElZ-g8-nCl" firstAttribute="top" secondItem="xBj-8Z-NIp" secondAttribute="top" id="DJQ-w5-XY4"/>
                             <constraint firstItem="C25-LK-fys" firstAttribute="leading" secondItem="tJL-7I-awB" secondAttribute="leading" constant="17" id="L2d-75-lYX"/>
                             <constraint firstItem="tJL-7I-awB" firstAttribute="trailing" secondItem="C25-LK-fys" secondAttribute="trailing" constant="16.68" id="M2r-mj-oJ0"/>
                             <constraint firstItem="8ZJ-zs-OVS" firstAttribute="top" secondItem="X2O-Mk-2Xi" secondAttribute="bottom" constant="33" id="M6d-Pj-4Sf"/>
                             <constraint firstItem="lhr-Xi-BY9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7CO-Zr-73y" secondAttribute="trailing" constant="82" id="OYL-0C-vyU"/>
+                            <constraint firstItem="W10-aF-5ex" firstAttribute="height" secondItem="C25-LK-fys" secondAttribute="height" multiplier="0.226154" id="P7u-93-sww"/>
                             <constraint firstItem="tJL-7I-awB" firstAttribute="trailing" secondItem="4n3-V7-4ew" secondAttribute="trailing" constant="16" id="ReP-BI-jQK"/>
                             <constraint firstItem="X2O-Mk-2Xi" firstAttribute="leading" secondItem="C25-LK-fys" secondAttribute="leading" constant="18" id="Rsh-3R-EPF"/>
                             <constraint firstItem="ElZ-g8-nCl" firstAttribute="leading" secondItem="xBj-8Z-NIp" secondAttribute="leading" id="UWT-cB-ut3"/>

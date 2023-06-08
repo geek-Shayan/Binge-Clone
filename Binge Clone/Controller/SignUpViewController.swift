@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nextButtonViewTopConstant: NSLayoutConstraint!
     @IBOutlet weak var appleSignInButton: UIButton!
+//    @IBOutlet weak var appleSignInButton: ASAuthorizationAppleIDButton!
     
     
     private let maxLengthPhoneNumber = 10
