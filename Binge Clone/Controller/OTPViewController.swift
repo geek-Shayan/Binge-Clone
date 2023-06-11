@@ -37,10 +37,7 @@ class OTPViewController: UIViewController {
         otpTextField1.layer.cornerRadius = 8
         otpTextField1.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor
         otpTextField1.textContentType = .oneTimeCode
-//        self.otpTextField1.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         otpTextField1.becomeFirstResponder()
-        
-//        print("otpTextField1.text  -------   \(otpTextField1?.text)")
         
         otpTextField2.delegate = self
         otpTextField2.layer.borderWidth = 1
@@ -68,19 +65,51 @@ class OTPViewController: UIViewController {
         
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
-//        if #available(iOS 12.0, *) {
-            if textField.textContentType == UITextContentType.oneTimeCode{
-                //here split the text to your four text fields
-                if let otpCode = textField.text, otpCode.count > 3{
-                    otpTextField1.text = String(otpCode[otpCode.index(otpCode.startIndex, offsetBy: 0)])
-                    otpTextField2.text = String(otpCode[otpCode.index(otpCode.startIndex, offsetBy: 1)])
-                    otpTextField3.text = String(otpCode[otpCode.index(otpCode.startIndex, offsetBy: 2)])
-                    otpTextField4.text = String(otpCode[otpCode.index(otpCode.startIndex, offsetBy: 3)])
-                }
-            }
-//         }
-      }
+    private func otpPaste(_ textField: UITextField, _ string: String) {
+        if textField.textContentType == UITextContentType.oneTimeCode{
+            otpTextField1.becomeFirstResponder()
+            otpTextField1.text = String(string[string.index(string.startIndex, offsetBy: 0)])
+            otpTextField2.text = String(string[string.index(string.startIndex, offsetBy: 1)])
+            otpTextField3.text = String(string[string.index(string.startIndex, offsetBy: 2)])
+            otpTextField4.text = String(string[string.index(string.startIndex, offsetBy: 3)])
+            otpTextField1.resignFirstResponder()
+        }
+    }
+    
+    
+    private func otpSentToApi(_ textField: UITextField) {
+        
+        if otpTextField1.text != "" && otpTextField2.text != "" && otpTextField3.text != "" && otpTextField4.text != "" {
+            print( "not '' check")
+            textField.resignFirstResponder()//
+            
+            //api call
+            OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
+            print("OTP  \(OTP)")
+            
+            //api success
+            nextButtonImageView.image = UIImage(named: "Group 229 (3)") //unlocked
+            nextButton.isUserInteractionEnabled = true
+
+        }
+    }
+    
+//    @objc func textFieldDidChange(_ textField: UITextField) {
+////        if #available(iOS 12.0, *) {
+//            if textField.textContentType == UITextContentType.oneTimeCode{
+//                //here split the text to your four text fields
+//                if let otpCode = textField.text, otpCode.count > 3{
+//                    otpTextField1.text = String(otpCode[otpCode.index(otpCode.startIndex, offsetBy: 0)])
+//                    otpTextField2.text = String(otpCode[otpCode.index(otpCode.startIndex, offsetBy: 1)])
+//                    otpTextField3.text = String(otpCode[otpCode.index(otpCode.startIndex, offsetBy: 2)])
+//                    otpTextField4.text = String(otpCode[otpCode.index(otpCode.startIndex, offsetBy: 3)])
+//                }
+//            }
+////         }
+//      }
+    
+    
+    
 
     @IBAction func backPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -104,15 +133,10 @@ class OTPViewController: UIViewController {
         otpTextField3.text = nil
         otpTextField4.text = nil
         
-//        print("otpTextField1.text  -------   \(otpTextField1?.text)")
-        
-        nextButtonImageView.image = UIImage(named: "Group 229")
+        nextButtonImageView.image = UIImage(named: "Group 229") // locked
         nextButton.isUserInteractionEnabled = false
         
         otpTextField1.becomeFirstResponder()
-        
-//        nextButtonImageView.image = UIImage(named: "Group 229 (3)")
-//        nextButton.isUserInteractionEnabled = true
     }
     
 }
@@ -219,18 +243,8 @@ extension OTPViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print(textFieldDidBeginEditing)
-        
-//        print("textField   \(textField)")
-//        textField.textContentType = .oneTimeCode
-        
-//        if textField != otpTextField1 {
-//            otpTextField1.becomeFirstResponder()
-        
-//        if otpTextField1.text != "" {
-//            print("TF 1 not nil")
-////            otpTextField1.resignFirstResponder()
-//            otpTextField2.becomeFirstResponder()
-//        }
+//        textField.text = nil
+//        textField.deleteBackward()
         
     }
     
@@ -240,67 +254,59 @@ extension OTPViewController: UITextFieldDelegate {
         let numberOnly = NSCharacterSet(charactersIn: acceptableNumbers).inverted
         let strValid = string.rangeOfCharacter(from: numberOnly) == nil
         
+        // number validation
         if (strValid) {
-            // tf change track
             
+            // tf paste input
             if string.count == 4 {
-                if textField != otpTextField1 { // other 3
-//                    self.otpTextField1.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidBegin)
-                    otpTextField1.becomeFirstResponder()
-//                    textField.text? = string
-//                    otpTextField1.text = string[0]
-                    otpTextField1.text = String(string[string.index(string.startIndex, offsetBy: 0)])
-                    otpTextField2.text = String(string[string.index(string.startIndex, offsetBy: 1)])
-                    otpTextField3.text = String(string[string.index(string.startIndex, offsetBy: 2)])
-                    otpTextField4.text = String(string[string.index(string.startIndex, offsetBy: 3)])
-                    otpTextField1.resignFirstResponder()
-                    
-                    //api call
-                    OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
-                    print("OTP  \(OTP)")
-                    
-                    nextButtonImageView.image = UIImage(named: "Group 229 (3)")
-                    nextButton.isUserInteractionEnabled = true
-//                    return false
-                }
-                else {
-//                    self.otpTextField1.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidBegin)
-                    otpTextField1.becomeFirstResponder()
-//                    textField.text? = string
-                    otpTextField1.text = String(string[string.index(string.startIndex, offsetBy: 0)])
-                    otpTextField2.text = String(string[string.index(string.startIndex, offsetBy: 1)])
-                    otpTextField3.text = String(string[string.index(string.startIndex, offsetBy: 2)])
-                    otpTextField4.text = String(string[string.index(string.startIndex, offsetBy: 3)])
-                    otpTextField1.resignFirstResponder()
-                    
-                    //api call
-                    OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
-                    print("OTP  \(OTP)")
-                    
-                    nextButtonImageView.image = UIImage(named: "Group 229 (3)")
-                    nextButton.isUserInteractionEnabled = true
-                }
+                
+                otpPaste(textField, string)
+                
+//                if textField.textContentType == UITextContentType.oneTimeCode{
+//                    otpTextField1.becomeFirstResponder()
+//                    otpTextField1.text = String(string[string.index(string.startIndex, offsetBy: 0)])
+//                    otpTextField2.text = String(string[string.index(string.startIndex, offsetBy: 1)])
+//                    otpTextField3.text = String(string[string.index(string.startIndex, offsetBy: 2)])
+//                    otpTextField4.text = String(string[string.index(string.startIndex, offsetBy: 3)])
+//                    otpTextField1.resignFirstResponder()
+//                }
+                
+                //api call
+                otpSentToApi(textField)
+                
+//                //api call
+//                OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
+//                print("OTP  \(OTP)")
+//
+//                //api success
+//                nextButtonImageView.image = UIImage(named: "Group 229 (3)") //unlocked
+//                nextButton.isUserInteractionEnabled = true
+
                 return false
             }
+            
+            // tf single input
             else if string.count == 1 {
+                
                 if textField == otpTextField1 {
                     otpTextField2.becomeFirstResponder()
                     textField.text? = string
                     
-                    
-                    if otpTextField1.text != "" && otpTextField2.text != "" && otpTextField3.text != "" && otpTextField4.text != "" {
-//                    if (textField.text != nil)  {
-                        print( "not '' check")
-                        textField.resignFirstResponder()//
-                        
-                        //api call
-                        OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
-                        print("OTP  \(OTP)")
-                        
-                        nextButtonImageView.image = UIImage(named: "Group 229 (3)")
-                        nextButton.isUserInteractionEnabled = true
-
-                    }
+                    //check for not empty
+                    otpSentToApi(textField)
+//                    if otpTextField1.text != "" && otpTextField2.text != "" && otpTextField3.text != "" && otpTextField4.text != "" {
+//                        print( "not '' check")
+//                        textField.resignFirstResponder()//
+//
+//                        //api call
+//                        OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
+//                        print("OTP  \(OTP)")
+//
+//                        //api success
+//                        nextButtonImageView.image = UIImage(named: "Group 229 (3)") //unlocked
+//                        nextButton.isUserInteractionEnabled = true
+//
+//                    }
                     
                 }
                 if textField == otpTextField2 {
@@ -310,27 +316,27 @@ extension OTPViewController: UITextFieldDelegate {
                         textField.text? = string
                     }
                     else {
-                        
                         otpTextField1.becomeFirstResponder()
                         otpTextField1.text = string
                         textField.becomeFirstResponder()
                     }
                     
                     
-                    
-                    if otpTextField1.text != "" && otpTextField2.text != "" && otpTextField3.text != "" && otpTextField4.text != "" {
-//                    if (textField.text != nil)  {
-                        print( "not '' check")
-                        textField.resignFirstResponder()
-                        
-                        //api call
-                        OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
-                        print("OTP  \(OTP)")
-                        
-                        nextButtonImageView.image = UIImage(named: "Group 229 (3)")
-                        nextButton.isUserInteractionEnabled = true
-
-                    }
+                    //check for not empty
+                    otpSentToApi(textField)
+//                    if otpTextField1.text != "" && otpTextField2.text != "" && otpTextField3.text != "" && otpTextField4.text != "" {
+//                        print( "not '' check")
+//                        textField.resignFirstResponder()
+//
+//                        //api call
+//                        OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
+//                        print("OTP  \(OTP)")
+//
+//                        //api success
+//                        nextButtonImageView.image = UIImage(named: "Group 229 (3)") //unlocked
+//                        nextButton.isUserInteractionEnabled = true
+//
+//                    }
                 }
                 if textField == otpTextField3 {
                     if otpTextField2.text != "" {
@@ -345,25 +351,21 @@ extension OTPViewController: UITextFieldDelegate {
                     }
                     
                     
-                    
-                    
-//                    otpTextField4.becomeFirstResponder()
-//                    textField.text? = string
-                    
-                    
-                    if otpTextField1.text != "" && otpTextField2.text != "" && otpTextField3.text != "" && otpTextField4.text != "" {
-//                    if (textField.text != nil)  {
-                        print( "not '' check")
-                        textField.resignFirstResponder()//
-                        
-                        //api call
-                        OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
-                        print("OTP  \(OTP)")
-                        
-                        nextButtonImageView.image = UIImage(named: "Group 229 (3)")
-                        nextButton.isUserInteractionEnabled = true
-
-                    }
+                    //check for not empty
+                    otpSentToApi(textField)
+//                    if otpTextField1.text != "" && otpTextField2.text != "" && otpTextField3.text != "" && otpTextField4.text != "" {
+//                        print( "not '' check")
+//                        textField.resignFirstResponder()//
+//
+//                        //api call
+//                        OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
+//                        print("OTP  \(OTP)")
+//
+//                        //api success
+//                        nextButtonImageView.image = UIImage(named: "Group 229 (3)") //unlocked
+//                        nextButton.isUserInteractionEnabled = true
+//
+//                    }
                     
                 }
                 if textField == otpTextField4 {
@@ -379,133 +381,78 @@ extension OTPViewController: UITextFieldDelegate {
                     }
                     
                     
-                    
-//                    otpTextField4.resignFirstResponder()
-//                    textField.text? = string
-                    
-                    if otpTextField1.text != "" && otpTextField2.text != "" && otpTextField3.text != "" && otpTextField4.text != "" {
-//                    if (textField.text != nil)  {
-                        print( "not '' check")
-                        textField.resignFirstResponder()
-                        
-                        //api call
-                        OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
-                        print("OTP  \(OTP)")
-                        
-                        nextButtonImageView.image = UIImage(named: "Group 229 (3)")
-                        nextButton.isUserInteractionEnabled = true
-
-                    }
+                    //check for not empty
+                    otpSentToApi(textField)
+//                    if otpTextField1.text != "" && otpTextField2.text != "" && otpTextField3.text != "" && otpTextField4.text != "" {
+//                        print( "not '' check")
+//                        textField.resignFirstResponder()
+//
+//                        //api call
+//                        OTP = "\(otpTextField1.text!)\(otpTextField2.text!)\(otpTextField3.text!)\(otpTextField4.text!)"
+//                        print("OTP  \(OTP)")
+//
+//                        //api success
+//                        nextButtonImageView.image = UIImage(named: "Group 229 (3)") //unlocked
+//                        nextButton.isUserInteractionEnabled = true
+//
+//                    }
                 }
-//                textField.text? = string
                 return false
             }
             else if string.count == 0 {
+                
                 if textField == otpTextField4 {
-//                    if otpTextField3.text == "" {
-//
-//                        otpTextField3?.becomeFirstResponder()
-//                        textField.text? = string
-//                    }
-//                    else {
-//
-//                        textField.becomeFirstResponder()
-//                        textField.text = string
-//                    }
-                    
-                    
-                    
                     
                     otpTextField3?.becomeFirstResponder()
                     textField.text? = string
                 }
+                
                 if textField == otpTextField3 {
                     
                     if otpTextField2.text != "" && otpTextField4.text != "" {
                         textField.becomeFirstResponder()
                         textField.text = string
                     }
-//                    else if otpTextField2.text != "" || otpTextField2.text != "" {
-//                        textField.becomeFirstResponder()
-//                        textField.text = string
-//                    }
+
                     else {
                         otpTextField2?.becomeFirstResponder()
                         textField.text? = string
                     }
-                        
-                    
-                    
-//                    if otpTextField2.text == "" {
-//
-//                        otpTextField2?.becomeFirstResponder()
-//                        textField.text? = string
-//                    }
-//                    else {
-//
-//                        textField.becomeFirstResponder()
-//                        textField.text = string
-//                    }
-                    
-                    
-                    
-                    
-                    
                     
 //                    otpTextField2?.becomeFirstResponder()
 //                    textField.text? = string
                 }
+                
                 if textField == otpTextField2 {
                     
                     if otpTextField1.text != "" && otpTextField3.text != "" {
                         textField.becomeFirstResponder()
                         textField.text = string
                     }
-//                    else if otpTextField2.text != "" || otpTextField2.text != "" {
-//                        textField.becomeFirstResponder()
-//                        textField.text = string
-//                    }
+
                     else {
                         otpTextField1?.becomeFirstResponder()
                         textField.text? = string
                     }
                     
-                    
-                    
-                    
-//                    if otpTextField1.text == "" {
-//
-//                        otpTextField1?.becomeFirstResponder()
-//                        textField.text? = string
-//                    }
-//                    else {
-//
-//                        textField.becomeFirstResponder()
-//                        textField.text = string
-//                    }
-                    
-                    
-                    
-                    
-                    
-                    
 //                    otpTextField1?.becomeFirstResponder()
 //                    textField.text? = string
                 }
+                
                 if textField == otpTextField1 {
                     otpTextField1?.becomeFirstResponder()
                     textField.text? = string
                 }
                 
-                nextButtonImageView.image = UIImage(named: "Group 229")
+                nextButtonImageView.image = UIImage(named: "Group 229") // locked
                 nextButton.isUserInteractionEnabled = false
-//                textField.text? = string
+
                 return false
             }
             else {return false}
             
         }
-        else{
+        else {
             return strValid
         }
         
