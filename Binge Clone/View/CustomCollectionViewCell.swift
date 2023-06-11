@@ -42,6 +42,9 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+    
+        layer.backgroundColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor
+        layer.cornerRadius = 8
         addSubview(myImage)
         addSubview(myLabel)
     }
@@ -51,7 +54,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
-        myImage.frame = bounds
+        myImage.frame = CGRect(x: 6, y: 6, width: Int(self.frame.width) - 12, height: Int(self.frame.height) - 12)
         myLabel.frame = bounds
     }
     
