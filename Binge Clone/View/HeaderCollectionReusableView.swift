@@ -13,8 +13,8 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     private let header: UILabel = {
         let label = UILabel()
-//        label.font = .systemFont(ofSize: 12, weight: .medium)
-        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.font = .systemFont(ofSize: 14, weight: .bold)
+//        label.font = .preferredFont(forTextStyle: .subheadline)
 //        label.text = "Category"
 //        label.backgroundColor = .darkGray
         

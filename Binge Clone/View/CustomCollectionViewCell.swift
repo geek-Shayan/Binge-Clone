@@ -17,7 +17,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
 //        imageView.image = UIImage(named: "photo 1")
         imageView.tintColor = .systemMint
         imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
 //        imageView.layer.cornerRadius = 45
 //        imageView.layer.borderColor = CGColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 0.50)

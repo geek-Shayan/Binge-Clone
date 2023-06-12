@@ -17,6 +17,8 @@
 		1A0E15372A1C8560002A0C22 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E15362A1C8560002A0C22 /* HeaderCollectionReusableView.swift */; };
 		1A0E15392A1C85AB002A0C22 /* FooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E15382A1C85AB002A0C22 /* FooterCollectionReusableView.swift */; };
 		1A2601C22A28932A00F0D710 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2601C12A28932A00F0D710 /* OTPViewController.swift */; };
+		1A2E2C322A36EBBF0013FB04 /* CustomFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E2C302A36EBBF0013FB04 /* CustomFilterCollectionViewCell.swift */; };
+		1A2E2C332A36EBBF0013FB04 /* CustomFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E2C312A36EBBF0013FB04 /* CustomFilterCollectionViewCell.xib */; };
 		1A4CAA892A1F27F100B40D0B /* LiveTvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA882A1F27F100B40D0B /* LiveTvViewController.swift */; };
 		1A4CAA8B2A1F282F00B40D0B /* OriginalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA8A2A1F282F00B40D0B /* OriginalsViewController.swift */; };
 		1A4CAA8D2A1F284700B40D0B /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CAA8C2A1F284700B40D0B /* MyListViewController.swift */; };
@@ -44,6 +46,8 @@
 		1A0E15362A1C8560002A0C22 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		1A0E15382A1C85AB002A0C22 /* FooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		1A2601C12A28932A00F0D710 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		1A2E2C302A36EBBF0013FB04 /* CustomFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		1A2E2C312A36EBBF0013FB04 /* CustomFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomFilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A4CAA882A1F27F100B40D0B /* LiveTvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTvViewController.swift; sourceTree = "<group>"; };
 		1A4CAA8A2A1F282F00B40D0B /* OriginalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalsViewController.swift; sourceTree = "<group>"; };
 		1A4CAA8C2A1F284700B40D0B /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				1ABDB4E32A21D6BC00946656 /* CustomActionTableViewCell.xib */,
 				1A6A961B2A2DCEB200A894DD /* CustomGenreCollectionViewCell.swift */,
 				1A6A961C2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib */,
+				1A2E2C302A36EBBF0013FB04 /* CustomFilterCollectionViewCell.swift */,
+				1A2E2C312A36EBBF0013FB04 /* CustomFilterCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 				1A0E15272A1C7D71002A0C22 /* Assets.xcassets in Resources */,
 				1ABDB4E52A21D6BC00946656 /* CustomActionTableViewCell.xib in Resources */,
 				1A0E15252A1C7D6F002A0C22 /* Main.storyboard in Resources */,
+				1A2E2C332A36EBBF0013FB04 /* CustomFilterCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +234,7 @@
 				1AB207882A246CB000E5026C /* ActionViewController.swift in Sources */,
 				1A0E15222A1C7D6F002A0C22 /* HomeViewController.swift in Sources */,
 				1A4CAA8F2A1F285C00B40D0B /* ProfileViewController.swift in Sources */,
+				1A2E2C322A36EBBF0013FB04 /* CustomFilterCollectionViewCell.swift in Sources */,
 				1A4CAA892A1F27F100B40D0B /* LiveTvViewController.swift in Sources */,
 				1A0E151E2A1C7D6F002A0C22 /* AppDelegate.swift in Sources */,
 				1A84C07A2A2C60B500070B30 /* Extension.swift in Sources */,

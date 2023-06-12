@@ -13,8 +13,8 @@ class FooterCollectionReusableView: UICollectionReusableView {
     
     private let footer: UILabel = {
         let label = UILabel()
-//        label.font = .systemFont(ofSize: 18, weight: .medium)
-        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.font = .systemFont(ofSize: 14, weight: .bold)
+//        label.font = .preferredFont(forTextStyle: .subheadline)
 //        label.textAlignment = .center
 //        label.text = "Category"
 //        label.backgroundColor = .darkGray
