@@ -16,6 +16,8 @@
 		1A0E15352A1C8522002A0C22 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E15342A1C8522002A0C22 /* CustomCollectionViewCell.swift */; };
 		1A0E15372A1C8560002A0C22 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E15362A1C8560002A0C22 /* HeaderCollectionReusableView.swift */; };
 		1A0E15392A1C85AB002A0C22 /* FooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E15382A1C85AB002A0C22 /* FooterCollectionReusableView.swift */; };
+		1A2395532A386A8500C34BD5 /* CustomCarosselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2395512A386A8500C34BD5 /* CustomCarosselCollectionViewCell.swift */; };
+		1A2395542A386A8500C34BD5 /* CustomCarosselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2395522A386A8500C34BD5 /* CustomCarosselCollectionViewCell.xib */; };
 		1A2601C22A28932A00F0D710 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2601C12A28932A00F0D710 /* OTPViewController.swift */; };
 		1A2E2C322A36EBBF0013FB04 /* CustomFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E2C302A36EBBF0013FB04 /* CustomFilterCollectionViewCell.swift */; };
 		1A2E2C332A36EBBF0013FB04 /* CustomFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E2C312A36EBBF0013FB04 /* CustomFilterCollectionViewCell.xib */; };
@@ -45,6 +47,8 @@
 		1A0E15342A1C8522002A0C22 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A0E15362A1C8560002A0C22 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		1A0E15382A1C85AB002A0C22 /* FooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionReusableView.swift; sourceTree = "<group>"; };
+		1A2395512A386A8500C34BD5 /* CustomCarosselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCarosselCollectionViewCell.swift; sourceTree = "<group>"; };
+		1A2395522A386A8500C34BD5 /* CustomCarosselCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCarosselCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A2601C12A28932A00F0D710 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		1A2E2C302A36EBBF0013FB04 /* CustomFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A2E2C312A36EBBF0013FB04 /* CustomFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomFilterCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				1A6A961C2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib */,
 				1A2E2C302A36EBBF0013FB04 /* CustomFilterCollectionViewCell.swift */,
 				1A2E2C312A36EBBF0013FB04 /* CustomFilterCollectionViewCell.xib */,
+				1A2395512A386A8500C34BD5 /* CustomCarosselCollectionViewCell.swift */,
+				1A2395522A386A8500C34BD5 /* CustomCarosselCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,6 +221,7 @@
 			files = (
 				1A0E152A2A1C7D71002A0C22 /* LaunchScreen.storyboard in Resources */,
 				1A6A961E2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib in Resources */,
+				1A2395542A386A8500C34BD5 /* CustomCarosselCollectionViewCell.xib in Resources */,
 				1A0E15272A1C7D71002A0C22 /* Assets.xcassets in Resources */,
 				1ABDB4E52A21D6BC00946656 /* CustomActionTableViewCell.xib in Resources */,
 				1A0E15252A1C7D6F002A0C22 /* Main.storyboard in Resources */,
@@ -246,6 +253,7 @@
 				1A0E15352A1C8522002A0C22 /* CustomCollectionViewCell.swift in Sources */,
 				1AB207AA2A24C10900E5026C /* SignUpViewController.swift in Sources */,
 				1A2601C22A28932A00F0D710 /* OTPViewController.swift in Sources */,
+				1A2395532A386A8500C34BD5 /* CustomCarosselCollectionViewCell.swift in Sources */,
 				1A4CAA8B2A1F282F00B40D0B /* OriginalsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

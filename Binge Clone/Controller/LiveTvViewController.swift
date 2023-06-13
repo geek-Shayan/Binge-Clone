@@ -157,6 +157,8 @@ class LiveTvViewController: UIViewController {
         
         collection.register(UINib(nibName: "CustomFilterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomFilterCollectionViewCell.identifier)
         
+        collection.register(UINib(nibName: "CustomCarosselCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCarosselCollectionViewCell.identifier)
+        
         collection.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: HomeViewController.headerKind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier)
         collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: HomeViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
                                                                                        
@@ -279,8 +281,9 @@ extension LiveTvViewController: UICollectionViewDataSource {
 //        print("Cell indexPath row, section, item", indexPath.row, indexPath.section, indexPath.item)
         
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(with: sectionData0[indexPath.item].image, and: sectionData0[indexPath.item].label)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCarosselCollectionViewCell.identifier, for: indexPath) as! CustomCarosselCollectionViewCell
+//            cell.setup(with: sectionData0[indexPath.item].image, and: sectionData0[indexPath.item].label)
+            cell.setup(sectionData0[indexPath.item].image)
             //            cell.backgroundColor = .orange
             cell.layer.cornerRadius = 0
             return cell
@@ -293,7 +296,7 @@ extension LiveTvViewController: UICollectionViewDataSource {
             
             if cell.isSelected == true {
                 cell.setup(with: sectionData1[indexPath.item].label)
-                cell.deSelected()
+                cell.selected()
                 return cell
             }
             else {
@@ -328,11 +331,14 @@ extension LiveTvViewController: UICollectionViewDelegate {
             
             if cell.isSelected == true && indexPath.section == 1 {
                 cell.selected()
-//                collectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPos
-                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
+//                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
 //                collectionView.reloadSections([indexPath.section])
 //                collectionView.reloadItems(at: [indexPath])
 //                collectionView.reloadData()
+//                cell.layoutIfNeeded()
+                self.view.layoutSubviews()
+                
+//                print(collectionView.indexPathsForSelectedItems)
                 
             }
         }
@@ -346,11 +352,13 @@ extension LiveTvViewController: UICollectionViewDelegate {
             // deselection,
             if cell.isSelected == false && indexPath.section == 1 {
                 cell.deSelected()
-                collectionView.deselectItem(at: indexPath, animated: true)
+//                collectionView.deselectItem(at: indexPath, animated: true)
+                
 //                collectionView.reloadSections([indexPath.section])
 //                collectionView.reloadItems(at: [indexPath])
 //                collectionView.reloadData()
-                
+//                cell.layoutIfNeeded()
+                self.view.layoutSubviews()
               
             }
         }

@@ -46,6 +46,8 @@ class CustomFilterCollectionViewCell: UICollectionViewCell {
         filterBackgroundView.layer.borderWidth = 0
         
         filterImage.isHidden = false
+//        layoutSubviews()
+//        layoutIfNeeded()
     }
     
     func deSelected() {
@@ -53,6 +55,8 @@ class CustomFilterCollectionViewCell: UICollectionViewCell {
         filterBackgroundView.layer.borderWidth = 1
         
         filterImage.isHidden = true
+//        layoutSubviews()
+//        layoutIfNeeded()
     }
 
     
