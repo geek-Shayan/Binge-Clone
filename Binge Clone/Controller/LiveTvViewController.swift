@@ -10,37 +10,31 @@ import UIKit
 class LiveTvViewController: UIViewController {
     
     private var sectionHeadersFooters: [supplementaryDataType] = [supplementaryDataType(header: "", footer: ""),
-                                                                  supplementaryDataType(header: "Continue Robi", footer: "C"),
-                                                                  supplementaryDataType(header: "Exclusive Sports", footer: "E"),
-                                                                  supplementaryDataType(header: "Recommended For you", footer: "R"),
-                                                                  supplementaryDataType(header: "Recommended For you", footer: "R"),
-                                                                  supplementaryDataType(header: "Recommended For you", footer: "R"),
-                                                                  supplementaryDataType(header: "Originals (Free: Robi Data, Mob App)", footer: ""),
-                                                                  supplementaryDataType(header: "Originals (Free: Robi Data, Mob App)", footer: ""),
-                                                                  supplementaryDataType(header: "Originals (Free: Robi Data, Mob App)", footer: ""),
-                                                                  supplementaryDataType(header: "Sports", footer: "")]
+                                                                  supplementaryDataType(header: "", footer: ""),
+                                                                  supplementaryDataType(header: "Sports", footer: "E"),
+                                                                  supplementaryDataType(header: "News (Free: Robi Data, Mob App)", footer: "R"),
+                                                                  supplementaryDataType(header: "Entertainment", footer: "R"),
+                                                                  supplementaryDataType(header: "Local TV (Free: Robi Data, Mob App)", footer: "R"),
+                                                                  supplementaryDataType(header: "Movies", footer: ""),
+                                                                  supplementaryDataType(header: "Music", footer: ""),
+                                                                  supplementaryDataType(header: "Kids", footer: ""),
+                                                                  supplementaryDataType(header: "Infotainment", footer: ""),
+                                                                  supplementaryDataType(header: "Religious", footer: "")]
 
-    private var sectionData0: [cellDataType] = [cellDataType(image: "s1", label: "1"),
-                                                cellDataType(image: "s1", label: "2"),
-                                                cellDataType(image: "s1", label: "3"),
-                                                cellDataType(image: "s1", label: "4")]
-
-    private var sectionData1: [cellDataType] = [cellDataType(image: "s", label: "Exclusive"),
-                                                cellDataType(image: "s", label: "Sports"),
-                                                cellDataType(image: "s", label: "Robi"),
-                                                cellDataType(image: "s", label: "Sports"),
-                                                cellDataType(image: "s", label: "Robi"),
-                                                cellDataType(image: "s", label: "Recommended"),
-                                                cellDataType(image: "s", label: "Robi"),
-                                                cellDataType(image: "s", label: "Recommended"),
-                                                cellDataType(image: "s", label: "Exclusive"),
-                                                cellDataType(image: "s", label: "Sports"),
-                                                cellDataType(image: "s", label: "Robi"),
-                                                cellDataType(image: "s", label: "Sports"),
-                                                cellDataType(image: "s", label: "Robi"),
-                                                cellDataType(image: "s", label: "Recommended"),
-                                                cellDataType(image: "s", label: "Robi"),
-                                                cellDataType(image: "s", label: "Recommended")]
+    private var sectionData0: [cellDataType] = [cellDataType(image: "image 5", label: "1"),
+                                                cellDataType(image: "image 5", label: "2"),
+                                                cellDataType(image: "image 5", label: "3"),
+                                                cellDataType(image: "image 5", label: "4")]
+    
+    private var sectionData1: [cellDataType] = [cellDataType(image: "s", label: "Sports"),
+                                                cellDataType(image: "s", label: "News"),
+                                                cellDataType(image: "s", label: "Entertainment"),
+                                                cellDataType(image: "s", label: "Local TV"),
+                                                cellDataType(image: "s", label: "Movies"),
+                                                cellDataType(image: "s", label: "Music"),
+                                                cellDataType(image: "s", label: "Kids"),
+                                                cellDataType(image: "s", label: "Infotainment"),
+                                                cellDataType(image: "s", label: "Religious")]
 
     private var sectionData2: [cellDataType] = [cellDataType(image: "Sony Ten 1 1", label: ""),
                                                 cellDataType(image: "Sony Ten 2 1", label: ""),
@@ -97,10 +91,12 @@ class LiveTvViewController: UIViewController {
 //                item.contentInsets.trailing = 2
 //                item.contentInsets.bottom = 8
                 
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(414)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(403)), subitems: [item])
+
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPaging
+                section.contentInsets.bottom = 10
                 
                 section.visibleItemsInvalidationHandler = { (items, offset, environment) in
                     items.forEach { item in
@@ -118,18 +114,15 @@ class LiveTvViewController: UIViewController {
                 print("second")
                 
                 let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .estimated(100), heightDimension: .fractionalHeight(1)))
-//                item.contentInsets.trailing = 8
-//                item.contentInsets.bottom = 8
                 item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: nil, top: nil, trailing: .fixed(8), bottom: nil)
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(2000), heightDimension: .absolute(28)), subitems: [item])
-//                    group.contentInsets.trailing = 8
-//                    group.contentInsets.bottom = 32
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets.leading = 16
                 section.contentInsets.trailing = 8
+                section.contentInsets.bottom = 16
                 
                 return section
 
@@ -138,16 +131,13 @@ class LiveTvViewController: UIViewController {
             else {
                 print("third ...")
                 
-                let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .fractionalWidth(0.2)))
+                let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2) , heightDimension: .fractionalWidth(0.2)))
                 item.contentInsets.trailing = 8
                 item.contentInsets.bottom = 8
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100)), subitems: [item])
-//                    group.contentInsets.trailing = 8
-//                    group.contentInsets.bottom = 32
                 
                 let section = NSCollectionLayoutSection(group: group)
-                //                section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets.leading = 16
                 section.contentInsets.trailing = 8
                 section.contentInsets.bottom = 16
@@ -155,7 +145,6 @@ class LiveTvViewController: UIViewController {
                 let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(30))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: headerKind, alignment: .topLeading)
                 //                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
-                
                 section.boundarySupplementaryItems = [header] //, footer
                 
                 return section
@@ -187,6 +176,8 @@ class LiveTvViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.backgroundColor = .clear
+        
+        collectionView.allowsMultipleSelection = true //
  
         view.addSubview(collectionView)
         
@@ -203,8 +194,6 @@ class LiveTvViewController: UIViewController {
     @objc private func pullDownToRefresh() {
         print("Refresh")
         
-//        sectionData0 = []
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             self.collectionView.reloadData()
             self.collectionView.refreshControl?.endRefreshing()
@@ -220,7 +209,6 @@ class LiveTvViewController: UIViewController {
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
 
-//
 //        let transition = CATransition()
 //        transition.duration = 0.5
 //        transition.type = CATransitionType.push
@@ -231,9 +219,7 @@ class LiveTvViewController: UIViewController {
 //        self.tabBarController?.modalPresentationCapturesStatusBarAppearance = false
 //        self.tabBarController?.tabBar.removeFromSuperview()
 //        self.addChild(tabBarController!)
-//
-        
-//        
+
 //        self.tabBarController?.tabBar.isHidden = false
         
         self.present(vc, animated: false, completion: nil)
@@ -305,7 +291,7 @@ extension LiveTvViewController: UICollectionViewDataSource {
             //            cell.setup(with: sectionData1[indexPath.item].image, and: sectionData1[indexPath.item].label)
             //            cell.backgroundColor = .orange
             
-            if cell.isSelected {
+            if cell.isSelected == true {
                 cell.setup(with: sectionData1[indexPath.item].label)
                 cell.deSelected()
                 return cell
@@ -337,18 +323,16 @@ extension LiveTvViewController: UICollectionViewDataSource {
 extension LiveTvViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if indexPath.section == 1 {
             let cell = collectionView.cellForItem(at: indexPath) as! CustomFilterCollectionViewCell
             
-            if cell.isSelected == true {
+            if cell.isSelected == true && indexPath.section == 1 {
                 cell.selected()
-                
-                //            finalSelections.append(genreNames[indexPath.row])
-                //            print("append  \(finalSelections)")
-                //
-                //            continueButton.backgroundColor = UIColor(red: 0.898, green: 0.035, blue: 0.078, alpha: 1) //red
-                //            continueButton.isUserInteractionEnabled = true
+//                collectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPos
+                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
+//                collectionView.reloadSections([indexPath.section])
+//                collectionView.reloadItems(at: [indexPath])
+//                collectionView.reloadData()
                 
             }
         }
@@ -360,14 +344,14 @@ extension LiveTvViewController: UICollectionViewDelegate {
             let cell = collectionView.cellForItem(at: indexPath) as! CustomFilterCollectionViewCell
             
             // deselection,
-            if cell.isSelected == false {
+            if cell.isSelected == false && indexPath.section == 1 {
                 cell.deSelected()
+                collectionView.deselectItem(at: indexPath, animated: true)
+//                collectionView.reloadSections([indexPath.section])
+//                collectionView.reloadItems(at: [indexPath])
+//                collectionView.reloadData()
                 
-                //            finalSelections.removeAll { $0 == genreNames[indexPath.row] } //(genreNames[indexPath.row])
-                //            print("removed if  \(finalSelections)")
-                //
-                //            continueButton.backgroundColor = UIColor(red: 0.255, green: 0.255, blue: 0.255, alpha: 1) //gray
-                //            continueButton.isUserInteractionEnabled = false
+              
             }
         }
     }
