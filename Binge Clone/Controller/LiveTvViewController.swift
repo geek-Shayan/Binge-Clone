@@ -10,6 +10,7 @@ import UIKit
 class LiveTvViewController: UIViewController {
     
     @IBOutlet weak var topStackView: UIStackView!
+    @IBOutlet weak var topView: UIView!
     private var sectionHeadersFooters: [supplementaryDataType] = [supplementaryDataType(header: "", footer: ""),
                                                                   supplementaryDataType(header: "", footer: ""),
                                                                   supplementaryDataType(header: "Sports", footer: "E"),
@@ -63,6 +64,43 @@ class LiveTvViewController: UIViewController {
                                                 cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
                                                 cellDataType(image: "RTV-HD_110x110", label: ""),
                                                 cellDataType(image: "Ekattor-HD_110x110", label: ""),
+                                                cellDataType(image: "Somoy-News_110x110", label: ""),
+                                                cellDataType(image: "Independent-TV_110x110", label: ""),
+                                                cellDataType(image: "Bijoy-TV_110x110", label: ""),
+                                                cellDataType(image: "Channel-24_110x110", label: ""),
+                                                cellDataType(image: "NTV_110x110", label: ""),
+                                                cellDataType(image: "Desh-TV_110x110", label: ""),
+                                                cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
+                                                cellDataType(image: "RTV-HD_110x110", label: ""),
+                                                cellDataType(image: "Ekattor-HD_110x110", label: ""),
+                                                cellDataType(image: "Somoy-News_110x110", label: ""),
+                                                cellDataType(image: "Independent-TV_110x110", label: ""),
+                                                cellDataType(image: "Independent-TV_110x110", label: ""),
+                                                cellDataType(image: "Bijoy-TV_110x110", label: ""),
+                                                cellDataType(image: "Channel-24_110x110", label: ""),
+                                                cellDataType(image: "NTV_110x110", label: ""),
+                                                cellDataType(image: "Desh-TV_110x110", label: ""),
+                                                cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
+                                                cellDataType(image: "RTV-HD_110x110", label: ""),
+                                                cellDataType(image: "Ekattor-HD_110x110", label: ""),
+                                                cellDataType(image: "Somoy-News_110x110", label: ""),
+                                                cellDataType(image: "Independent-TV_110x110", label: ""),
+                                                cellDataType(image: "Bijoy-TV_110x110", label: ""),
+                                                cellDataType(image: "Channel-24_110x110", label: ""),
+                                                cellDataType(image: "NTV_110x110", label: ""),
+                                                cellDataType(image: "Desh-TV_110x110", label: ""),
+                                                cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
+                                                cellDataType(image: "RTV-HD_110x110", label: ""),
+                                                cellDataType(image: "Ekattor-HD_110x110", label: ""),
+                                                cellDataType(image: "Somoy-News_110x110", label: ""),
+                                                cellDataType(image: "Independent-TV_110x110", label: ""),
+                                                cellDataType(image: "Bijoy-TV_110x110", label: ""),
+                                                cellDataType(image: "Channel-24_110x110", label: ""),
+                                                cellDataType(image: "NTV_110x110", label: ""),
+                                                cellDataType(image: "Desh-TV_110x110", label: ""),
+                                                cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
+                                                cellDataType(image: "RTV-HD_110x110", label: ""),
+                                                cellDataType(image: "Ekattor-HD_110x110", label: ""),
                                                 cellDataType(image: "Somoy-News_110x110", label: "")]
 
 
@@ -81,6 +119,7 @@ class LiveTvViewController: UIViewController {
     static let footerKind = "footerKind"
     
     private var selectedItem = [String]()
+    private var selectedSectionIndex = Int()
     
     private let collectionView: UICollectionView = {
 
@@ -162,8 +201,8 @@ class LiveTvViewController: UIViewController {
         
         collection.register(UINib(nibName: "CustomCarosselCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCarosselCollectionViewCell.identifier)
         
-        collection.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: HomeViewController.headerKind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier)
-        collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: HomeViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
+        collection.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.headerKind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier)
+        collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
                                                                                        
         return collection
     }()
@@ -174,8 +213,9 @@ class LiveTvViewController: UIViewController {
         
         loadCollectionView()
 
-        view.addSubview(topStackView)
-        
+//        view.addSubview(topStackView)
+        view.addSubview(topView)
+        topView.isHidden = true
     }
     
     func loadCollectionView() {
@@ -352,9 +392,17 @@ extension LiveTvViewController: UICollectionViewDelegate {
                     cell.isSelected = true
                     selectedItem.append(sectionData1[indexPath.item].label)
                     print("selectedItem    \(selectedItem)")
+//                    selectedSectionIndex.append(indexPath.section)
+                    selectedSectionIndex = indexPath.section
+                    
+//                    scrollToSection(selectedSectionIndex)
+//                    collectionView.scrollToSupplementaryView(ofKind: LiveTvViewController.headerKind, at: [indexPath.item+2 ,0], at: .centeredVertically, animated: true)
+                    
+                    collectionView.scrollToItem(at: [indexPath.item+2 ,0] , at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
+                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
+
                 }
                 
-//                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
 //                collectionView.reloadSections([indexPath.section])
 //                collectionView.reloadItems(at: [indexPath])//
                 collectionView.reloadData()

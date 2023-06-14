@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -212,43 +211,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zUb-LI-NdI">
-                                <rect key="frame" x="16" y="103" width="361" height="28.333333333333343"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wrf-Cz-BJp">
+                                <rect key="frame" x="0.0" y="103" width="393" height="28.333333333333343"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDS-jl-W8W">
-                                        <rect key="frame" x="0.0" y="0.0" width="115" height="28.333333333333332"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="TV SHOWS">
-                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZf-vZ-jco">
-                                        <rect key="frame" x="123" y="0.0" width="115" height="28.333333333333332"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="MOVIES">
-                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTN-Yd-IlP">
-                                        <rect key="frame" x="246" y="0.0" width="115" height="28.333333333333332"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Vector 2" title="CATEGORIES">
-                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
-                                        </buttonConfiguration>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiM-O8-Dxb">
+                                        <rect key="frame" x="40" y="0.0" width="313" height="28.333333333333332"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVf-MQ-rmT">
+                                                <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="28.333333333333332"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="TV SHOWS">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHw-XX-sfb">
+                                                <rect key="frame" x="104.33333333333334" y="0.0" width="104.33333333333334" height="28.333333333333332"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="MOVIES">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSD-cS-Za3">
+                                                <rect key="frame" x="208.66666666666666" y="0.0" width="104.33333333333334" height="28.333333333333332"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="CATEGORIES">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="RiM-O8-Dxb" firstAttribute="leading" secondItem="Wrf-Cz-BJp" secondAttribute="leading" constant="40" id="HT0-ve-xs7"/>
+                                    <constraint firstAttribute="bottom" secondItem="RiM-O8-Dxb" secondAttribute="bottom" id="dJd-Fm-Qjf"/>
+                                    <constraint firstItem="RiM-O8-Dxb" firstAttribute="top" secondItem="Wrf-Cz-BJp" secondAttribute="top" id="iqs-XO-kUs"/>
+                                    <constraint firstAttribute="trailing" secondItem="RiM-O8-Dxb" secondAttribute="trailing" constant="40" id="kfJ-yj-Wrf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oXG-bn-bBI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zUb-LI-NdI" firstAttribute="leading" secondItem="oXG-bn-bBI" secondAttribute="leading" constant="16" id="Mom-4z-wHh"/>
-                            <constraint firstItem="zUb-LI-NdI" firstAttribute="centerX" secondItem="c8X-un-dq3" secondAttribute="centerX" id="ZeD-WF-BAo"/>
-                            <constraint firstItem="zUb-LI-NdI" firstAttribute="top" secondItem="oXG-bn-bBI" secondAttribute="top" id="eQk-UO-KmG"/>
-                            <constraint firstItem="oXG-bn-bBI" firstAttribute="trailing" secondItem="zUb-LI-NdI" secondAttribute="trailing" constant="16" id="rof-ch-Ry1"/>
+                            <constraint firstItem="Wrf-Cz-BJp" firstAttribute="leading" secondItem="oXG-bn-bBI" secondAttribute="leading" id="GyP-GI-nG6"/>
+                            <constraint firstItem="oXG-bn-bBI" firstAttribute="trailing" secondItem="Wrf-Cz-BJp" secondAttribute="trailing" id="PU1-Hs-rt8"/>
+                            <constraint firstItem="Wrf-Cz-BJp" firstAttribute="top" secondItem="oXG-bn-bBI" secondAttribute="top" id="oI8-Cl-ALo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Binge" id="6bh-zq-ap3">
@@ -264,7 +274,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="topStackView" destination="zUb-LI-NdI" id="VA8-ab-lZb"/>
+                        <outlet property="topStackView" destination="RiM-O8-Dxb" id="nuk-y0-rco"/>
+                        <outlet property="topView" destination="Wrf-Cz-BJp" id="s8e-Fn-0ag"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEq-xv-5X1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -958,7 +969,6 @@ resend code after 56 sec.</string>
         <image name="Rectangle 163" width="156" height="48"/>
         <image name="Rectangle 164" width="156" height="48"/>
         <image name="Rectangle 18" width="393" height="852"/>
-        <image name="Vector 2" width="7" height="5"/>
         <image name="b.square.fill" catalog="system" width="128" height="114"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
