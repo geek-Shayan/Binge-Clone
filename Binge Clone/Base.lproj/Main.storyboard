@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -210,8 +211,45 @@
                     <view key="view" contentMode="scaleToFill" id="c8X-un-dq3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zUb-LI-NdI">
+                                <rect key="frame" x="16" y="103" width="361" height="28.333333333333343"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDS-jl-W8W">
+                                        <rect key="frame" x="0.0" y="0.0" width="115" height="28.333333333333332"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="TV SHOWS">
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZf-vZ-jco">
+                                        <rect key="frame" x="123" y="0.0" width="115" height="28.333333333333332"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="MOVIES">
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTN-Yd-IlP">
+                                        <rect key="frame" x="246" y="0.0" width="115" height="28.333333333333332"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Vector 2" title="CATEGORIES">
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="oXG-bn-bBI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zUb-LI-NdI" firstAttribute="leading" secondItem="oXG-bn-bBI" secondAttribute="leading" constant="16" id="Mom-4z-wHh"/>
+                            <constraint firstItem="zUb-LI-NdI" firstAttribute="centerX" secondItem="c8X-un-dq3" secondAttribute="centerX" id="ZeD-WF-BAo"/>
+                            <constraint firstItem="zUb-LI-NdI" firstAttribute="top" secondItem="oXG-bn-bBI" secondAttribute="top" id="eQk-UO-KmG"/>
+                            <constraint firstItem="oXG-bn-bBI" firstAttribute="trailing" secondItem="zUb-LI-NdI" secondAttribute="trailing" constant="16" id="rof-ch-Ry1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Binge" id="6bh-zq-ap3">
                         <barButtonItem key="leftBarButtonItem" title="Action" style="done" id="oLL-Gd-Ixr">
@@ -225,10 +263,13 @@
                             <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="topStackView" destination="zUb-LI-NdI" id="VA8-ab-lZb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEq-xv-5X1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1247" y="706"/>
+            <point key="canvasLocation" x="1246.5648854961833" y="705.63380281690149"/>
         </scene>
         <!--ORIGINALS-->
         <scene sceneID="5Xd-B8-DiI">
@@ -917,6 +958,7 @@ resend code after 56 sec.</string>
         <image name="Rectangle 163" width="156" height="48"/>
         <image name="Rectangle 164" width="156" height="48"/>
         <image name="Rectangle 18" width="393" height="852"/>
+        <image name="Vector 2" width="7" height="5"/>
         <image name="b.square.fill" catalog="system" width="128" height="114"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>

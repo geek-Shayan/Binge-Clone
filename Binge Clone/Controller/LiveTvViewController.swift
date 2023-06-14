@@ -9,6 +9,7 @@ import UIKit
 
 class LiveTvViewController: UIViewController {
     
+    @IBOutlet weak var topStackView: UIStackView!
     private var sectionHeadersFooters: [supplementaryDataType] = [supplementaryDataType(header: "", footer: ""),
                                                                   supplementaryDataType(header: "", footer: ""),
                                                                   supplementaryDataType(header: "Sports", footer: "E"),
@@ -79,6 +80,7 @@ class LiveTvViewController: UIViewController {
     static let headerKind = "headerKind"
     static let footerKind = "footerKind"
     
+    private var selectedItem = [String]()
     
     private let collectionView: UICollectionView = {
 
@@ -116,7 +118,8 @@ class LiveTvViewController: UIViewController {
                 let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .estimated(100), heightDimension: .fractionalHeight(1)))
                 item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: nil, top: nil, trailing: .fixed(8), bottom: nil)
                 
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(2000), heightDimension: .absolute(28)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(1000), heightDimension: .absolute(28)), subitems: [item])
+//                group.interItemSpacing = .fixed(8)
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
@@ -171,6 +174,8 @@ class LiveTvViewController: UIViewController {
         
         loadCollectionView()
 
+        view.addSubview(topStackView)
+        
     }
     
     func loadCollectionView() {
@@ -179,7 +184,7 @@ class LiveTvViewController: UIViewController {
         
         collectionView.backgroundColor = .clear
         
-        collectionView.allowsMultipleSelection = true //
+//        collectionView.allowsMultipleSelection = true //
  
         view.addSubview(collectionView)
         
@@ -294,7 +299,11 @@ extension LiveTvViewController: UICollectionViewDataSource {
             //            cell.setup(with: sectionData1[indexPath.item].image, and: sectionData1[indexPath.item].label)
             //            cell.backgroundColor = .orange
             
-            if cell.isSelected == true {
+            
+//            if cell.isSelected == true || indexPath.item == selectedItem {
+            if cell.isSelected == true || selectedItem.contains(where: { $0 == sectionData1[indexPath.item].label}) {
+//            if cell.isSelected == true {
+
                 cell.setup(with: sectionData1[indexPath.item].label)
                 cell.selected()
                 return cell
@@ -326,17 +335,31 @@ extension LiveTvViewController: UICollectionViewDataSource {
 extension LiveTvViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("didSelectItemAt")
         if indexPath.section == 1 {
             let cell = collectionView.cellForItem(at: indexPath) as! CustomFilterCollectionViewCell
             
             if cell.isSelected == true && indexPath.section == 1 {
-                cell.selected()
+                if selectedItem.contains(where: { $0 == sectionData1[indexPath.item].label}) {
+//                if selectedItem.count == 1 { /////
+                    cell.deSelected()
+                    cell.isSelected = false
+                    selectedItem.removeAll { $0 == sectionData1[indexPath.item].label}
+                    print("selectedItem    \(selectedItem)")
+                }
+                else {
+                    cell.selected()
+                    cell.isSelected = true
+                    selectedItem.append(sectionData1[indexPath.item].label)
+                    print("selectedItem    \(selectedItem)")
+                }
+                
 //                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
 //                collectionView.reloadSections([indexPath.section])
-//                collectionView.reloadItems(at: [indexPath])
-//                collectionView.reloadData()
+//                collectionView.reloadItems(at: [indexPath])//
+                collectionView.reloadData()
 //                cell.layoutIfNeeded()
-                self.view.layoutSubviews()
+//                self.view.layoutSubviews()
                 
 //                print(collectionView.indexPathsForSelectedItems)
                 
@@ -346,19 +369,21 @@ extension LiveTvViewController: UICollectionViewDelegate {
 
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        print("didDeselectItemAt")
         if indexPath.section == 1 {
             let cell = collectionView.cellForItem(at: indexPath) as! CustomFilterCollectionViewCell
-            
             // deselection,
             if cell.isSelected == false && indexPath.section == 1 {
                 cell.deSelected()
-//                collectionView.deselectItem(at: indexPath, animated: true)
+//                selectedItem.removeAll { $0 == sectionData1[indexPath.item].label}
+//                print("selectedItem    \(selectedItem)")
                 
+//                collectionView.deselectItem(at: indexPath, animated: true)
 //                collectionView.reloadSections([indexPath.section])
-//                collectionView.reloadItems(at: [indexPath])
+//                collectionView.reloadItems(at: [indexPath])//
 //                collectionView.reloadData()
 //                cell.layoutIfNeeded()
-                self.view.layoutSubviews()
+//                self.view.layoutSubviews()
               
             }
         }
