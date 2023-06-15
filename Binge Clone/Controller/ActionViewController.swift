@@ -54,6 +54,10 @@ class ActionViewController: UIViewController {
 
 extension ActionViewController: UITableViewDelegate {
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
 }
 
 

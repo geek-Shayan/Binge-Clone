@@ -11,6 +11,7 @@ class LiveTvViewController: UIViewController {
     
     @IBOutlet weak var topStackView: UIStackView!
     @IBOutlet weak var topView: UIView!
+    
     private var sectionHeadersFooters: [supplementaryDataType] = [supplementaryDataType(header: "", footer: ""),
                                                                   supplementaryDataType(header: "", footer: ""),
                                                                   supplementaryDataType(header: "Sports", footer: "E"),
@@ -61,44 +62,11 @@ class LiveTvViewController: UIViewController {
                                                 cellDataType(image: "Channel-24_110x110", label: ""),
                                                 cellDataType(image: "NTV_110x110", label: ""),
                                                 cellDataType(image: "Desh-TV_110x110", label: ""),
-                                                cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
-                                                cellDataType(image: "RTV-HD_110x110", label: ""),
                                                 cellDataType(image: "Ekattor-HD_110x110", label: ""),
                                                 cellDataType(image: "Somoy-News_110x110", label: ""),
                                                 cellDataType(image: "Independent-TV_110x110", label: ""),
                                                 cellDataType(image: "Bijoy-TV_110x110", label: ""),
                                                 cellDataType(image: "Channel-24_110x110", label: ""),
-                                                cellDataType(image: "NTV_110x110", label: ""),
-                                                cellDataType(image: "Desh-TV_110x110", label: ""),
-                                                cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
-                                                cellDataType(image: "RTV-HD_110x110", label: ""),
-                                                cellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                cellDataType(image: "Somoy-News_110x110", label: ""),
-                                                cellDataType(image: "Independent-TV_110x110", label: ""),
-                                                cellDataType(image: "Independent-TV_110x110", label: ""),
-                                                cellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                cellDataType(image: "Channel-24_110x110", label: ""),
-                                                cellDataType(image: "NTV_110x110", label: ""),
-                                                cellDataType(image: "Desh-TV_110x110", label: ""),
-                                                cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
-                                                cellDataType(image: "RTV-HD_110x110", label: ""),
-                                                cellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                cellDataType(image: "Somoy-News_110x110", label: ""),
-                                                cellDataType(image: "Independent-TV_110x110", label: ""),
-                                                cellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                cellDataType(image: "Channel-24_110x110", label: ""),
-                                                cellDataType(image: "NTV_110x110", label: ""),
-                                                cellDataType(image: "Desh-TV_110x110", label: ""),
-                                                cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
-                                                cellDataType(image: "RTV-HD_110x110", label: ""),
-                                                cellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                cellDataType(image: "Somoy-News_110x110", label: ""),
-                                                cellDataType(image: "Independent-TV_110x110", label: ""),
-                                                cellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                cellDataType(image: "Channel-24_110x110", label: ""),
-                                                cellDataType(image: "NTV_110x110", label: ""),
-                                                cellDataType(image: "Desh-TV_110x110", label: ""),
-                                                cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
                                                 cellDataType(image: "RTV-HD_110x110", label: ""),
                                                 cellDataType(image: "Ekattor-HD_110x110", label: ""),
                                                 cellDataType(image: "Somoy-News_110x110", label: "")]
@@ -155,16 +123,17 @@ class LiveTvViewController: UIViewController {
                 print("second")
                 
                 let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .estimated(100), heightDimension: .fractionalHeight(1)))
-                item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: nil, top: nil, trailing: .fixed(8), bottom: nil)
+//                item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: nil, top: nil, trailing: .fixed(8), bottom: nil)
                 
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(1000), heightDimension: .absolute(28)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .estimated(1000), heightDimension: .absolute(28)), subitems: [item])
 //                group.interItemSpacing = .fixed(8)
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets.leading = 16
-                section.contentInsets.trailing = 8
+                section.contentInsets.trailing = 16
                 section.contentInsets.bottom = 16
+                section.interGroupSpacing = 8
                 
                 return section
 
@@ -195,11 +164,11 @@ class LiveTvViewController: UIViewController {
         }
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+        collection.register(UINib(nibName: "CustomCarosselCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCarosselCollectionViewCell.identifier)
         
         collection.register(UINib(nibName: "CustomFilterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomFilterCollectionViewCell.identifier)
         
-        collection.register(UINib(nibName: "CustomCarosselCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCarosselCollectionViewCell.identifier)
+        collection.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         
         collection.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.headerKind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier)
         collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
@@ -240,6 +209,8 @@ class LiveTvViewController: UIViewController {
     
     @objc private func pullDownToRefresh() {
         print("Refresh")
+        
+        selectedItem = []
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             self.collectionView.reloadData()
@@ -336,9 +307,6 @@ extension LiveTvViewController: UICollectionViewDataSource {
         
         else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomFilterCollectionViewCell.identifier, for: indexPath) as! CustomFilterCollectionViewCell
-            //            cell.setup(with: sectionData1[indexPath.item].image, and: sectionData1[indexPath.item].label)
-            //            cell.backgroundColor = .orange
-            
             
 //            if cell.isSelected == true || indexPath.item == selectedItem {
             if cell.isSelected == true || selectedItem.contains(where: { $0 == sectionData1[indexPath.item].label}) {
@@ -381,35 +349,38 @@ extension LiveTvViewController: UICollectionViewDelegate {
             
             if cell.isSelected == true && indexPath.section == 1 {
                 if selectedItem.contains(where: { $0 == sectionData1[indexPath.item].label}) {
-//                if selectedItem.count == 1 { /////
                     cell.deSelected()
-                    cell.isSelected = false
                     selectedItem.removeAll { $0 == sectionData1[indexPath.item].label}
-                    print("selectedItem    \(selectedItem)")
+                    print("selectedItem con   \(selectedItem)")
+    
+                    collectionView.scrollToItem(at: [0 ,0] , at: UICollectionView.ScrollPosition.top, animated: true)
+                }
+                else if selectedItem.count == 1 {
+                    cell.deSelected()
+                    selectedItem.removeAll()
+                    selectedItem.append(sectionData1[indexPath.item].label)
+                    print("selectedItem ==1   \(selectedItem)")
+
+//                    collectionView.scrollToItem(at: [indexPath.item+2 ,0] , at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
+                    collectionView.scrollToSupplementaryView(ofKind: LiveTvViewController.headerKind, at: [indexPath.item+2,0], at: .top, animated: true)
+//                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
                 }
                 else {
                     cell.selected()
-                    cell.isSelected = true
+//                    cell.isSelected = true
                     selectedItem.append(sectionData1[indexPath.item].label)
                     print("selectedItem    \(selectedItem)")
 //                    selectedSectionIndex.append(indexPath.section)
                     selectedSectionIndex = indexPath.section
                     
-//                    scrollToSection(selectedSectionIndex)
-//                    collectionView.scrollToSupplementaryView(ofKind: LiveTvViewController.headerKind, at: [indexPath.item+2 ,0], at: .centeredVertically, animated: true)
-                    
-                    collectionView.scrollToItem(at: [indexPath.item+2 ,0] , at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
-                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
+//                    collectionView.scrollToItem(at: [indexPath.item+2 ,0] , at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
+                    collectionView.scrollToSupplementaryView(ofKind: LiveTvViewController.headerKind, at: [indexPath.item+2,0], at: .top, animated: true)
+//                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
 
                 }
-                
 //                collectionView.reloadSections([indexPath.section])
 //                collectionView.reloadItems(at: [indexPath])//
                 collectionView.reloadData()
-//                cell.layoutIfNeeded()
-//                self.view.layoutSubviews()
-                
-//                print(collectionView.indexPathsForSelectedItems)
                 
             }
         }
@@ -418,6 +389,7 @@ extension LiveTvViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         print("didDeselectItemAt")
+        if indexPath.section == 0 {}
         if indexPath.section == 1 {
             let cell = collectionView.cellForItem(at: indexPath) as! CustomFilterCollectionViewCell
             // deselection,

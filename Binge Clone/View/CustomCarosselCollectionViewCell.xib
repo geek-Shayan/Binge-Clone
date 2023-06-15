@@ -23,10 +23,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-s9-qei">
                                 <rect key="frame" x="0.0" y="0.0" width="403" height="403"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 35" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-Vx-TtF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 35" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-Vx-TtF">
                                 <rect key="frame" x="0.0" y="309" width="403" height="94"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 34" translatesAutoresizingMaskIntoConstraints="NO" id="AEu-YB-pq2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 34" translatesAutoresizingMaskIntoConstraints="NO" id="AEu-YB-pq2">
                                 <rect key="frame" x="0.0" y="0.0" width="403" height="92"/>
                             </imageView>
                         </subviews>
@@ -60,7 +60,7 @@
                 <outlet property="carosselImageView" destination="kZe-s9-qei" id="by6-8E-kfL"/>
                 <outlet property="carosselTopGradientImageView" destination="AEu-YB-pq2" id="K3o-4Z-sp7"/>
             </connections>
-            <point key="canvasLocation" x="374.80916030534348" y="228.52112676056339"/>
+            <point key="canvasLocation" x="329" y="245"/>
         </collectionViewCell>
     </objects>
     <resources>
