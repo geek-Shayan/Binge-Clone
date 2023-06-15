@@ -184,7 +184,10 @@ class LiveTvViewController: UIViewController {
 
 //        view.addSubview(topStackView)
         view.addSubview(topView)
+//        collectionView.addSubview(topView)
+//        collectionView.bringSubviewToFront(topView)
         topView.isHidden = true
+        
     }
     
     func loadCollectionView() {
@@ -201,8 +204,13 @@ class LiveTvViewController: UIViewController {
         collectionView.refreshControl?.addTarget(self, action: #selector(pullDownToRefresh), for: .valueChanged)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        collectionView.bringSubviewToFront(topView)
+    }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
     }
     
@@ -302,6 +310,8 @@ extension LiveTvViewController: UICollectionViewDataSource {
             cell.setup(sectionData0[indexPath.item].image)
             //            cell.backgroundColor = .orange
             cell.layer.cornerRadius = 0
+//            cell.contentView.addSubview(topView)
+//            cell.bringSubviewToFront(topView)
             return cell
         }
         
