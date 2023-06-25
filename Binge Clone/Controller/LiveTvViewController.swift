@@ -184,9 +184,10 @@ class LiveTvViewController: UIViewController {
 
 //        view.addSubview(topStackView)
         view.addSubview(topView)
+        view.sendSubviewToBack(collectionView)
 //        collectionView.addSubview(topView)
 //        collectionView.bringSubviewToFront(topView)
-        topView.isHidden = true
+//        topView.isHidden = true
         
     }
     
@@ -249,6 +250,16 @@ class LiveTvViewController: UIViewController {
 //        self.tabBarController?.tabBar.isHidden = false
         
         self.present(vc, animated: false, completion: nil)
+    }
+    
+    
+    @IBAction func categoriesPressed(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "CategoriesViewController") as! CategoriesViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        
+        present(vc, animated: true)
+//        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
