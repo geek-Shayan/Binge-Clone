@@ -122,7 +122,7 @@
         <!--Binge-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,13 +206,13 @@
         <!--Binge-->
         <scene sceneID="6Go-uV-pQQ">
             <objects>
-                <viewController id="W3k-bQ-Wgm" customClass="LiveTvViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LiveTvViewController" id="W3k-bQ-Wgm" customClass="LiveTvViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c8X-un-dq3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wrf-Cz-BJp">
-                                <rect key="frame" x="0.0" y="103" width="393" height="28.333333333333343"/>
+                                <rect key="frame" x="0.0" y="111" width="393" height="28.333333333333343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiM-O8-Dxb">
                                         <rect key="frame" x="40" y="0.0" width="313" height="28.333333333333332"/>
@@ -261,7 +261,7 @@
                         <constraints>
                             <constraint firstItem="Wrf-Cz-BJp" firstAttribute="leading" secondItem="oXG-bn-bBI" secondAttribute="leading" id="GyP-GI-nG6"/>
                             <constraint firstItem="oXG-bn-bBI" firstAttribute="trailing" secondItem="Wrf-Cz-BJp" secondAttribute="trailing" id="PU1-Hs-rt8"/>
-                            <constraint firstItem="Wrf-Cz-BJp" firstAttribute="top" secondItem="oXG-bn-bBI" secondAttribute="top" id="oI8-Cl-ALo"/>
+                            <constraint firstItem="Wrf-Cz-BJp" firstAttribute="top" secondItem="oXG-bn-bBI" secondAttribute="top" constant="8" id="oI8-Cl-ALo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Binge" id="6bh-zq-ap3">
@@ -311,7 +311,7 @@
         <!--Binge-->
         <scene sceneID="g9n-Nv-1LB">
             <objects>
-                <viewController id="DVB-Pk-4QW" customClass="OriginalsViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OriginalsViewController" id="DVB-Pk-4QW" customClass="OriginalsViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ncx-99-ae1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,7 +361,7 @@
         <!--Binge-->
         <scene sceneID="4j9-Zc-hri">
             <objects>
-                <viewController id="aLo-02-r5g" customClass="MyListViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyListViewController" id="aLo-02-r5g" customClass="MyListViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="98W-MR-IL8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -411,7 +411,7 @@
         <!--Binge-->
         <scene sceneID="yBH-2u-4fe">
             <objects>
-                <viewController id="Xp3-EP-4CA" customClass="ProfileViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="Xp3-EP-4CA" customClass="ProfileViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TrE-ux-2Xa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -644,9 +644,7 @@
                             <constraint firstItem="d2M-jW-IlX" firstAttribute="trailing" secondItem="cMJ-2P-3R9" secondAttribute="trailing" constant="18" id="vBt-ij-mGp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Uq7-XF-8VY">
-                        <barButtonItem key="backBarButtonItem" title="tt" id="yqh-cO-eG8"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Uq7-XF-8VY"/>
                     <connections>
                         <outlet property="appleSignInButton" destination="3pp-9A-gSB" id="cEX-62-3qf"/>
                         <outlet property="conuntryCodeTextField" destination="JP8-C1-7oh" id="Nai-BB-thS"/>
@@ -945,7 +943,7 @@ resend code after 56 sec.</string>
             </objects>
             <point key="canvasLocation" x="2059" y="1434"/>
         </scene>
-        <!--Categories View Controller-->
+        <!--cae-->
         <scene sceneID="c7m-7e-Jg0">
             <objects>
                 <viewController storyboardIdentifier="CategoriesViewController" id="tCf-BH-VNh" customClass="CategoriesViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
@@ -958,7 +956,9 @@ resend code after 56 sec.</string>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="j4D-VX-hEl">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTO-wp-Iql">
@@ -1047,6 +1047,9 @@ resend code after 56 sec.</string>
                             <constraint firstItem="7cg-cx-cf0" firstAttribute="centerX" secondItem="PVN-Pg-Tf1" secondAttribute="centerX" id="uFM-E0-tJs"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="cae" leftItemsSupplementBackButton="YES" id="McE-3v-CLO">
+                        <barButtonItem key="backBarButtonItem" title="Category" id="vLL-T6-gRF"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="PVN-Pg-Tf1" id="bd3-Th-npN"/>
                         <outlet property="skipButton" destination="7cg-cx-cf0" id="2rA-Ob-X8x"/>
@@ -1054,22 +1057,49 @@ resend code after 56 sec.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iha-fO-Zbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2852.6717557251909" y="1433.8028169014085"/>
+            <point key="canvasLocation" x="2789" y="2155"/>
         </scene>
-        <!--Categories View Controller-->
+        <!--Category View Controller-->
         <scene sceneID="5i2-eX-9nQ">
             <objects>
-                <viewController id="RwI-Ag-gjc" customClass="CategoriesViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryViewController" id="RwI-Ag-gjc" customClass="CategoryViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y09-ph-GIO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vzV-bB-bUi">
+                                <rect key="frame" x="16" y="103" width="361" height="715"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ool-wm-s6O">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RwI-Ag-gjc" id="Nha-Ft-UjU"/>
+                                    <outlet property="delegate" destination="RwI-Ag-gjc" id="tof-6K-7RE"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dyH-cA-vrg"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vzV-bB-bUi" firstAttribute="bottom" secondItem="dyH-cA-vrg" secondAttribute="bottom" id="NSg-4Q-SQK"/>
+                            <constraint firstItem="dyH-cA-vrg" firstAttribute="trailing" secondItem="vzV-bB-bUi" secondAttribute="trailing" constant="16" id="XT9-vr-GwK"/>
+                            <constraint firstItem="vzV-bB-bUi" firstAttribute="top" secondItem="dyH-cA-vrg" secondAttribute="top" id="h9T-Sn-vaz"/>
+                            <constraint firstItem="vzV-bB-bUi" firstAttribute="leading" secondItem="dyH-cA-vrg" secondAttribute="leading" constant="16" id="jeg-Vg-DHg"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Zvn-as-qi3"/>
+                    <connections>
+                        <outlet property="categoryCollectionView" destination="vzV-bB-bUi" id="vVh-MY-xhk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9x-2O-VYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3639" y="1434"/>
+            <point key="canvasLocation" x="4364" y="2155"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="W37-C2-IdL">
@@ -1127,7 +1157,7 @@ resend code after 56 sec.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KWh-YI-ytU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5106" y="1434"/>
+            <point key="canvasLocation" x="6031.2977099236641" y="1433.8028169014085"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9UZ-tY-3pa">
@@ -1146,6 +1176,24 @@ resend code after 56 sec.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ko5-CU-PN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-445" y="1434"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ecG-Nm-2s0">
+            <objects>
+                <navigationController storyboardIdentifier="CategoryNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="xm8-og-rbC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OyN-4M-ZbF">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RwI-Ag-gjc" kind="relationship" relationship="rootViewController" id="UGu-JA-p9g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GKO-45-fwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3524" y="2155"/>
         </scene>
     </scenes>
     <resources>

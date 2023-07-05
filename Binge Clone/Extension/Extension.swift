@@ -114,7 +114,7 @@ extension UIView {
 // MARK: Custom UICollectionView auto scroll to header extension
 
 extension UICollectionView {
-    func scrollToSupplementaryView(ofKind kind: String, at indexPath: IndexPath, at scrollPosition: UICollectionView.ScrollPosition, animated: Bool) {
+    func scrollToSupplementaryView(ofKind kind: String, at indexPath: IndexPath, at scrollPosition: UICollectionView.ScrollPosition, animated: Bool, navigationOffset: CGFloat) {
         self.layoutIfNeeded();
         if let layoutAttributes =  self.layoutAttributesForSupplementaryElement(ofKind: kind, at: indexPath) {
             let viewOrigin = CGPoint(x: layoutAttributes.frame.origin.x, y: layoutAttributes.frame.origin.y);
@@ -122,7 +122,7 @@ extension UICollectionView {
             
             switch(scrollPosition) {
             case UICollectionView.ScrollPosition.top:
-                offset.y = viewOrigin.y - self.contentInset.top - 190// -190 for navigation componsation at top
+                offset.y = viewOrigin.y - self.contentInset.top - (2 * navigationOffset) //- 190// -190 for navigation componsation at top
                 
             case UICollectionView.ScrollPosition.left:
                 offset.x = viewOrigin.x - self.contentInset.left

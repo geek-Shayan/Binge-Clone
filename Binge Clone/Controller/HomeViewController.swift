@@ -20,73 +20,56 @@ class HomeViewController: UIViewController {
     
     
     
-    private var sectionHeadersFooters: [supplementaryDataType] = [supplementaryDataType(header: "", footer: ""),
-                                                                  supplementaryDataType(header: "Continue Watch", footer: "C"),
-                                                                  supplementaryDataType(header: "Exclusive Sports", footer: "E"),
-                                                                  supplementaryDataType(header: "Recommended For you", footer: "R"),
-                                                                  supplementaryDataType(header: "Originals (Free: Robi Data, Mob App)", footer: ""),
-                                                                  supplementaryDataType(header: "Sports", footer: ""),
-                                                                  ]
-
-    private var sectionData0: [cellDataType] = [cellDataType(image: "s1", label: "1"),
-                                                cellDataType(image: "s1", label: "2"),
-                                                cellDataType(image: "s1", label: "3"),
-                                                cellDataType(image: "s1", label: "4")]
-
-    private var sectionData1: [cellDataType] = [cellDataType(image: "s2", label: "1"),
-                                                cellDataType(image: "s2", label: "2"),
-                                                cellDataType(image: "s2", label: "3"),
-                                                cellDataType(image: "s2", label: "4"),
-                                                cellDataType(image: "s2", label: "5"),
-                                                cellDataType(image: "s2", label: "6"),
-                                                cellDataType(image: "s2", label: "7"),
-                                                cellDataType(image: "s2", label: "8")]
-
-    private var sectionData2: [cellDataType] = [cellDataType(image: "s3", label: "1"),
-                                                cellDataType(image: "s3", label: "2"),
-                                                cellDataType(image: "s3", label: "3"),
-                                                cellDataType(image: "s3", label: "4")]
-
-    private var sectionData3: [cellDataType] = [cellDataType(image: "s4", label: "1"),
-                                                cellDataType(image: "s4", label: "2"),
-                                                cellDataType(image: "s4", label: "3"),
-                                                cellDataType(image: "s4", label: "4")]
-
-    private var sectionData4: [cellDataType] = [cellDataType(image: "s5", label: "1"),
-                                                cellDataType(image: "s5", label: "2"),
-                                                cellDataType(image: "s5", label: "3"),
-                                                cellDataType(image: "s5", label: "4"),
-                                                cellDataType(image: "s5", label: "5"),
-                                                cellDataType(image: "s5", label: "6"),
-                                                cellDataType(image: "s5", label: "7"),
-                                                cellDataType(image: "s5", label: "8"),
-                                                cellDataType(image: "s5", label: "9"),
-                                                cellDataType(image: "s5", label: "10")]
-    
-    private var sectionData5: [cellDataType] = [cellDataType(image: "s6", label: "1"),
-                                                cellDataType(image: "s6", label: "2"),
-                                                cellDataType(image: "s6", label: "3"),
-                                                cellDataType(image: "s6", label: "4")]
-
-    
-    struct cellDataType {
-        let image: String
-        let label: String
-    }
-    
-    struct supplementaryDataType {
-        let header: String
-        let footer: String
-    }
-    
-    enum Section: Int, CaseIterable {
-        case first
-        case second
-        case third
-        case forth
-        case fifth
-        case sixth
-    }
+//    private var sectionHeadersFooters: [SupplementaryDataType] = [SupplementaryDataType(header: "", footer: ""),
+//                                                                  SupplementaryDataType(header: "Continue Watch", footer: "C"),
+//                                                                  SupplementaryDataType(header: "Exclusive Sports", footer: "E"),
+//                                                                  SupplementaryDataType(header: "Recommended For you", footer: "R"),
+//                                                                  SupplementaryDataType(header: "Originals (Free: Robi Data, Mob App)", footer: ""),
+//                                                                  SupplementaryDataType(header: "Sports", footer: ""),
+//                                                                  ]
+//
+//
+//    private var sectionData0: [CellDataType] = [CellDataType(image: "s1", label: "1"),
+//                                                CellDataType(image: "s1", label: "2"),
+//                                                CellDataType(image: "s1", label: "3"),
+//                                                CellDataType(image: "s1", label: "4")]
+//
+//    private var sectionData1: [CellDataType] = [CellDataType(image: "s2", label: "1"),
+//                                                CellDataType(image: "s2", label: "2"),
+//                                                CellDataType(image: "s2", label: "3"),
+//                                                CellDataType(image: "s2", label: "4"),
+//                                                CellDataType(image: "s2", label: "5"),
+//                                                CellDataType(image: "s2", label: "6"),
+//                                                CellDataType(image: "s2", label: "7"),
+//                                                CellDataType(image: "s2", label: "8")]
+//
+//    private var sectionData2: [CellDataType] = [CellDataType(image: "s3", label: "1"),
+//                                                CellDataType(image: "s3", label: "2"),
+//                                                CellDataType(image: "s3", label: "3"),
+//                                                CellDataType(image: "s3", label: "4")]
+//
+//    private var sectionData3: [CellDataType] = [CellDataType(image: "s4", label: "1"),
+//                                                CellDataType(image: "s4", label: "2"),
+//                                                CellDataType(image: "s4", label: "3"),
+//                                                CellDataType(image: "s4", label: "4")]
+//
+//    private var sectionData4: [CellDataType] = [CellDataType(image: "s5", label: "1"),
+//                                                CellDataType(image: "s5", label: "2"),
+//                                                CellDataType(image: "s5", label: "3"),
+//                                                CellDataType(image: "s5", label: "4"),
+//                                                CellDataType(image: "s5", label: "5"),
+//                                                CellDataType(image: "s5", label: "6"),
+//                                                CellDataType(image: "s5", label: "7"),
+//                                                CellDataType(image: "s5", label: "8"),
+//                                                CellDataType(image: "s5", label: "9"),
+//                                                CellDataType(image: "s5", label: "10")]
+//
+//    private var sectionData5: [CellDataType] = [CellDataType(image: "s6", label: "1"),
+//                                                CellDataType(image: "s6", label: "2"),
+//                                                CellDataType(image: "s6", label: "3"),
+//                                                CellDataType(image: "s6", label: "4")]
+//
+//
     
     static let headerKind = "headerKind"
     static let footerKind = "footerKind"
@@ -96,17 +79,17 @@ class HomeViewController: UIViewController {
 
         let layout = UICollectionViewCompositionalLayout { sectionNumber, env in
             
-            guard let section = Section(rawValue: sectionNumber) else {return nil}
-            
-            switch section {
-                
-            case .first:
-                
+//            guard let section = Section(rawValue: sectionNumber) else {return nil}
+//
+//            switch section {
+//
+//            case .first:
+            if sectionNumber == 0 {
                 print("first carossel")
                 
                 let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-//                item.contentInsets.trailing = 2
-//                item.contentInsets.bottom = 8
+                //                item.contentInsets.trailing = 2
+                //                item.contentInsets.bottom = 8
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(480)), subitems: [item])
                 
@@ -123,9 +106,10 @@ class HomeViewController: UIViewController {
                     }
                 }
                 return section
-                
-                
-            case .second:
+            }
+            
+//            case .second:
+            else if sectionNumber == 1 {
                 
                 print("second")
                 
@@ -141,14 +125,15 @@ class HomeViewController: UIViewController {
                 
                 let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(40))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: headerKind, alignment: .topLeading)
-//                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
+                //                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
                 
                 section.boundarySupplementaryItems = [header] //, footer
                 
                 return section
+            }
                 
-                
-            case .third:
+//            case .third:
+            else if sectionNumber == 2 {
                 
                 print("third")
                 
@@ -164,14 +149,15 @@ class HomeViewController: UIViewController {
                 
                 let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(40))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: headerKind, alignment: .topLeading)
-//                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
+                //                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
                 
                 section.boundarySupplementaryItems = [header] //, footer
                 
                 return section
+            }
                 
-                
-            case .forth:
+//            case .forth:
+            else if sectionNumber == 3 {
                 
                 print("forth")
                 
@@ -187,14 +173,16 @@ class HomeViewController: UIViewController {
                 
                 let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(40))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: headerKind, alignment: .topLeading)
-//                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
+                //                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
                 
                 section.boundarySupplementaryItems = [header] //, footer
                 
                 return section
+            }
                 
+//            case .fifth:
+            else if sectionNumber == 4 {
                 
-            case .fifth:
                 print("fifth")
                 
                 let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
@@ -209,14 +197,17 @@ class HomeViewController: UIViewController {
                 
                 let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(40))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: headerKind, alignment: .topLeading)
-//                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
+                //                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
                 
                 section.boundarySupplementaryItems = [header] //, footer
                 
                 return section
+            }
                 
-            case .sixth:
-                print("sixth")
+//            case .sixth:
+//            else if sectionNumber == 5 {
+            else {
+                print("sixth...")
                 
                 let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 item.contentInsets.trailing = 16
@@ -230,12 +221,12 @@ class HomeViewController: UIViewController {
                 
                 let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(40))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: headerKind, alignment: .topLeading)
-//                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
+                //                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
                 
                 section.boundarySupplementaryItems = [header] //, footer
                 
                 return section
-        
+            
             }
         }
         
@@ -250,6 +241,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.title = "Binge"
         
         loadCollectionView()
         
@@ -317,7 +310,7 @@ class HomeViewController: UIViewController {
             actionContainerView.frame = CGRect(x: -self.actionContainerView.bounds.width, y: self.actionContainerView.frame.origin.y , width: self.actionContainerView.bounds.width, height: self.actionContainerView.bounds.height)
             actionTableView.frame = CGRect(x: -self.actionTableView.bounds.width, y: self.actionTableView.frame.origin.y, width: self.actionTableView.bounds.width, height: self.actionTableView.bounds.height)
             actionContainerView.alpha = 0.0
-            UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
                 self.actionContainerView.frame = CGRect(x: 0, y: self.actionContainerView.frame.origin.y, width: self.actionContainerView.bounds.width, height: self.actionContainerView.bounds.height)
                 self.actionTableView.frame = CGRect(x: 0, y: self.actionTableView.frame.origin.y, width: self.actionTableView.bounds.width, height: self.actionTableView.bounds.height)
                 self.actionContainerView.alpha = 1.0
@@ -334,7 +327,7 @@ class HomeViewController: UIViewController {
             actionTableView.frame = CGRect(x: 0, y: self.actionTableView.frame.origin.y, width: self.actionTableView.bounds.width, height: self.actionTableView.bounds.height)
             actionContainerView.alpha = 1.0
             
-            UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
                 self.actionContainerView.frame = CGRect(x: -self.actionContainerView.bounds.width, y: self.actionContainerView.frame.origin.y, width: self.actionContainerView.bounds.width, height: self.actionContainerView.bounds.height)
                 self.actionTableView.frame = CGRect(x: -self.actionTableView.bounds.width, y: self.actionTableView.frame.origin.y, width: self.actionTableView.bounds.width, height: self.actionTableView.bounds.height)
                 self.actionContainerView.alpha = 0.0
@@ -361,30 +354,35 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sectionHeadersFooters.count
+//        return sectionHeadersFooters.count
+//        return homeSectionsData.carosselSection0
+        return homeSectionsData.sections.count
 //        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return homeSectionsData.sections[section].cells.count
         
-        guard let sections = Section(rawValue: section) else {return 0}
-        
-        switch sections {
-            
-        case .first:
-            return sectionData0.count
-        case .second:
-            return sectionData1.count
-        case .third:
-            return sectionData2.count
-        case .forth:
-            return sectionData3.count
-        case .fifth:
-            return sectionData4.count
-        case .sixth:
-            return sectionData5.count
-            
-        }
+//        guard let sections = Section(rawValue: section) else {return 0}
+//
+//        switch sections {
+//
+//        case .first:
+////            return sectionData0.count
+////            return homeSectionsData.carosselSection0.cells.count
+//            return homeSectionsData.sections[section].cells.count
+//        case .second:
+//            return sectionData1.count
+//        case .third:
+//            return sectionData2.count
+//        case .forth:
+//            return sectionData3.count
+//        case .fifth:
+//            return sectionData4.count
+//        case .sixth:
+//            return sectionData5.count
+//
+//        }
         
     }
     
@@ -393,13 +391,15 @@ extension HomeViewController: UICollectionViewDataSource {
         switch kind {
             case HomeViewController.headerKind:
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-                header.setup(head: sectionHeadersFooters[indexPath.section].header)
+//                header.setup(head: sectionHeadersFooters[indexPath.section].header)//
+                header.setup(head: homeSectionsData.sections[indexPath.section].headerFooter.header)
                 return header
                 
                 
             case HomeViewController.footerKind:
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
-                footer.setup(foot: sectionHeadersFooters[indexPath.section].footer, indicatorFlag: false)
+//                footer.setup(foot: sectionHeadersFooters[indexPath.section].footer, indicatorFlag: false)
+            footer.setup(foot: homeSectionsData.sections[indexPath.section].headerFooter.footer, indicatorFlag: false)
                 return footer
                 
                 
@@ -414,46 +414,59 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 //        print("Cell indexPath row, section, item", indexPath.row, indexPath.section, indexPath.item)
         
-        guard let section = Section(rawValue: indexPath.section) else {return UICollectionViewCell()}
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
+        cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image, label: homeSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+        cell.backgroundColor = .red
+        return cell
         
-        switch section {
-            
-        case .first:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(with: sectionData0[indexPath.item].image, and: sectionData0[indexPath.item].label)
-            cell.backgroundColor = .red
-            return cell
-            
-        case .second:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(with: sectionData1[indexPath.item].image, and: sectionData1[indexPath.item].label)
-            cell.backgroundColor = .red
-            return cell
-            
-        case .third:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(with: sectionData2[indexPath.item].image, and: sectionData2[indexPath.item].label)
-            cell.backgroundColor = .red
-            return cell
-            
-        case .forth:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(with: sectionData3[indexPath.item].image, and: sectionData3[indexPath.item].label)
-            cell.backgroundColor = .red
-            return cell
-            
-        case .fifth:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(with: sectionData4[indexPath.item].image, and: sectionData4[indexPath.item].label) //dynamic
-            cell.backgroundColor = .red
-            return cell
-            
-        case .sixth:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(with: sectionData5[indexPath.item].image, and: sectionData4[indexPath.item].label) //dynamic
-            cell.backgroundColor = .red
-            return cell
-        }
+//        guard let section = Section(rawValue: indexPath.section) else {return UICollectionViewCell()}
+//
+//        switch section {
+//
+//        case .first:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
+////            cell.setup(image: sectionData0[indexPath.item].image, label: sectionData0[indexPath.item].label)
+////            cell.setup(image: homeSectionsData.carosselSection0.cells[indexPath.item].image, label: homeSectionsData.carosselSection0.cells[indexPath.item].label)
+//            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image, label: homeSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+//            cell.backgroundColor = .white
+//            self.collectionView.layoutIfNeeded()
+//            return cell
+//
+//        case .second:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
+////            cell.setup(image: sectionData1[indexPath.item].image, label: sectionData1[indexPath.item].label)
+//            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image, label: homeSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+//            cell.backgroundColor = .white
+//            return cell
+//
+//        case .third:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
+////            cell.setup(image: sectionData2[indexPath.item].image, label: sectionData2[indexPath.item].label)
+//            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image, label: homeSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+//            cell.backgroundColor = .white
+//            return cell
+//
+//        case .forth:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
+////            cell.setup(image: sectionData3[indexPath.item].image, label: sectionData3[indexPath.item].label)
+//            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image, label: homeSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+//            cell.backgroundColor = .red
+//            return cell
+//
+//        case .fifth:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
+////            cell.setup(image: sectionData4[indexPath.item].image, label: sectionData4[indexPath.item].label) //dynamic
+//            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image, label: homeSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+//            cell.backgroundColor = .red
+//            return cell
+//
+//        case .sixth:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
+////            cell.setup(image: sectionData5[indexPath.item].image, label: sectionData4[indexPath.item].label) //dynamic
+//            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image, label: homeSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+//            cell.backgroundColor = .red
+//            return cell
+//        }
         
     }
 }

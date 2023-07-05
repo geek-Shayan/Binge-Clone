@@ -17,6 +17,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
 //        imageView.image = UIImage(named: "photo 1")
         imageView.tintColor = .systemMint
         imageView.contentMode = .scaleAspectFill
+//        imageView.contentMode = .scaleAspectFit
 //        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
 //        imageView.layer.cornerRadius = 45
@@ -58,8 +59,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
         myLabel.frame = bounds
     }
     
-    func setup(with img: String, and lbl: String) {
-        myImage.image = UIImage(named: img)
-        myLabel.text = lbl
+    func setup(image: String, label: String) {
+        myImage.image = UIImage(named: image)
+        myLabel.text = label
     }
 }

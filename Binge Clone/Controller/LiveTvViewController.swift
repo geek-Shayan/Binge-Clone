@@ -12,77 +12,68 @@ class LiveTvViewController: UIViewController {
     @IBOutlet weak var topStackView: UIStackView!
     @IBOutlet weak var topView: UIView!
     
-    private var sectionHeadersFooters: [supplementaryDataType] = [supplementaryDataType(header: "", footer: ""),
-                                                                  supplementaryDataType(header: "", footer: ""),
-                                                                  supplementaryDataType(header: "Sports", footer: "E"),
-                                                                  supplementaryDataType(header: "News (Free: Robi Data, Mob App)", footer: "R"),
-                                                                  supplementaryDataType(header: "Entertainment", footer: "R"),
-                                                                  supplementaryDataType(header: "Local TV (Free: Robi Data, Mob App)", footer: "R"),
-                                                                  supplementaryDataType(header: "Movies", footer: ""),
-                                                                  supplementaryDataType(header: "Music", footer: ""),
-                                                                  supplementaryDataType(header: "Kids", footer: ""),
-                                                                  supplementaryDataType(header: "Infotainment", footer: ""),
-                                                                  supplementaryDataType(header: "Religious", footer: "")]
+    //Declare the view which is going to be added as header view
+//    let requiredView = topView!
+    
+    private var sectionHeadersFooters: [SupplementaryDataType] = [SupplementaryDataType(header: "", footer: ""),
+                                                                  SupplementaryDataType(header: "", footer: ""),
+                                                                  SupplementaryDataType(header: "Sports", footer: "E"),
+                                                                  SupplementaryDataType(header: "News (Free: Robi Data, Mob App)", footer: "R"),
+                                                                  SupplementaryDataType(header: "Entertainment", footer: "R"),
+                                                                  SupplementaryDataType(header: "Local TV (Free: Robi Data, Mob App)", footer: "R"),
+                                                                  SupplementaryDataType(header: "Movies", footer: ""),
+                                                                  SupplementaryDataType(header: "Music", footer: ""),
+                                                                  SupplementaryDataType(header: "Kids", footer: ""),
+                                                                  SupplementaryDataType(header: "Infotainment", footer: ""),
+                                                                  SupplementaryDataType(header: "Religious", footer: "")]
 
-    private var sectionData0: [cellDataType] = [cellDataType(image: "image 5", label: "1"),
-                                                cellDataType(image: "image 5", label: "2"),
-                                                cellDataType(image: "image 5", label: "3"),
-                                                cellDataType(image: "image 5", label: "4")]
+    private var sectionData0: [CellDataType] = [CellDataType(image: "image 5", label: "1"),
+                                                CellDataType(image: "image 5", label: "2"),
+                                                CellDataType(image: "image 5", label: "3"),
+                                                CellDataType(image: "image 5", label: "4")]
     
-    private var sectionData1: [cellDataType] = [cellDataType(image: "s", label: "Sports"),
-                                                cellDataType(image: "s", label: "News"),
-                                                cellDataType(image: "s", label: "Entertainment"),
-                                                cellDataType(image: "s", label: "Local TV"),
-                                                cellDataType(image: "s", label: "Movies"),
-                                                cellDataType(image: "s", label: "Music"),
-                                                cellDataType(image: "s", label: "Kids"),
-                                                cellDataType(image: "s", label: "Infotainment"),
-                                                cellDataType(image: "s", label: "Religious")]
+    private var sectionData1: [CellDataType] = [CellDataType(image: "s", label: "Sports"),
+                                                CellDataType(image: "s", label: "News"),
+                                                CellDataType(image: "s", label: "Entertainment"),
+                                                CellDataType(image: "s", label: "Local TV"),
+                                                CellDataType(image: "s", label: "Movies"),
+                                                CellDataType(image: "s", label: "Music"),
+                                                CellDataType(image: "s", label: "Kids"),
+                                                CellDataType(image: "s", label: "Infotainment"),
+                                                CellDataType(image: "s", label: "Religious")]
 
-    private var sectionData2: [cellDataType] = [cellDataType(image: "Sony Ten 1 1", label: ""),
-                                                cellDataType(image: "Sony Ten 2 1", label: ""),
-                                                cellDataType(image: "Sony Ten 3 1", label: ""),
-                                                cellDataType(image: "Sony Ten 5 1", label: ""),
-                                                cellDataType(image: "Sony Ten 1 1", label: ""),
-                                                cellDataType(image: "Sony Ten 2 1", label: ""),
-                                                cellDataType(image: "Sony Ten 3 1", label: ""),
-                                                cellDataType(image: "Sony Ten 5 1", label: "")]
+    private var sectionData2: [CellDataType] = [CellDataType(image: "Sony Ten 1 1", label: ""),
+                                                CellDataType(image: "Sony Ten 2 1", label: ""),
+                                                CellDataType(image: "Sony Ten 3 1", label: ""),
+                                                CellDataType(image: "Sony Ten 5 1", label: ""),
+                                                CellDataType(image: "Sony Ten 1 1", label: ""),
+                                                CellDataType(image: "Sony Ten 2 1", label: ""),
+                                                CellDataType(image: "Sony Ten 3 1", label: ""),
+                                                CellDataType(image: "Sony Ten 5 1", label: "")]
     
-    private var sectionData3: [cellDataType] = [cellDataType(image: "Independent-TV_110x110", label: ""),
-                                                cellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                cellDataType(image: "Channel-24_110x110", label: ""),
-                                                cellDataType(image: "NTV_110x110", label: ""),
-                                                cellDataType(image: "Desh-TV_110x110", label: ""),
-                                                cellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
-                                                cellDataType(image: "RTV-HD_110x110", label: ""),
-                                                cellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                cellDataType(image: "Somoy-News_110x110", label: ""),
-                                                cellDataType(image: "Independent-TV_110x110", label: ""),
-                                                cellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                cellDataType(image: "Channel-24_110x110", label: ""),
-                                                cellDataType(image: "NTV_110x110", label: ""),
-                                                cellDataType(image: "Desh-TV_110x110", label: ""),
-                                                cellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                cellDataType(image: "Somoy-News_110x110", label: ""),
-                                                cellDataType(image: "Independent-TV_110x110", label: ""),
-                                                cellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                cellDataType(image: "Channel-24_110x110", label: ""),
-                                                cellDataType(image: "RTV-HD_110x110", label: ""),
-                                                cellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                cellDataType(image: "Somoy-News_110x110", label: "")]
+    private var sectionData3: [CellDataType] = [CellDataType(image: "Independent-TV_110x110", label: ""),
+                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
+                                                CellDataType(image: "Channel-24_110x110", label: ""),
+                                                CellDataType(image: "NTV_110x110", label: ""),
+                                                CellDataType(image: "Desh-TV_110x110", label: ""),
+                                                CellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
+                                                CellDataType(image: "RTV-HD_110x110", label: ""),
+                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
+                                                CellDataType(image: "Somoy-News_110x110", label: ""),
+                                                CellDataType(image: "Independent-TV_110x110", label: ""),
+                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
+                                                CellDataType(image: "Channel-24_110x110", label: ""),
+                                                CellDataType(image: "NTV_110x110", label: ""),
+                                                CellDataType(image: "Desh-TV_110x110", label: ""),
+                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
+                                                CellDataType(image: "Somoy-News_110x110", label: ""),
+                                                CellDataType(image: "Independent-TV_110x110", label: ""),
+                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
+                                                CellDataType(image: "Channel-24_110x110", label: ""),
+                                                CellDataType(image: "RTV-HD_110x110", label: ""),
+                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
+                                                CellDataType(image: "Somoy-News_110x110", label: "")]
 
-
-    
-    struct cellDataType {
-        let image: String
-        let label: String
-    }
-    
-    struct supplementaryDataType {
-        let header: String
-        let footer: String
-    }
-    
     static let headerKind = "headerKind"
     static let footerKind = "footerKind"
     
@@ -180,14 +171,23 @@ class LiveTvViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        self.title = "Binge"
+        
         loadCollectionView()
 
 //        view.addSubview(topStackView)
         view.addSubview(topView)
-        view.sendSubviewToBack(collectionView)
+//        view.sendSubviewToBack(collectionView)
 //        collectionView.addSubview(topView)
 //        collectionView.bringSubviewToFront(topView)
 //        topView.isHidden = true
+        
+
+        //Add your required view as subview of uicollectionview backgroundView view like as
+//        collectionView.backgroundView = UIView()
+//        collectionView.addSubview(topView)
+//        collectionView.backgroundView?.addSubview(topView)
+//        collectionView.bringSubviewToFront(topView)
         
     }
     
@@ -207,12 +207,23 @@ class LiveTvViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        collectionView.bringSubviewToFront(topView)
+//        collectionView.bringSubviewToFront(topView)x
+        
+        
+        //        var xx = navigationController?.toolbar.frame.size.height // navigationController?.navigationBar.frame.size.height
+        var xx = (navigationController?.navigationBar.frame.size.height)! + (view.window?.windowScene?.statusBarManager?.statusBarFrame.height)!
+//                var xx = self.view.window?.windowScene?.statusBarManager?.statusBarFrame.height
+//                var xx = UIApplication.shared.statusBarFrame.height // statusBarManager?.statusBarFrame.size.height
+        //        var xx = (int)[UIApplication sharedApplication].statusBarFrame.size.height
+        //        var xx = [UIApplication.shared.applicationState].statusBarFrame.size.height
+        print("navigationBar   \(xx)")
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
+//        collectionView.frame = CGRectMake(0, 190, view.frame.width, view.frame.height)
+//        collectionView.contentInset.top = 190
     }
     
     
@@ -255,11 +266,16 @@ class LiveTvViewController: UIViewController {
     
     @IBAction func categoriesPressed(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "CategoriesViewController") as! CategoriesViewController
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .coverVertical
         
-        present(vc, animated: true)
-//        navigationController?.pushViewController(vc, animated: true)
+//        present(vc, animated: true)
+//        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.pushViewController(vc, animated: false)
+//        self.navigationController?.title = ""
+//        self.navigationController?.navigationBar.backItem?.title = "jdsnjk"
+//        self.navigationController?.navigationItem.hidesBackButton = true
+//        self.navigationController?.present(vc, animated: false)
     }
 }
 
@@ -281,7 +297,8 @@ extension LiveTvViewController: UICollectionViewDataSource {
             return sectionData1.count
         }
         else if section == 2 {
-            return sectionData2.count
+//            return sectionData2.count
+            return liveTvSectionsData.sections[section].cells.count
         }
         else {
             return sectionData3.count
@@ -346,14 +363,15 @@ extension LiveTvViewController: UICollectionViewDataSource {
         
         else if indexPath.section == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(with: sectionData2[indexPath.item].image, and: sectionData2[indexPath.item].label)
+//            cell.setup(image: sectionData2[indexPath.item].image, label: sectionData2[indexPath.item].label)
+            cell.setup(image: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].image, label: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].label)
             //            cell.backgroundColor = .orange
             return cell
         }
         
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(with: sectionData3[indexPath.item].image, and: sectionData3[indexPath.item].label)
+            cell.setup(image: sectionData3[indexPath.item].image, label: sectionData3[indexPath.item].label)
             //            cell.backgroundColor = .orange
             return cell
         }
@@ -373,7 +391,7 @@ extension LiveTvViewController: UICollectionViewDelegate {
                     cell.deSelected()
                     selectedItem.removeAll { $0 == sectionData1[indexPath.item].label}
                     print("selectedItem con   \(selectedItem)")
-    
+                    
                     collectionView.scrollToItem(at: [0 ,0] , at: UICollectionView.ScrollPosition.top, animated: true)
                 }
                 else if selectedItem.count == 1 {
@@ -381,32 +399,32 @@ extension LiveTvViewController: UICollectionViewDelegate {
                     selectedItem.removeAll()
                     selectedItem.append(sectionData1[indexPath.item].label)
                     print("selectedItem ==1   \(selectedItem)")
-
-//                    collectionView.scrollToItem(at: [indexPath.item+2 ,0] , at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
-                    collectionView.scrollToSupplementaryView(ofKind: LiveTvViewController.headerKind, at: [indexPath.item+2,0], at: .top, animated: true)
-//                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
+                    
+                    //                    collectionView.scrollToItem(at: [indexPath.item+2 ,0] , at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
+                    collectionView.scrollToSupplementaryView(ofKind: LiveTvViewController.headerKind, at: [indexPath.item+2,0], at: .top, animated: true, navigationOffset: (navigationController?.navigationBar.frame.size.height)! + (view.window?.windowScene?.statusBarManager?.statusBarFrame.height)!)
+                    //                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
                 }
                 else {
                     cell.selected()
-//                    cell.isSelected = true
+                    //                    cell.isSelected = true
                     selectedItem.append(sectionData1[indexPath.item].label)
                     print("selectedItem    \(selectedItem)")
-//                    selectedSectionIndex.append(indexPath.section)
+                    //                    selectedSectionIndex.append(indexPath.section)
                     selectedSectionIndex = indexPath.section
                     
-//                    collectionView.scrollToItem(at: [indexPath.item+2 ,0] , at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
-                    collectionView.scrollToSupplementaryView(ofKind: LiveTvViewController.headerKind, at: [indexPath.item+2,0], at: .top, animated: true)
-//                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
-
+                    //                    collectionView.scrollToItem(at: [indexPath.item+2 ,0] , at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
+                    collectionView.scrollToSupplementaryView(ofKind: LiveTvViewController.headerKind, at: [indexPath.item+2,0], at: .top, animated: true, navigationOffset: (navigationController?.navigationBar.frame.size.height)! + (view.window?.windowScene?.statusBarManager?.statusBarFrame.height)!)
+                    //                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
+                    
                 }
-//                collectionView.reloadSections([indexPath.section])
-//                collectionView.reloadItems(at: [indexPath])//
+                //                collectionView.reloadSections([indexPath.section])
+                //                collectionView.reloadItems(at: [indexPath])//
                 collectionView.reloadData()
                 
             }
         }
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         print("didDeselectItemAt")
@@ -416,18 +434,30 @@ extension LiveTvViewController: UICollectionViewDelegate {
             // deselection,
             if cell.isSelected == false && indexPath.section == 1 {
                 cell.deSelected()
-//                selectedItem.removeAll { $0 == sectionData1[indexPath.item].label}
-//                print("selectedItem    \(selectedItem)")
+                //                selectedItem.removeAll { $0 == sectionData1[indexPath.item].label}
+                //                print("selectedItem    \(selectedItem)")
                 
-//                collectionView.deselectItem(at: indexPath, animated: true)
-//                collectionView.reloadSections([indexPath.section])
-//                collectionView.reloadItems(at: [indexPath])//
-//                collectionView.reloadData()
-//                cell.layoutIfNeeded()
-//                self.view.layoutSubviews()
-              
+                //                collectionView.deselectItem(at: indexPath, animated: true)
+                //                collectionView.reloadSections([indexPath.section])
+                //                collectionView.reloadItems(at: [indexPath])//
+                //                collectionView.reloadData()
+                //                cell.layoutIfNeeded()
+                //                self.view.layoutSubviews()
+                
             }
         }
     }
-
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let per:CGFloat = 100 + 8 + (navigationController?.navigationBar.frame.size.height)! //percentage of required view to move on while moving collection view //60
+        let deductValue = CGFloat(per / 100 * topView.frame.size.height)
+//        let deductValue = CGFloat(per / 100 * topView.frame.size.height) - (navigationController?.navigationBar.frame.size.height)!
+        let offset = (-(per/100)) * (collectionView.contentOffset.y)
+        let value = offset - deductValue
+        let rect = topView.frame
+        self.topView.frame = CGRectMake(rect.origin.x, value, rect.size.width, rect.size.height)
+    }
+    
+    
 }

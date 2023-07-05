@@ -23,10 +23,10 @@ class GenreViewController: UIViewController {
         
         setupView()
         
-        loadActionCollection()
+        loadGenreCollection()
     }
     
-    func loadActionCollection() {
+    func loadGenreCollection() {
         genreCollectionView.register(UINib(nibName: "CustomGenreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomGenreCollectionViewCell.identifier)
         
         genreCollectionView.allowsMultipleSelection = true

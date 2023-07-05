@@ -10,7 +10,6 @@ import UIKit
 class CustomCategoriesCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var categoryBackgroundView: UIView!
-    @IBOutlet weak var categoryBackgroundImageView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     
     static let identifier = "CustomCategoriesCollectionViewCell"
@@ -23,19 +22,7 @@ class CustomCategoriesCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupView() {
-//        categoryBackgroundView.layer.borderWidth = 1
         categoryBackgroundView.layer.cornerRadius = 8
-//        categoryBackgroundView.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor //white
-    }
-    
-    func selected() {
-//        categoryBackgroundView.backgroundColor = UIColor(red: 0.898, green: 0.035, blue: 0.078, alpha: 1) //red
-//        categoryBackgroundView.layer.borderWidth = 0
-    }
-    
-    func deSelected() {
-//        categoryBackgroundView.backgroundColor = .black
-//        categoryBackgroundView.layer.borderWidth = 1
     }
     
     func setup( label: String) {
