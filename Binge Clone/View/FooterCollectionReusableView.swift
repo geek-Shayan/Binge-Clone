@@ -44,6 +44,13 @@ class FooterCollectionReusableView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
+//    override func awakeFromNib() {
+//       super.awakeFromNib()
+//       //custom logic goes here
+//        addSubview(footer)
+//        addSubview(loadingIndicator)
+//    }
+
     override func layoutSubviews() {
         footer.frame = bounds
         loadingIndicator.frame = CGRect(x: footer.frame.midX - 18, y: footer.frame.midY, width: 20, height: 20)

@@ -10,13 +10,9 @@ import UIKit
 class ActionViewController: UIViewController {
     
     @IBOutlet var actionContainer: UIView!
-    
     @IBOutlet weak var actionTable: UITableView!
     
     var actionOpen: Bool = true
-    
-    private var titleNames = ["Profile", "Edit Profile", "Support", "setting", "Profile", "Edit Profile", "Support", "setting"]
-    private var imageNames = [UIImage(systemName: "person"), UIImage(systemName: "pencil"), UIImage(systemName: "phone"), UIImage(systemName: "gearshape"), UIImage(systemName: "person"), UIImage(systemName: "pencil"), UIImage(systemName: "phone"), UIImage(systemName: "gearshape")]
     
 
     override func viewDidLoad() {
@@ -63,14 +59,12 @@ extension ActionViewController: UITableViewDelegate {
 
 extension ActionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleNames.count
+        return actionsData.cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomActionTableViewCell.identifier, for: indexPath) as! CustomActionTableViewCell
-        cell.actionImage.image = imageNames[indexPath.row]
-        cell.actionLabel.text = titleNames[indexPath.row]
-//        cell.backgroundColor = .brown
+        cell.setup(label: actionsData.cells[indexPath.item].label, image: actionsData.cells[indexPath.item].image)
         return cell
     }
 }

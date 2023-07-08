@@ -8,7 +8,7 @@
 import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
-    static let identifier = "customCell"
+    static let identifier = "CustomCollectionViewCell"
     
     private let myImage: UIImageView = {
         let imageView = UIImageView()
@@ -59,7 +59,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         myLabel.frame = bounds
     }
     
-    func setup(image: String, label: String) {
+    func setup(image: String, label: String? = nil) {
         myImage.image = UIImage(named: image)
         myLabel.text = label
     }

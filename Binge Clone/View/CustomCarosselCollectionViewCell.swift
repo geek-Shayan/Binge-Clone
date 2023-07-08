@@ -22,10 +22,11 @@ class CustomCarosselCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        carosselBackgroundView.backgroundColor = .red
     }
 
     
-    func setup(_ image: String) {
+    func setup(image: String) {
         carosselImageView.image = UIImage(named: image)
     }
 }

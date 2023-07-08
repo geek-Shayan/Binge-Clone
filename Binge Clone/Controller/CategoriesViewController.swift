@@ -29,13 +29,10 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        categoriesCollectionView.sendSubviewToBack(view)
     }
     
     func loadCategoriesCollection() {
         categoriesCollectionView.register(UINib(nibName: "CustomCategoriesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCategoriesCollectionViewCell.identifier)
-        
-//        categoriesCollectionView.allowsMultipleSelection = true
     }
     
     private func setupView() {

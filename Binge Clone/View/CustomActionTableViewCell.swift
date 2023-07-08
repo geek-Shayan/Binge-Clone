@@ -26,4 +26,8 @@ class CustomActionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setup(label: String, image: String) {
+        actionLabel.text = label
+        actionImage.image = UIImage(systemName: image)
+    }
 }

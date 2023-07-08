@@ -12,11 +12,8 @@ class CustomFilterCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var filterBackgroundView: UIView!
     
     @IBOutlet weak var filterImage: UIImageView!
-    //    @IBOutlet weak var filterImage: UIImageView!
     
     @IBOutlet weak var filterLabel: UILabel!
-    //    @IBOutlet weak var filterLabel: UILabel!
-    
     
     static let identifier = "CustomFilterCollectionViewCell"
     
@@ -60,7 +57,7 @@ class CustomFilterCollectionViewCell: UICollectionViewCell {
     }
 
     
-    func setup(with lbl: String) {
-        filterLabel.text = lbl
+    func setup(label: String) {
+        filterLabel.text = label
     }
 }

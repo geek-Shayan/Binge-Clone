@@ -33,21 +33,22 @@
 		1A6A961E2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6A961C2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib */; };
 		1A75AEB92A494BE1005EB96E /* CellDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75AEB82A494BE1005EB96E /* CellDataType.swift */; };
 		1A75AEBB2A494C60005EB96E /* SupplementaryDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75AEBA2A494C60005EB96E /* SupplementaryDataType.swift */; };
-		1A75AEBD2A494CC1005EB96E /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75AEBC2A494CC1005EB96E /* Section.swift */; };
 		1A75AEC02A49783E005EB96E /* CustomCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75AEBE2A49783E005EB96E /* CustomCategoryCollectionViewCell.swift */; };
 		1A75AEC12A49783E005EB96E /* CustomCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A75AEBF2A49783E005EB96E /* CustomCategoryCollectionViewCell.xib */; };
 		1A79CBF72A4C1E07008C814C /* SectionDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79CBF62A4C1E07008C814C /* SectionDataType.swift */; };
-		1A79CBFA2A4C2830008C814C /* HomeSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79CBF92A4C2830008C814C /* HomeSections.swift */; };
-		1A79CBFC2A4D4060008C814C /* LiveTvSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79CBFB2A4D4060008C814C /* LiveTvSections.swift */; };
+		1A79CBFA2A4C2830008C814C /* HomeSectionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79CBF92A4C2830008C814C /* HomeSectionsData.swift */; };
+		1A79CBFC2A4D4060008C814C /* LiveTvSectionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79CBFB2A4D4060008C814C /* LiveTvSectionsData.swift */; };
+		1A7DE5632A558BDB0029892F /* ActionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7DE5622A558BDB0029892F /* ActionsData.swift */; };
 		1A84C07A2A2C60B500070B30 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84C0792A2C60B500070B30 /* Extension.swift */; };
 		1AB207882A246CB000E5026C /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB207872A246CB000E5026C /* ActionViewController.swift */; };
 		1AB207AA2A24C10900E5026C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB207A92A24C10900E5026C /* SignUpViewController.swift */; };
 		1ABC9F5D2A4853A80002C3FD /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABC9F5C2A4853A80002C3FD /* CategoryViewController.swift */; };
 		1ABDB4E42A21D6BC00946656 /* CustomActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDB4E22A21D6BC00946656 /* CustomActionTableViewCell.swift */; };
 		1ABDB4E52A21D6BC00946656 /* CustomActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDB4E32A21D6BC00946656 /* CustomActionTableViewCell.xib */; };
+		1AD0FC7B2A59544100190FE1 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD0FC7A2A59544100190FE1 /* Actions.swift */; };
 		1AD1A8E62A542F5C00FFA8F4 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1A8E52A542F5C00FFA8F4 /* Sections.swift */; };
-		1AD1A8E82A54362200FFA8F4 /* OriginalsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1A8E72A54362100FFA8F4 /* OriginalsSections.swift */; };
-		1AD1A8EA2A54366900FFA8F4 /* MyListSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1A8E92A54366900FFA8F4 /* MyListSections.swift */; };
+		1AD1A8E82A54362200FFA8F4 /* OriginalsSectionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1A8E72A54362100FFA8F4 /* OriginalsSectionsData.swift */; };
+		1AD1A8EA2A54366900FFA8F4 /* MyListSectionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1A8E92A54366900FFA8F4 /* MyListSectionsData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,21 +81,22 @@
 		1A6A961C2A2DCEB200A894DD /* CustomGenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomGenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A75AEB82A494BE1005EB96E /* CellDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDataType.swift; sourceTree = "<group>"; };
 		1A75AEBA2A494C60005EB96E /* SupplementaryDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementaryDataType.swift; sourceTree = "<group>"; };
-		1A75AEBC2A494CC1005EB96E /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		1A75AEBE2A49783E005EB96E /* CustomCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A75AEBF2A49783E005EB96E /* CustomCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A79CBF62A4C1E07008C814C /* SectionDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDataType.swift; sourceTree = "<group>"; };
-		1A79CBF92A4C2830008C814C /* HomeSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSections.swift; sourceTree = "<group>"; };
-		1A79CBFB2A4D4060008C814C /* LiveTvSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTvSections.swift; sourceTree = "<group>"; };
+		1A79CBF92A4C2830008C814C /* HomeSectionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionsData.swift; sourceTree = "<group>"; };
+		1A79CBFB2A4D4060008C814C /* LiveTvSectionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTvSectionsData.swift; sourceTree = "<group>"; };
+		1A7DE5622A558BDB0029892F /* ActionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsData.swift; sourceTree = "<group>"; };
 		1A84C0792A2C60B500070B30 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1AB207872A246CB000E5026C /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		1AB207A92A24C10900E5026C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1ABC9F5C2A4853A80002C3FD /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		1ABDB4E22A21D6BC00946656 /* CustomActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionTableViewCell.swift; sourceTree = "<group>"; };
 		1ABDB4E32A21D6BC00946656 /* CustomActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomActionTableViewCell.xib; sourceTree = "<group>"; };
+		1AD0FC7A2A59544100190FE1 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		1AD1A8E52A542F5C00FFA8F4 /* Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
-		1AD1A8E72A54362100FFA8F4 /* OriginalsSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalsSections.swift; sourceTree = "<group>"; };
-		1AD1A8E92A54366900FFA8F4 /* MyListSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListSections.swift; sourceTree = "<group>"; };
+		1AD1A8E72A54362100FFA8F4 /* OriginalsSectionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalsSectionsData.swift; sourceTree = "<group>"; };
+		1AD1A8E92A54366900FFA8F4 /* MyListSectionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListSectionsData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +170,8 @@
 				1A75AEB82A494BE1005EB96E /* CellDataType.swift */,
 				1A75AEBA2A494C60005EB96E /* SupplementaryDataType.swift */,
 				1A79CBF62A4C1E07008C814C /* SectionDataType.swift */,
-				1A75AEBC2A494CC1005EB96E /* Section.swift */,
 				1AD1A8E52A542F5C00FFA8F4 /* Sections.swift */,
+				1AD0FC7A2A59544100190FE1 /* Actions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,10 +201,11 @@
 		1A79CBF82A4C27A2008C814C /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				1A79CBF92A4C2830008C814C /* HomeSections.swift */,
-				1A79CBFB2A4D4060008C814C /* LiveTvSections.swift */,
-				1AD1A8E72A54362100FFA8F4 /* OriginalsSections.swift */,
-				1AD1A8E92A54366900FFA8F4 /* MyListSections.swift */,
+				1A79CBF92A4C2830008C814C /* HomeSectionsData.swift */,
+				1A79CBFB2A4D4060008C814C /* LiveTvSectionsData.swift */,
+				1AD1A8E72A54362100FFA8F4 /* OriginalsSectionsData.swift */,
+				1AD1A8E92A54366900FFA8F4 /* MyListSectionsData.swift */,
+				1A7DE5622A558BDB0029892F /* ActionsData.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -299,33 +302,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A75AEBD2A494CC1005EB96E /* Section.swift in Sources */,
 				1A4CAA8D2A1F284700B40D0B /* MyListViewController.swift in Sources */,
 				1A75AEB92A494BE1005EB96E /* CellDataType.swift in Sources */,
 				1ABDB4E42A21D6BC00946656 /* CustomActionTableViewCell.swift in Sources */,
 				1AB207882A246CB000E5026C /* ActionViewController.swift in Sources */,
 				1A79CBF72A4C1E07008C814C /* SectionDataType.swift in Sources */,
-				1A79CBFA2A4C2830008C814C /* HomeSections.swift in Sources */,
+				1A79CBFA2A4C2830008C814C /* HomeSectionsData.swift in Sources */,
 				1A0E15222A1C7D6F002A0C22 /* HomeViewController.swift in Sources */,
 				1A4CAA8F2A1F285C00B40D0B /* ProfileViewController.swift in Sources */,
 				1A2E2C322A36EBBF0013FB04 /* CustomFilterCollectionViewCell.swift in Sources */,
 				1A4CAA892A1F27F100B40D0B /* LiveTvViewController.swift in Sources */,
+				1A7DE5632A558BDB0029892F /* ActionsData.swift in Sources */,
 				1A0E151E2A1C7D6F002A0C22 /* AppDelegate.swift in Sources */,
 				1A84C07A2A2C60B500070B30 /* Extension.swift in Sources */,
 				1A0E15202A1C7D6F002A0C22 /* SceneDelegate.swift in Sources */,
 				1A75AEBB2A494C60005EB96E /* SupplementaryDataType.swift in Sources */,
-				1AD1A8E82A54362200FFA8F4 /* OriginalsSections.swift in Sources */,
+				1AD1A8E82A54362200FFA8F4 /* OriginalsSectionsData.swift in Sources */,
 				1A6A961D2A2DCEB200A894DD /* CustomGenreCollectionViewCell.swift in Sources */,
 				1A3E48C02A3B315200A76070 /* CustomCategoriesCollectionViewCell.swift in Sources */,
 				1A6A961A2A2DCB2800A894DD /* GenreViewController.swift in Sources */,
-				1A79CBFC2A4D4060008C814C /* LiveTvSections.swift in Sources */,
+				1A79CBFC2A4D4060008C814C /* LiveTvSectionsData.swift in Sources */,
 				1A0E15372A1C8560002A0C22 /* HeaderCollectionReusableView.swift in Sources */,
 				1A0E15392A1C85AB002A0C22 /* FooterCollectionReusableView.swift in Sources */,
 				1A3E48BD2A3B2B4E00A76070 /* CategoriesViewController.swift in Sources */,
 				1A0E15352A1C8522002A0C22 /* CustomCollectionViewCell.swift in Sources */,
 				1AB207AA2A24C10900E5026C /* SignUpViewController.swift in Sources */,
-				1AD1A8EA2A54366900FFA8F4 /* MyListSections.swift in Sources */,
+				1AD1A8EA2A54366900FFA8F4 /* MyListSectionsData.swift in Sources */,
 				1A75AEC02A49783E005EB96E /* CustomCategoryCollectionViewCell.swift in Sources */,
+				1AD0FC7B2A59544100190FE1 /* Actions.swift in Sources */,
 				1AD1A8E62A542F5C00FFA8F4 /* Sections.swift in Sources */,
 				1A2601C22A28932A00F0D710 /* OTPViewController.swift in Sources */,
 				1A2395532A386A8500C34BD5 /* CustomCarosselCollectionViewCell.swift in Sources */,
