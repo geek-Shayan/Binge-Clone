@@ -9,7 +9,6 @@ import UIKit
 
 class CustomGenreCollectionViewCell: UICollectionViewCell {
     
-//    @IBOutlet weak var genreButton: UIButton!
     @IBOutlet weak var genreBackgroundView: UIView!
     @IBOutlet weak var genreLabel: UILabel!
     

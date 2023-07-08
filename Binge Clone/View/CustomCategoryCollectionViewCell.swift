@@ -23,6 +23,7 @@ class CustomCategoryCollectionViewCell: UICollectionViewCell {
     
     private func setupView() {
         categoryBackgroundView.layer.cornerRadius = 5
+        categoryImageView.layer.cornerRadius = 5
         categoryBackgroundView.backgroundColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1) //white
     }
     

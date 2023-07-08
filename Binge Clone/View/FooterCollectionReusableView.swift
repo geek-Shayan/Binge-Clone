@@ -56,7 +56,7 @@ class FooterCollectionReusableView: UICollectionReusableView {
         loadingIndicator.frame = CGRect(x: footer.frame.midX - 18, y: footer.frame.midY, width: 20, height: 20)
     }
     
-    func setup(foot: String, indicatorFlag: Bool) {
+    func setup(foot: String, indicatorFlag: Bool = false) {
         footer.text = foot
         indicatorFlag ? loadingIndicator.startAnimating() : loadingIndicator.stopAnimating()
     }

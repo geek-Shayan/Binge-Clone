@@ -10,80 +10,55 @@ import UIKit
 
 var originalsSectionsData: Sections = Sections(
     sections: [
-        
+        //0
         SectionDataType(
             headerFooter: SupplementaryDataType(header: "", footer: ""),
             cells: [
-                CellDataType(image: "image 5", label: "1"),
-                CellDataType(image: "image 5", label: "2"),
-                CellDataType(image: "image 5", label: "3")
+                CellDataType(image: "image 20", label: "1"),
+                CellDataType(image: "image 5",  label: "2"),
+                CellDataType(image: "image 16", label: "3"),
+                CellDataType(image: "image 70", label: "4"),
+                CellDataType(image: "image 19", label: "5"),
+                CellDataType(image: "image 17", label: "6"),
+                CellDataType(image: "image 12", label: "7"),
+                CellDataType(image: "image 11", label: "8"),
+                CellDataType(image: "image 10", label: "9"),
+                CellDataType(image: "image 9",  label: "10"),
+                CellDataType(image: "image 6",  label: "11"),
+                CellDataType(image: "image 4",  label: "12"),
+                CellDataType(image: "image 2",  label: "13"),
             ]),
-
+        //1
         SectionDataType(
-            headerFooter: SupplementaryDataType(header: "Continue Watch", footer: "C"),
+            headerFooter: SupplementaryDataType(header: "", footer: ""),
             cells: [
-                CellDataType(image: "", label: "1"),
-                CellDataType(image: "", label: "2"),
-                CellDataType(image: "", label: "3"),
-                CellDataType(image: "", label: "4"),
-                CellDataType(image: "", label: "5"),
-                CellDataType(image: "", label: "6")
+                CellDataType(image: "s", label: "Sports"),
+//                CellDataType(image: "s", label: "News"),
+//                CellDataType(image: "s", label: "Entertainment"),
+//                CellDataType(image: "s", label: "Local TV"),
+//                CellDataType(image: "s", label: "Movies"),
+//                CellDataType(image: "s", label: "Music"),
+//                CellDataType(image: "s", label: "Kids"),
+//                CellDataType(image: "s", label: "Infotainment"),
+//                CellDataType(image: "s", label: "Religious")
             ]),
-
+        //2
         SectionDataType(
-            headerFooter: SupplementaryDataType(header: "Exclusive Sports", footer: "E"),
+            headerFooter: SupplementaryDataType(header: "Binge Original", footer: "B"),
             cells: [
-                CellDataType(image: "Sony Ten 1 1", label: ""),
-                CellDataType(image: "Sony Ten 2 1", label: ""),
-                CellDataType(image: "Sony Ten 3 1", label: ""),
-                CellDataType(image: "Sony Ten 5 1", label: ""),
-                CellDataType(image: "Sony Ten 1 1", label: ""),
-                CellDataType(image: "Sony Ten 2 1", label: ""),
-                CellDataType(image: "Sony Ten 3 1", label: ""),
-                CellDataType(image: "Sony Ten 5 1", label: ""),
-                
-                CellDataType(image: "Sony Ten 1 1", label: ""),
-                CellDataType(image: "Sony Ten 2 1", label: ""),
-                CellDataType(image: "Sony Ten 3 1", label: ""),
-                CellDataType(image: "Sony Ten 5 1", label: ""),
-                CellDataType(image: "Sony Ten 1 1", label: ""),
-                CellDataType(image: "Sony Ten 2 1", label: ""),
-                CellDataType(image: "Sony Ten 3 1", label: ""),
-
-            ]),
-
-        SectionDataType(
-            headerFooter: SupplementaryDataType(header: "Recommended For you", footer: "R"),
-            cells: [
-                CellDataType(image: "", label: "1"),
-                CellDataType(image: "", label: "2"),
-                CellDataType(image: "", label: "3"),
-                CellDataType(image: "", label: "4"),
-                CellDataType(image: "", label: "5")
-            ]),
-
-        SectionDataType(
-            headerFooter: SupplementaryDataType(header: "Originals (Free: Robi Data, Mob App)", footer: "O"),
-            cells: [
-                CellDataType(image: "", label: "1"),
-                CellDataType(image: "", label: "2"),
-                CellDataType(image: "", label: "3"),
-                CellDataType(image: "", label: "4"),
-                CellDataType(image: "", label: "5"),
-                CellDataType(image: "", label: "6"),
-                CellDataType(image: "", label: "7")
-            ]),
-        
-        SectionDataType(
-            headerFooter: SupplementaryDataType(header: "Sports", footer: "S"),
-            cells: [
-                CellDataType(image: "", label: "1"),
-                CellDataType(image: "", label: "2"),
-                CellDataType(image: "", label: "3"),
-                CellDataType(image: "", label: "4"),
-                CellDataType(image: "", label: "5"),
-                CellDataType(image: "", label: "6"),
-                CellDataType(image: "", label: "7"),
-                CellDataType(image: "", label: "8")
+                CellDataType(image: "image 20", label: "1"),
+                CellDataType(image: "image 5",  label: "2"),
+                CellDataType(image: "image 16", label: "3"),
+                CellDataType(image: "image 70", label: "4"),
+                CellDataType(image: "image 19", label: "5"),
+                CellDataType(image: "image 17", label: "6"),
+                CellDataType(image: "image 12", label: "7"),
+                CellDataType(image: "image 11", label: "8"),
+                CellDataType(image: "image 10", label: "9"),
+                CellDataType(image: "image 9",  label: "10"),
+                CellDataType(image: "image 6",  label: "11"),
+                CellDataType(image: "image 4",  label: "12"),
+                CellDataType(image: "image 2",  label: "13"),
             ])
+        
     ])

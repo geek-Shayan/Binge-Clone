@@ -100,7 +100,9 @@ class LiveTvViewController: UIViewController {
         collection.register(UINib(nibName: "CustomCarosselCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCarosselCollectionViewCell.identifier)
         collection.register(UINib(nibName: "CustomFilterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomFilterCollectionViewCell.identifier)
         collection.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
-        collection.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.headerKind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier)
+        
+        collection.register(UINib(nibName: "CustomHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: LiveTvViewController.headerKind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier)
+//        collection.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.headerKind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier)
         collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
                                                                                        
         return collection
@@ -212,14 +214,18 @@ extension LiveTvViewController: UICollectionViewDataSource {
 //        print("supp indexPath row, section, item", indexPath.row, indexPath.section, indexPath.item)
         switch kind {
             case HomeViewController.headerKind:
-                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-                header.setup(head: liveTvSectionsData.sections[indexPath.section].headerFooter.header)
+//                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
+//                header.setup(head: liveTvSectionsData.sections[indexPath.section].headerFooter.header)
+//                return header
+            
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier, for: indexPath) as! CustomHeaderCollectionReusableView
+                header.setup(head: liveTvSectionsData.sections[indexPath.section].headerFooter.header, imageFlag: false)
                 return header
                 
                 
             case HomeViewController.footerKind:
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
-            footer.setup(foot: liveTvSectionsData.sections[indexPath.section].headerFooter.footer, indicatorFlag: false)
+                footer.setup(foot: liveTvSectionsData.sections[indexPath.section].headerFooter.footer, indicatorFlag: false)
                 return footer
                 
                 
