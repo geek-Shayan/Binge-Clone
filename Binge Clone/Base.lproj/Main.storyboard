@@ -214,31 +214,31 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wrf-Cz-BJp">
                                 <rect key="frame" x="0.0" y="111" width="393" height="28.333333333333343"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiM-O8-Dxb">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="RiM-O8-Dxb">
                                         <rect key="frame" x="40" y="0.0" width="313" height="28.333333333333332"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVf-MQ-rmT">
-                                                <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="28.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="28.333333333333332"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="TV SHOWS">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHw-XX-sfb">
-                                                <rect key="frame" x="104.33333333333334" y="0.0" width="104.33333333333334" height="28.333333333333332"/>
+                                                <rect key="frame" x="102.66666666666666" y="0.0" width="82" height="28.333333333333332"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="MOVIES">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSD-cS-Za3">
-                                                <rect key="frame" x="208.66666666666666" y="0.0" width="104.33333333333334" height="28.333333333333332"/>
+                                                <rect key="frame" x="184.66666666666663" y="0.0" width="128.33333333333337" height="28.333333333333332"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="CATEGORIES">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="Vector 2" imagePlacement="trailing" title="CATEGORIES" imagePadding="4">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="categoriesPressed:" destination="W3k-bQ-Wgm" eventType="touchUpInside" id="4a1-XP-8z0"/>
@@ -373,7 +373,7 @@
                             <imageReference key="image" image="line.3.horizontal.decrease" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
-                                <action selector="actionButtonPressed:" destination="aLo-02-r5g" id="mrc-OI-5YP"/>
+                                <action selector="actionButtonPressed:" destination="aLo-02-r5g" id="p0Y-eX-6tn"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="tId-83-uOp">
@@ -964,31 +964,31 @@ resend code after 56 sec.</string>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTO-wp-Iql">
                                 <rect key="frame" x="0.0" y="59.000000000000007" width="393" height="28.333333333333336"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1G-Uh-UhX">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="c1G-Uh-UhX">
                                         <rect key="frame" x="40" y="0.0" width="313" height="28.333333333333332"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSf-yU-qIV">
-                                                <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="28.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="28.333333333333332"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="TV SHOWS">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-JD-KpD">
-                                                <rect key="frame" x="104.33333333333334" y="0.0" width="104.33333333333334" height="28.333333333333332"/>
+                                                <rect key="frame" x="102.66666666666666" y="0.0" width="82" height="28.333333333333332"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="MOVIES">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A82-h2-la3">
-                                                <rect key="frame" x="208.66666666666666" y="0.0" width="104.33333333333334" height="28.333333333333332"/>
+                                                <rect key="frame" x="184.66666666666663" y="0.0" width="128.33333333333337" height="28.333333333333332"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="CATEGORIES">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="Vector 2" imagePlacement="trailing" title="CATEGORIES" imagePadding="4">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
@@ -1073,65 +1073,7 @@ resend code after 56 sec.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9x-2O-VYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4364" y="2155"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="W37-C2-IdL">
-            <objects>
-                <viewController id="c8A-RN-gKF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xKl-2d-2rx">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 18" translatesAutoresizingMaskIntoConstraints="NO" id="Qsg-p3-Vfe">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                            </imageView>
-                            <visualEffectView opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vgj-Eu-tnv">
-                                <rect key="frame" x="16" y="262" width="361" height="329"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ImT-AJ-2FS">
-                                    <rect key="frame" x="0.0" y="0.0" width="361" height="329"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Somoy-News_110x110" translatesAutoresizingMaskIntoConstraints="NO" id="n2n-4b-gAe">
-                                            <rect key="frame" x="45" y="59" width="289" height="226"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="regular"/>
-                            </visualEffectView>
-                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NaU-Js-GDR">
-                                <rect key="frame" x="76" y="106" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Hz-gA-XTc">
-                                <rect key="frame" x="110" y="142" width="172" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Labelv df" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62c-nk-7Pe">
-                                <rect key="frame" x="161" y="164" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="4p3-NZ-dFU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Qsg-p3-Vfe" firstAttribute="top" secondItem="4p3-NZ-dFU" secondAttribute="top" id="Hjz-SN-a9U"/>
-                            <constraint firstItem="4p3-NZ-dFU" firstAttribute="trailing" secondItem="Qsg-p3-Vfe" secondAttribute="trailing" id="eFl-Mv-MEV"/>
-                            <constraint firstItem="Qsg-p3-Vfe" firstAttribute="leading" secondItem="4p3-NZ-dFU" secondAttribute="leading" id="jt0-aT-2NF"/>
-                            <constraint firstItem="4p3-NZ-dFU" firstAttribute="bottom" secondItem="Qsg-p3-Vfe" secondAttribute="bottom" id="n9Y-0s-3MI"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KWh-YI-ytU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6031.2977099236641" y="1433.8028169014085"/>
+            <point key="canvasLocation" x="4285" y="2155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9UZ-tY-3pa">
@@ -1184,7 +1126,7 @@ resend code after 56 sec.</string>
         <image name="Rectangle 163" width="156" height="48"/>
         <image name="Rectangle 164" width="156" height="48"/>
         <image name="Rectangle 18" width="393" height="852"/>
-        <image name="Somoy-News_110x110" width="55" height="55"/>
+        <image name="Vector 2" width="7" height="4.3333334922790527"/>
         <image name="b.square.fill" catalog="system" width="128" height="114"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>

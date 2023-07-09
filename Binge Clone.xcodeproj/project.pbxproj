@@ -40,6 +40,8 @@
 		1A79CBFC2A4D4060008C814C /* LiveTvSectionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79CBFB2A4D4060008C814C /* LiveTvSectionsData.swift */; };
 		1A7DE5632A558BDB0029892F /* ActionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7DE5622A558BDB0029892F /* ActionsData.swift */; };
 		1A84C07A2A2C60B500070B30 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84C0792A2C60B500070B30 /* Extension.swift */; };
+		1AA5AF0F2A5A8A03007A167D /* CustomListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5AF0D2A5A8A03007A167D /* CustomListCollectionViewCell.swift */; };
+		1AA5AF102A5A8A03007A167D /* CustomListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA5AF0E2A5A8A03007A167D /* CustomListCollectionViewCell.xib */; };
 		1AB207882A246CB000E5026C /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB207872A246CB000E5026C /* ActionViewController.swift */; };
 		1AB207AA2A24C10900E5026C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB207A92A24C10900E5026C /* SignUpViewController.swift */; };
 		1ABC9F5D2A4853A80002C3FD /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABC9F5C2A4853A80002C3FD /* CategoryViewController.swift */; };
@@ -92,6 +94,8 @@
 		1A79CBFB2A4D4060008C814C /* LiveTvSectionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTvSectionsData.swift; sourceTree = "<group>"; };
 		1A7DE5622A558BDB0029892F /* ActionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsData.swift; sourceTree = "<group>"; };
 		1A84C0792A2C60B500070B30 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		1AA5AF0D2A5A8A03007A167D /* CustomListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListCollectionViewCell.swift; sourceTree = "<group>"; };
+		1AA5AF0E2A5A8A03007A167D /* CustomListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomListCollectionViewCell.xib; sourceTree = "<group>"; };
 		1AB207872A246CB000E5026C /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		1AB207A92A24C10900E5026C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1ABC9F5C2A4853A80002C3FD /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				1A3E48BF2A3B315200A76070 /* CustomCategoriesCollectionViewCell.xib */,
 				1A75AEBE2A49783E005EB96E /* CustomCategoryCollectionViewCell.swift */,
 				1A75AEBF2A49783E005EB96E /* CustomCategoryCollectionViewCell.xib */,
+				1AA5AF0D2A5A8A03007A167D /* CustomListCollectionViewCell.swift */,
+				1AA5AF0E2A5A8A03007A167D /* CustomListCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				1AD0FC812A5994BA00190FE1 /* CustomHeaderCollectionReusableView.xib in Resources */,
 				1A0E15272A1C7D71002A0C22 /* Assets.xcassets in Resources */,
 				1ABDB4E52A21D6BC00946656 /* CustomActionTableViewCell.xib in Resources */,
+				1AA5AF102A5A8A03007A167D /* CustomListCollectionViewCell.xib in Resources */,
 				1A0E15252A1C7D6F002A0C22 /* Main.storyboard in Resources */,
 				1A2E2C332A36EBBF0013FB04 /* CustomFilterCollectionViewCell.xib in Resources */,
 				1A3E48C12A3B315200A76070 /* CustomCategoriesCollectionViewCell.xib in Resources */,
@@ -335,6 +342,7 @@
 				1AD1A8E82A54362200FFA8F4 /* OriginalsSectionsData.swift in Sources */,
 				1A6A961D2A2DCEB200A894DD /* CustomGenreCollectionViewCell.swift in Sources */,
 				1AD0FC802A5994BA00190FE1 /* CustomHeaderCollectionReusableView.swift in Sources */,
+				1AA5AF0F2A5A8A03007A167D /* CustomListCollectionViewCell.swift in Sources */,
 				1A3E48C02A3B315200A76070 /* CustomCategoriesCollectionViewCell.swift in Sources */,
 				1A6A961A2A2DCB2800A894DD /* GenreViewController.swift in Sources */,
 				1A79CBFC2A4D4060008C814C /* LiveTvSectionsData.swift in Sources */,

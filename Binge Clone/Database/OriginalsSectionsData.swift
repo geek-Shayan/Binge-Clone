@@ -32,8 +32,8 @@ var originalsSectionsData: Sections = Sections(
         SectionDataType(
             headerFooter: SupplementaryDataType(header: "", footer: ""),
             cells: [
-                CellDataType(image: "s", label: "Sports"),
-//                CellDataType(image: "s", label: "News"),
+                CellDataType(image: "s", label: "", title: "VOYER GOLPO", genre: "Thriller", year: "2023", duration: "1h 39m")
+//                CellDataType(image: "s", label: "Sports"),
 //                CellDataType(image: "s", label: "Entertainment"),
 //                CellDataType(image: "s", label: "Local TV"),
 //                CellDataType(image: "s", label: "Movies"),

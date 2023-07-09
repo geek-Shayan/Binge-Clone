@@ -147,7 +147,7 @@ extension CategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt  \(indexPath)")
         if indexPath.section == 0 {
-            let cell = collectionView.cellForItem(at: indexPath) as! CustomCategoryCollectionViewCell
+//            let cell = collectionView.cellForItem(at: indexPath) as! CustomCategoryCollectionViewCell
             
             //send to new vc
             let vc = UIViewController()

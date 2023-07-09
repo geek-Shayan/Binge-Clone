@@ -9,77 +9,6 @@ import UIKit
 
 class OriginalsViewController: UIViewController {
     
-    private var sectionHeadersFooters: [SupplementaryDataType] = [SupplementaryDataType(header: "Sports", footer: ""),
-                                                                  SupplementaryDataType(header: "Sports", footer: ""),
-                                                                  SupplementaryDataType(header: "Sports", footer: "E"),
-                                                                  SupplementaryDataType(header: "News (Free: Robi Data, Mob App)", footer: "R"),
-                                                                  SupplementaryDataType(header: "Entertainment", footer: "R"),
-                                                                  SupplementaryDataType(header: "Local TV (Free: Robi Data, Mob App)", footer: "R"),
-                                                                  SupplementaryDataType(header: "Movies", footer: ""),
-                                                                  SupplementaryDataType(header: "Music", footer: ""),
-                                                                  SupplementaryDataType(header: "Kids", footer: ""),
-                                                                  SupplementaryDataType(header: "Infotainment", footer: ""),
-                                                                  SupplementaryDataType(header: "Religious", footer: "")]
-
-    
-    private var sectionData3: [CellDataType] = [CellDataType(image: "Independent-TV_110x110", label: ""),
-                                                CellDataType(image: "image 20", label: "1"),
-                                                CellDataType(image: "image 5",  label: "2"),
-                                                CellDataType(image: "image 16", label: "3"),
-                                                CellDataType(image: "image 70", label: "4"),
-                                                CellDataType(image: "image 19", label: "5"),
-                                                CellDataType(image: "image 17", label: "6"),
-                                                CellDataType(image: "image 12", label: "7"),
-                                                CellDataType(image: "image 11", label: "8"),
-                                                CellDataType(image: "image 10", label: "9"),
-                                                CellDataType(image: "image 9",  label: "10"),
-                                                CellDataType(image: "image 6",  label: "11"),
-                                                CellDataType(image: "image 4",  label: "12"),
-                                                CellDataType(image: "image 2",  label: "13"),
-                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                CellDataType(image: "Channel-24_110x110", label: ""),
-                                                CellDataType(image: "NTV_110x110", label: ""),
-                                                CellDataType(image: "Desh-TV_110x110", label: ""),
-                                                CellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
-                                                CellDataType(image: "RTV-HD_110x110", label: ""),
-                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                CellDataType(image: "Somoy-News_110x110", label: ""),
-                                                CellDataType(image: "Independent-TV_110x110", label: ""),
-                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                CellDataType(image: "Channel-24_110x110", label: ""),
-                                                CellDataType(image: "NTV_110x110", label: ""),
-                                                CellDataType(image: "Desh-TV_110x110", label: ""),
-                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                CellDataType(image: "Somoy-News_110x110", label: ""),
-                                                CellDataType(image: "Independent-TV_110x110", label: ""),
-                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                CellDataType(image: "Channel-24_110x110", label: ""),
-                                                CellDataType(image: "RTV-HD_110x110", label: ""),
-                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                CellDataType(image: "Somoy-News_110x110", label: ""),
-                                                CellDataType(image: "Independent-TV_110x110", label: ""),
-                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                CellDataType(image: "Channel-24_110x110", label: ""),
-                                                CellDataType(image: "NTV_110x110", label: ""),
-                                                CellDataType(image: "Desh-TV_110x110", label: ""),
-                                                CellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
-                                                CellDataType(image: "RTV-HD_110x110", label: ""),
-                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                CellDataType(image: "Somoy-News_110x110", label: ""),
-                                                CellDataType(image: "Independent-TV_110x110", label: ""),
-                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                CellDataType(image: "Channel-24_110x110", label: ""),
-                                                CellDataType(image: "NTV_110x110", label: ""),
-                                                CellDataType(image: "Desh-TV_110x110", label: ""),
-                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                CellDataType(image: "Somoy-News_110x110", label: ""),
-                                                CellDataType(image: "Independent-TV_110x110", label: ""),
-                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                CellDataType(image: "Channel-24_110x110", label: ""),
-                                                CellDataType(image: "RTV-HD_110x110", label: ""),
-                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                CellDataType(image: "Somoy-News_110x110", label: "")]
-    
     
     static let headerKind = "headerKind"
     static let footerKind = "footerKind"
@@ -122,11 +51,14 @@ class OriginalsViewController: UIViewController {
 //                item.contentInsets.bottom = 8
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(42)), subitems: [item])
+//                group.contentInsets.trailing = 16
                 
                 let section = NSCollectionLayoutSection(group: group)
+//                section.orthogonalScrollingBehavior = .groupPagingCentered
                 section.contentInsets.leading = 16
                 section.contentInsets.trailing = 16
                 section.contentInsets.bottom = 24
+//                section.interGroupSpacing = 32
                 
                 return section
             }
@@ -159,7 +91,6 @@ class OriginalsViewController: UIViewController {
         collection.register(UINib(nibName: "CustomCarosselCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCarosselCollectionViewCell.identifier)
         collection.register(UINib(nibName: "CustomTitleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomTitleCollectionViewCell.identifier)
         collection.register(UINib(nibName: "CustomCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCategoryCollectionViewCell.identifier)
-        
         
         collection.register(UINib(nibName: "CustomHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: OriginalsViewController.headerKind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier)
         collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: OriginalsViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
@@ -273,8 +204,12 @@ extension OriginalsViewController: UICollectionViewDataSource {
         
         else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomTitleCollectionViewCell.identifier, for: indexPath) as! CustomTitleCollectionViewCell
-//            cell.setup(image: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].image)
-            cell.setup(title: "VOYER GOLPO", year: "2023", genre: "Thriller", duration: "1h 39m")
+            cell.setup(
+                title: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].title ?? "Title",
+                year: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].year ?? "Year",
+                genre: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].genre ?? "Genre",
+                duration: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].duration ?? "Duration"
+            )
             //        cell.backgroundColor = .orange
             return cell  
         }

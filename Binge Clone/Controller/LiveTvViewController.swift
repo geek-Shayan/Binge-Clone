@@ -53,7 +53,7 @@ class LiveTvViewController: UIViewController {
             }
             
             else if sectionNumber == 1 {
-                print("second")
+                print("second filter")
                 
                 let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .estimated(100), heightDimension: .fractionalHeight(1)))
 //                item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: nil, top: nil, trailing: .fixed(8), bottom: nil)
@@ -102,7 +102,6 @@ class LiveTvViewController: UIViewController {
         collection.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         
         collection.register(UINib(nibName: "CustomHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: LiveTvViewController.headerKind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier)
-//        collection.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.headerKind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier)
         collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
                                                                                        
         return collection
@@ -214,11 +213,7 @@ extension LiveTvViewController: UICollectionViewDataSource {
 //        print("supp indexPath row, section, item", indexPath.row, indexPath.section, indexPath.item)
         switch kind {
             case HomeViewController.headerKind:
-//                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-//                header.setup(head: liveTvSectionsData.sections[indexPath.section].headerFooter.header)
-//                return header
-            
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier, for: indexPath) as! CustomHeaderCollectionReusableView
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier, for: indexPath) as! CustomHeaderCollectionReusableView
                 header.setup(head: liveTvSectionsData.sections[indexPath.section].headerFooter.header, imageFlag: false)
                 return header
                 
