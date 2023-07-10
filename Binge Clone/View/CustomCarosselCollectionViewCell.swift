@@ -17,16 +17,25 @@ class CustomCarosselCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var carosselBottomGradientImageView: UIImageView!
     
+    @IBOutlet weak var carosselPageControl: UIPageControl!
+    
     static let identifier = "CustomCarosselCollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        carosselBackgroundView.backgroundColor = .red
+        
+        setupView()
     }
-
     
-    func setup(image: String) {
+    private func setupView() {
+//        carosselBackgroundView.backgroundColor = .red
+        carosselPageControl.currentPage = 0
+    }
+    
+    func setup(image: String, indexPath: IndexPath, dataSize: Int) {
         carosselImageView.image = UIImage(named: image)
+        carosselPageControl.currentPage = indexPath.item
+        carosselPageControl.numberOfPages = dataSize
     }
 }

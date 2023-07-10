@@ -9,10 +9,14 @@ import UIKit
 
 class OriginalsViewController: UIViewController {
     
-    
     static let headerKind = "headerKind"
     static let footerKind = "footerKind"
     
+    private var titleData = [String]()
+    private var yearData = [String]()
+    private var genreData = [String]()
+    private var durationData = [String]()
+
     private let collectionView: UICollectionView = {
 
         let layout = UICollectionViewCompositionalLayout { sectionNumber, env in
@@ -28,12 +32,12 @@ class OriginalsViewController: UIViewController {
                 
                 
                 let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .groupPaging
+                section.orthogonalScrollingBehavior = .groupPagingCentered
                 section.contentInsets.bottom = 10
                 
-                section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+                section.visibleItemsInvalidationHandler = { (items, scrollOffset, environment) in
                     items.forEach { item in
-                        let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
+                        let distanceFromCenter = abs((item.frame.midX - scrollOffset.x) - environment.container.contentSize.width / 2.0)
                         let minScale: CGFloat = 0.8
                         let maxScale: CGFloat = 1.0 - (distanceFromCenter / environment.container.contentSize.width)
                         let scale = max(maxScale, minScale)
@@ -196,10 +200,26 @@ extension OriginalsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCarosselCollectionViewCell.identifier, for: indexPath) as! CustomCarosselCollectionViewCell
-            cell.setup(image: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].image)
+            cell.setup(image: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].image, indexPath: indexPath, dataSize: originalsSectionsData.sections[indexPath.section].cells.count)
+//            self.titleData.append(originalsSectionsData.sections[indexPath.section].cells[indexPath.item].title ?? "Title")
+//            self.yearData.append(originalsSectionsData.sections[indexPath.section].cells[indexPath.item].year ?? "Year")
+//            self.genreData.append(originalsSectionsData.sections[indexPath.section].cells[indexPath.item].genre ?? "Genre")
+//            self.durationData.append(originalsSectionsData.sections[indexPath.section].cells[indexPath.item].duration ?? "Duration")
             //            cell.backgroundColor = .orange
             cell.layer.cornerRadius = 0
             return cell
+            
+//            var celln = collectionView.cellForItem(at: indexPath) as! CustomCarosselCollectionViewCell
+//            var celln = collectionView.indexPath(for: CustomTitleCollectionViewCell.self)
+//            self.titleData = originalsSectionsData.sections[indexPath.section].cells[indexPath.item].title ?? "Title"
+//            self.yearData = originalsSectionsData.sections[indexPath.section].cells[indexPath.item].year ?? "Year"
+//            self.genreData = originalsSectionsData.sections[indexPath.section].cells[indexPath.item].genre ?? "Genre"
+//            self.durationData = originalsSectionsData.sections[indexPath.section].cells[indexPath.item].duration ?? "Duration"
+//            celln.setup(image: <#T##String#>, indexPath: <#T##IndexPath#>, dataSize: <#T##Int#>)
+//            self.titleData =
+//            self.yearData = originalsSectionsData.sections[indexPath.section].cells[indexPath.item].year ?? "Year"
+//            self.genreData = originalsSectionsData.sections[indexPath.section].cells[indexPath.item].genre ?? "Genre"
+//            self.durationData = originalsSectionsData.sections[indexPath.section].cells[indexPath.item].duration ?? "Duration"
         }
         
         else if indexPath.section == 1 {
@@ -210,8 +230,10 @@ extension OriginalsViewController: UICollectionViewDataSource {
                 genre: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].genre ?? "Genre",
                 duration: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].duration ?? "Duration"
             )
+//            cell.setup(title: titleData, year: yearData, genre: genreData, duration: durationData)
+//            cell.setup(title: titleData[indexPath.item], year: yearData[indexPath.item], genre: genreData[indexPath.item], duration: durationData[indexPath.item])
             //        cell.backgroundColor = .orange
-            return cell  
+            return cell
         }
         
         else {

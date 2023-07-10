@@ -34,11 +34,11 @@ class HomeViewController: UIViewController {
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(400)), subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .groupPaging
+                section.orthogonalScrollingBehavior = .groupPagingCentered
                 
-                section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+                section.visibleItemsInvalidationHandler = { (items, scrollOffset, environment) in
                     items.forEach { item in
-                        let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
+                        let distanceFromCenter = abs((item.frame.midX - scrollOffset.x) - environment.container.contentSize.width / 2.0)
                         let minScale: CGFloat = 0.8
                         let maxScale: CGFloat = 1.0 - (distanceFromCenter / environment.container.contentSize.width)
                         let scale = max(maxScale, minScale)
@@ -316,7 +316,7 @@ extension HomeViewController: UICollectionViewDataSource {
                 
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCarosselCollectionViewCell.identifier, for: indexPath) as! CustomCarosselCollectionViewCell
-            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image)
+            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image, indexPath: indexPath, dataSize: homeSectionsData.sections[indexPath.section].cells.count)
             return cell
         }
         

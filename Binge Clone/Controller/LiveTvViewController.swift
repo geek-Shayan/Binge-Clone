@@ -37,12 +37,12 @@ class LiveTvViewController: UIViewController {
 
                 
                 let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .groupPaging
+                section.orthogonalScrollingBehavior = .groupPagingCentered
                 section.contentInsets.bottom = 10
                 
-                section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+                section.visibleItemsInvalidationHandler = { (items, scrollOffset, environment) in
                     items.forEach { item in
-                        let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
+                        let distanceFromCenter = abs((item.frame.midX - scrollOffset.x) - environment.container.contentSize.width / 2.0)
                         let minScale: CGFloat = 0.8
                         let maxScale: CGFloat = 1.0 - (distanceFromCenter / environment.container.contentSize.width)
                         let scale = max(maxScale, minScale)
@@ -237,7 +237,7 @@ extension LiveTvViewController: UICollectionViewDataSource {
         
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCarosselCollectionViewCell.identifier, for: indexPath) as! CustomCarosselCollectionViewCell
-            cell.setup(image: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].image)
+            cell.setup(image: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].image, indexPath: indexPath, dataSize: liveTvSectionsData.sections[indexPath.section].cells.count)
             //            cell.backgroundColor = .orange
             cell.layer.cornerRadius = 0
             return cell

@@ -22,17 +22,23 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-s9-qei">
                                 <rect key="frame" x="0.0" y="0.0" width="403" height="403"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 35" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-Vx-TtF">
-                                <rect key="frame" x="0.0" y="309" width="403" height="94"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 34" translatesAutoresizingMaskIntoConstraints="NO" id="AEu-YB-pq2">
                                 <rect key="frame" x="0.0" y="0.0" width="403" height="92"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 35" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-Vx-TtF">
+                                <rect key="frame" x="0.0" y="309" width="403" height="94"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ise-Qx-NdG">
+                                <rect key="frame" x="251.33333333333337" y="377" width="151.66666666666663" height="26"/>
+                                <color key="currentPageIndicatorTintColor" red="0.8862745098" green="0.1843137255" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ise-Qx-NdG" secondAttribute="trailing" id="3nc-2m-0MS"/>
                             <constraint firstItem="AEu-YB-pq2" firstAttribute="leading" secondItem="5LE-H7-ese" secondAttribute="leading" id="AQw-h8-iL5"/>
                             <constraint firstItem="AEu-YB-pq2" firstAttribute="top" secondItem="5LE-H7-ese" secondAttribute="top" id="NW2-Qi-1vm"/>
+                            <constraint firstAttribute="bottom" secondItem="Ise-Qx-NdG" secondAttribute="bottom" id="OUU-D7-bdo"/>
                             <constraint firstAttribute="bottom" secondItem="bVE-Vx-TtF" secondAttribute="bottom" id="Osy-ug-t69"/>
                             <constraint firstItem="kZe-s9-qei" firstAttribute="top" secondItem="5LE-H7-ese" secondAttribute="top" id="QQy-VT-HW8"/>
                             <constraint firstItem="bVE-Vx-TtF" firstAttribute="leading" secondItem="5LE-H7-ese" secondAttribute="leading" id="Rmc-kZ-s5Q"/>
@@ -57,9 +63,10 @@
                 <outlet property="carosselBackgroundView" destination="5LE-H7-ese" id="Efc-7Q-BNU"/>
                 <outlet property="carosselBottomGradientImageView" destination="bVE-Vx-TtF" id="8Gr-uM-528"/>
                 <outlet property="carosselImageView" destination="kZe-s9-qei" id="by6-8E-kfL"/>
+                <outlet property="carosselPageControl" destination="Ise-Qx-NdG" id="2nB-Fu-Hoj"/>
                 <outlet property="carosselTopGradientImageView" destination="AEu-YB-pq2" id="K3o-4Z-sp7"/>
             </connections>
-            <point key="canvasLocation" x="329" y="245"/>
+            <point key="canvasLocation" x="327.48091603053433" y="244.71830985915494"/>
         </collectionViewCell>
     </objects>
     <resources>
