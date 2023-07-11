@@ -22,8 +22,9 @@ class CustomHeaderCollectionReusableView: UICollectionReusableView {
         // Initialization code
     }
     
-    func setup(head: String, imageFlag: Bool = false) {
+    func setup(head: String, font: UIFont = .systemFont(ofSize: 14, weight: .bold), imageFlag: Bool = false) {
         header.text = head
+        header.font = font
         imageFlag ? (image.isHidden = false) : (image.isHidden = true)
     }
     

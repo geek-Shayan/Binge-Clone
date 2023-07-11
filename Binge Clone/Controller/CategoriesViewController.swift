@@ -10,7 +10,7 @@ import UIKit
 class CategoriesViewController: UIViewController {
 
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
-    @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     
     private let categoryNames = ["Action", "Comedy", "Fashion", "History", "Horror", "Kids", "Romance", "Fantasy/SCI-FI", "Drama", "Family", "Sports", "Thriller", "Crime", "Pop", "Music", "War", "Educational", "Tragedy", "Game", "Reality Show"]
@@ -43,7 +43,7 @@ class CategoriesViewController: UIViewController {
     }
 
     
-    @IBAction func skipPressed(_ sender: Any) {
+    @IBAction func stopPressed(_ sender: Any) {
         print("skipPressed")
 //        self.dismiss(animated: true, completion: nil)
         self.navigationController?.isNavigationBarHidden = false

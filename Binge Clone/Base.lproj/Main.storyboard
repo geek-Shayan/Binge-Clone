@@ -169,6 +169,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="OF5-h4-cf1">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="BYZ-38-t0r" id="C6e-72-vhv"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -274,6 +277,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="7ON-hh-h8A">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="W3k-bQ-Wgm" id="mYc-ie-TWN"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -328,6 +334,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="ySe-R1-EwZ">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="DVB-Pk-4QW" id="03v-pe-eYR"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -378,6 +387,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="tId-83-uOp">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="aLo-02-r5g" id="uq8-hy-4iY"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -428,12 +440,61 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="Vuc-Nq-hfo">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="Xp3-EP-4CA" id="0Ex-dV-5Ow"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLf-vP-qea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3639" y="706"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="TSf-wf-hmZ">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="pFF-yf-ObM" customClass="SearchViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ys-9O-PgY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for a show, movie, e.t.c." translatesAutoresizingMaskIntoConstraints="NO" id="vjm-hp-C5v">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pFF-yf-ObM" id="USe-gw-Q8v"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mcV-rs-Sdi">
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="40" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="pFF-yf-ObM" id="Thg-G7-UQd"/>
+                                    <outlet property="delegate" destination="pFF-yf-ObM" id="lPC-C7-vbK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="q4Y-6x-f2Y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vjm-hp-C5v" firstAttribute="trailing" secondItem="q4Y-6x-f2Y" secondAttribute="trailing" id="0LR-f3-iHO"/>
+                            <constraint firstItem="vjm-hp-C5v" firstAttribute="leading" secondItem="q4Y-6x-f2Y" secondAttribute="leading" id="L3d-pf-74b"/>
+                            <constraint firstItem="q4Y-6x-f2Y" firstAttribute="trailing" secondItem="mcV-rs-Sdi" secondAttribute="trailing" id="SQ0-9U-cyB"/>
+                            <constraint firstItem="mcV-rs-Sdi" firstAttribute="top" secondItem="vjm-hp-C5v" secondAttribute="bottom" id="a6D-50-bOH"/>
+                            <constraint firstItem="mcV-rs-Sdi" firstAttribute="leading" secondItem="q4Y-6x-f2Y" secondAttribute="leading" id="bcj-vz-WRB"/>
+                            <constraint firstItem="q4Y-6x-f2Y" firstAttribute="bottom" secondItem="mcV-rs-Sdi" secondAttribute="bottom" id="lSD-vd-5jB"/>
+                            <constraint firstItem="vjm-hp-C5v" firstAttribute="top" secondItem="q4Y-6x-f2Y" secondAttribute="top" id="oxh-t5-nTW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="vjm-hp-C5v" id="9vV-xZ-66n"/>
+                        <outlet property="tableView" destination="mcV-rs-Sdi" id="Zpw-az-PNY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSA-Dr-qmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4285" y="1434"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="fzo-tl-6JB">
@@ -1026,7 +1087,7 @@ resend code after 56 sec.</string>
                                 <state key="normal" image="Group 62"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Group 62"/>
                                 <connections>
-                                    <action selector="skipPressed:" destination="tCf-BH-VNh" eventType="touchUpInside" id="Nnt-Rj-2kk"/>
+                                    <action selector="stopPressed:" destination="tCf-BH-VNh" eventType="touchUpInside" id="2Vq-Lz-dia"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1052,7 +1113,7 @@ resend code after 56 sec.</string>
                     </navigationItem>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="PVN-Pg-Tf1" id="bd3-Th-npN"/>
-                        <outlet property="skipButton" destination="7cg-cx-cf0" id="2rA-Ob-X8x"/>
+                        <outlet property="stopButton" destination="7cg-cx-cf0" id="ohH-Y7-xpE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iha-fO-Zbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

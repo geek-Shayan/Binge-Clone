@@ -167,6 +167,8 @@ class HomeViewController: UIViewController {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.register(UINib(nibName: "CustomCarosselCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCarosselCollectionViewCell.identifier)
         collection.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+        
+//        collection.register(UINib(nibName: "CustomHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: HomeViewController.headerKind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier)
         collection.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: HomeViewController.headerKind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier)
         collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: HomeViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
                                                                                        
@@ -264,6 +266,13 @@ class HomeViewController: UIViewController {
         
     }
     
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        
+        let searchVC = storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+//        searchVC.view.backgroundColor = .systemTeal
+        navigationController?.pushViewController(searchVC, animated: false)
+        
+    }
     
     @objc private func pullDownToRefresh() {
         print("Refresh")
@@ -295,6 +304,9 @@ extension HomeViewController: UICollectionViewDataSource {
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
                 header.setup(head: homeSectionsData.sections[indexPath.section].headerFooter.header)
                 return header
+//                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier, for: indexPath) as! CustomHeaderCollectionReusableView
+//                header.setup(head: homeSectionsData.sections[indexPath.section].headerFooter.header, imageFlag: false)
+//                return header
                 
                 
             case HomeViewController.footerKind:

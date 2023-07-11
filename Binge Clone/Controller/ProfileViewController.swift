@@ -24,6 +24,12 @@ class ProfileViewController: UIViewController {
 //        self.present(vc, animated: true)
     }
     
-    
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        
+        let searchVC = storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+//        searchVC.view.backgroundColor = .systemTeal
+        navigationController?.pushViewController(searchVC, animated: false)
+        
+    }
 
 }

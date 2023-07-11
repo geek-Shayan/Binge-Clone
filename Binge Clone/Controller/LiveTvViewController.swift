@@ -181,6 +181,14 @@ class LiveTvViewController: UIViewController {
         self.present(vc, animated: false, completion: nil)
     }
     
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        
+        let searchVC = storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+//        searchVC.view.backgroundColor = .systemTeal
+        navigationController?.pushViewController(searchVC, animated: false)
+        
+    }
+    
     
     @IBAction func categoriesPressed(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "CategoriesViewController") as! CategoriesViewController
