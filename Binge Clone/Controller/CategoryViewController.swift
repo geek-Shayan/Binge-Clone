@@ -9,6 +9,13 @@ import UIKit
 
 class CategoryViewController: UIViewController {
     
+    @IBOutlet weak var navView: UIStackView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var navLabel: UILabel!
+    @IBOutlet weak var castButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    
     private var sectionHeadersFooters: [SupplementaryDataType] = [SupplementaryDataType(header: "Sports", footer: ""),
                                                                   SupplementaryDataType(header: "Sports", footer: ""),
                                                                   SupplementaryDataType(header: "Sports", footer: "E"),
@@ -22,32 +29,47 @@ class CategoryViewController: UIViewController {
                                                                   SupplementaryDataType(header: "Religious", footer: "")]
 
     
-    private var sectionData3: [CellDataType] = [CellDataType(image: "Independent-TV_110x110", label: ""),
-                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                CellDataType(image: "Channel-24_110x110", label: ""),
-                                                CellDataType(image: "NTV_110x110", label: ""),
-                                                CellDataType(image: "Desh-TV_110x110", label: ""),
-                                                CellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
-                                                CellDataType(image: "RTV-HD_110x110", label: ""),
-                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                CellDataType(image: "Somoy-News_110x110", label: ""),
-                                                CellDataType(image: "Independent-TV_110x110", label: ""),
-                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                CellDataType(image: "Channel-24_110x110", label: ""),
-                                                CellDataType(image: "NTV_110x110", label: ""),
-                                                CellDataType(image: "Desh-TV_110x110", label: ""),
-                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                CellDataType(image: "Somoy-News_110x110", label: ""),
-                                                CellDataType(image: "Independent-TV_110x110", label: ""),
-                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                CellDataType(image: "Channel-24_110x110", label: ""),
-                                                CellDataType(image: "RTV-HD_110x110", label: ""),
-                                                CellDataType(image: "Ekattor-HD_110x110", label: ""),
-                                                CellDataType(image: "Somoy-News_110x110", label: ""),
-                                                CellDataType(image: "Independent-TV_110x110", label: ""),
-                                                CellDataType(image: "Bijoy-TV_110x110", label: ""),
-                                                CellDataType(image: "Channel-24_110x110", label: ""),
-                                                CellDataType(image: "NTV_110x110", label: ""),
+    private var sectionData3: [CellDataType] = [
+                                                CellDataType(image: "image 20", label: "1"),
+                                                CellDataType(image: "image 5",  label: "2"),
+                                                CellDataType(image: "image 16", label: "3"),
+                                                CellDataType(image: "image 70", label: "4"),
+                                                CellDataType(image: "image 19", label: "5"),
+                                                CellDataType(image: "image 17", label: "6"),
+                                                CellDataType(image: "image 12", label: "7"),
+                                                CellDataType(image: "image 11", label: "8"),
+                                                CellDataType(image: "image 10", label: "9"),
+                                                CellDataType(image: "image 9",  label: "10"),
+                                                CellDataType(image: "image 6",  label: "11"),
+                                                CellDataType(image: "image 4",  label: "12"),
+                                                CellDataType(image: "image 2",  label: "13"),
+                                                CellDataType(image: "image 20", label: "1"),
+                                                CellDataType(image: "image 5",  label: "2"),
+                                                CellDataType(image: "image 16", label: "3"),
+                                                CellDataType(image: "image 70", label: "4"),
+                                                CellDataType(image: "image 19", label: "5"),
+                                                CellDataType(image: "image 17", label: "6"),
+                                                CellDataType(image: "image 12", label: "7"),
+                                                CellDataType(image: "image 11", label: "8"),
+                                                CellDataType(image: "image 10", label: "9"),
+                                                CellDataType(image: "image 9",  label: "10"),
+                                                CellDataType(image: "image 6",  label: "11"),
+                                                CellDataType(image: "image 4",  label: "12"),
+                                                CellDataType(image: "image 2",  label: "13"),
+                                                CellDataType(image: "image 20", label: "1"),
+                                                CellDataType(image: "image 5",  label: "2"),
+                                                CellDataType(image: "image 16", label: "3"),
+                                                CellDataType(image: "image 70", label: "4"),
+                                                CellDataType(image: "image 19", label: "5"),
+                                                CellDataType(image: "image 17", label: "6"),
+                                                CellDataType(image: "image 12", label: "7"),
+                                                CellDataType(image: "image 11", label: "8"),
+                                                CellDataType(image: "image 10", label: "9"),
+                                                CellDataType(image: "image 9",  label: "10"),
+                                                CellDataType(image: "image 6",  label: "11"),
+                                                CellDataType(image: "image 4",  label: "12"),
+                                                CellDataType(image: "image 2",  label: "13"),
+                                            
                                                 CellDataType(image: "Desh-TV_110x110", label: ""),
                                                 CellDataType(image: "CHANNEL-I-HD_110x110", label: ""),
                                                 CellDataType(image: "RTV-HD_110x110", label: ""),
@@ -81,14 +103,14 @@ class CategoryViewController: UIViewController {
             item.contentInsets.trailing = 8
             item.contentInsets.bottom = 8
             
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(133)), subitems: [item])
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.2)), subitems: [item])
             
             let section = NSCollectionLayoutSection(group: group)
             section.contentInsets.leading = 16
             section.contentInsets.trailing = 4
-            section.contentInsets.bottom = 16
+//            section.contentInsets.bottom = 16
             
-            let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(30))
+            let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(60))
             let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: headerKind, alignment: .topLeading)
             //                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: footerKind, alignment: .bottomLeading)
             section.boundarySupplementaryItems = [header] //, footer
@@ -99,8 +121,9 @@ class CategoryViewController: UIViewController {
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.register(UINib(nibName: "CustomCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCategoryCollectionViewCell.identifier)
-        collection.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.headerKind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier)
-        collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: LiveTvViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
+        
+        collection.register(UINib(nibName: "CustomHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: CategoryViewController.headerKind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier)
+        collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: CategoryViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
                                                                                        
         return collection
     }()
@@ -111,6 +134,12 @@ class CategoryViewController: UIViewController {
         
         loadCollectionView()
         
+        self.navigationController?.isNavigationBarHidden = true
+        
+        title = "Binge"
+        
+        navLabel.text = "Category" 
+
     }
     
     func loadCollectionView() {
@@ -119,7 +148,7 @@ class CategoryViewController: UIViewController {
         
         collectionView.backgroundColor = .clear
  
-        view.addSubview(collectionView)
+        containerView.addSubview(collectionView)
         
         collectionView.refreshControl = UIRefreshControl()
         collectionView.refreshControl?.addTarget(self, action: #selector(pullDownToRefresh), for: .valueChanged)
@@ -127,7 +156,7 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
+        collectionView.frame = containerView.bounds
     }
     
     @objc private func pullDownToRefresh() {
@@ -139,6 +168,11 @@ class CategoryViewController: UIViewController {
             self.collectionView.reloadData()
             self.collectionView.refreshControl?.endRefreshing()
         }
+    }
+    
+    @IBAction func backPressed(_ sender: Any) {
+//        navigationController?.isNavigationBarHidden = false
+        dismiss(animated: true)
     }
     
 }
@@ -153,6 +187,8 @@ extension CategoryViewController: UICollectionViewDelegate {
             let vc = UIViewController()
             vc.view.backgroundColor = .orange
             
+            self.navigationController?.isNavigationBarHidden = false
+
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -173,19 +209,17 @@ extension CategoryViewController: UICollectionViewDataSource {
 //        print("supp indexPath row, section, item", indexPath.row, indexPath.section, indexPath.item)
         switch kind {
             case CategoryViewController.headerKind:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-                header.setup(head: sectionHeadersFooters[indexPath.section].header)
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier, for: indexPath) as! CustomHeaderCollectionReusableView
+                header.setup(head: sectionHeadersFooters[indexPath.section].header, font: .systemFont(ofSize: 24, weight: .bold), imageFlag: false)
                 return header
                 
             case CategoryViewController.footerKind:
-            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
+                let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
                 footer.setup(foot: sectionHeadersFooters[indexPath.section].footer, indicatorFlag: false)
                 return footer
                 
             default :
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-                header.setup(head: "Default header")
-                return header
+                return UICollectionReusableView()
         }
     }
     

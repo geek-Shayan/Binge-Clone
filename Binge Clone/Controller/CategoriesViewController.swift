@@ -36,8 +36,9 @@ class CategoriesViewController: UIViewController {
     }
     
     private func setupView() {
-        self.navigationItem.hidesBackButton = true
+//        self.navigationItem.hidesBackButton = true
 //        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.isNavigationBarHidden = true
 
 
     }
@@ -46,10 +47,10 @@ class CategoriesViewController: UIViewController {
     @IBAction func stopPressed(_ sender: Any) {
         print("skipPressed")
 //        self.dismiss(animated: true, completion: nil)
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.popViewController(animated: false)
+//        self.navigationController?.isNavigationBarHidden = false
+//        self.navigationController?.popViewController(animated: false)
 //        self.navigationController?.dismiss(animated: false)
-//        self.dismiss(animated: false)
+        self.dismiss(animated: false)
         
     }
     
@@ -61,32 +62,25 @@ class CategoriesViewController: UIViewController {
 extension CategoriesViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("indexPath  \(indexPath)")
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCategoriesCollectionViewCell
         
         if cell.isSelected {
             finalSelection = categoryNames[indexPath.row]
             print("selected  \(finalSelection)")
             
-            // pass to new vc
-            let vc = storyboard?.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
-            
-//            super.navigationController?.pushViewController(vc, animated: true)
-//            self.parent?.navigationController?.pushViewController(vc, animated: true)
-            
-//            UINavigationController().pushViewController(vc, animated: true)
-//                .pushViewController(vc, animated: true)
-//            present(vc, animated: true)
-//            self.navigationController?.pushViewController(vc, animated: true)
-            self.navigationController?.isNavigationBarHidden = false
-            self.navigationController?.pushViewController(vc, animated: true)
-            
-//            show(vc, sender: self)
+            // pass to new vc / navbar
+            let navbar = storyboard?.instantiateViewController(withIdentifier: "CategoryViewNavigationController") as! UINavigationController
+            navbar.modalPresentationStyle = .overCurrentContext
+            navbar.modalTransitionStyle = .crossDissolve
+            self.present(navbar, animated: true)
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.navigationController?.popViewController(animated: false)
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+////        self.navigationController?.popViewController(animated: false)
+//        self.dismiss(animated: false)
+//    }
 
 }
 

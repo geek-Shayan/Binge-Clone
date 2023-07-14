@@ -227,6 +227,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="TV SHOWS">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tvShowsPressed:" destination="W3k-bQ-Wgm" eventType="touchUpInside" id="BSt-uT-TEa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHw-XX-sfb">
                                                 <rect key="frame" x="102.66666666666666" y="0.0" width="82" height="28.333333333333332"/>
@@ -235,6 +238,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="MOVIES">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="moviesPressed:" destination="W3k-bQ-Wgm" eventType="touchUpInside" id="kup-es-AeZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSD-cS-Za3">
                                                 <rect key="frame" x="184.66666666666663" y="0.0" width="128.33333333333337" height="28.333333333333332"/>
@@ -450,10 +456,10 @@
             </objects>
             <point key="canvasLocation" x="3639" y="706"/>
         </scene>
-        <!--Item-->
+        <!--Search View Controller-->
         <scene sceneID="IEy-9t-Nyw">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="K3m-p8-1AU" customClass="SearchViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="K3m-p8-1AU" userLabel="Search View Controller" customClass="SearchViewController" customModule="Binge_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xag-8b-2y8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -486,7 +492,7 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0p-fN-Q33">
                                 <rect key="frame" x="0.0" y="165" width="393" height="687"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4l-LM-Zrl">
                                 <rect key="frame" x="0.0" y="103" width="393" height="54"/>
@@ -1175,9 +1181,7 @@ resend code after 56 sec.</string>
                             <constraint firstItem="7cg-cx-cf0" firstAttribute="centerX" secondItem="PVN-Pg-Tf1" secondAttribute="centerX" id="uFM-E0-tJs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="McE-3v-CLO">
-                        <barButtonItem key="backBarButtonItem" title="Category" id="vLL-T6-gRF"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="McE-3v-CLO"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="PVN-Pg-Tf1" id="bd3-Th-npN"/>
                         <outlet property="stopButton" destination="7cg-cx-cf0" id="ohH-Y7-xpE"/>
@@ -1185,7 +1189,7 @@ resend code after 56 sec.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iha-fO-Zbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2789" y="2155"/>
+            <point key="canvasLocation" x="3639" y="2155"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="5i2-eX-9nQ">
@@ -1194,14 +1198,80 @@ resend code after 56 sec.</string>
                     <view key="view" contentMode="scaleToFill" id="y09-ph-GIO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bBd-Ta-Yqp">
+                                <rect key="frame" x="16" y="103" width="361" height="24"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUj-jS-WMp">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FUj-jS-WMp" secondAttribute="height" multiplier="1:1" id="OJR-KL-Ok0"/>
+                                            <constraint firstAttribute="height" constant="24" id="x6t-sC-4kk"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="arrow-left" symbolScale="medium"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backPressed:" destination="RwI-Ag-gjc" eventType="touchUpInside" id="XsH-Jg-a6V"/>
+                                            <action selector="backPressed:" destination="K3m-p8-1AU" eventType="touchUpInside" id="rAI-MY-yNW"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1U-3l-sAW">
+                                        <rect key="frame" x="40" y="0.0" width="245" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoH-Q8-iMd">
+                                        <rect key="frame" x="301" y="0.0" width="20" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="WoH-Q8-iMd" secondAttribute="height" multiplier="5:6" id="3nQ-hh-B3y"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="Cast"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njy-sx-3qL">
+                                        <rect key="frame" x="337" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="njy-sx-3qL" secondAttribute="height" multiplier="1:1" id="1aY-rA-rBV"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="Search"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Io-bZ-aQJ">
+                                <rect key="frame" x="0.0" y="135" width="393" height="683"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dyH-cA-vrg"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dyH-cA-vrg" firstAttribute="trailing" secondItem="2Io-bZ-aQJ" secondAttribute="trailing" id="5fx-GW-Xmg"/>
+                            <constraint firstItem="2Io-bZ-aQJ" firstAttribute="leading" secondItem="dyH-cA-vrg" secondAttribute="leading" id="JMc-za-h0o"/>
+                            <constraint firstItem="2Io-bZ-aQJ" firstAttribute="top" secondItem="bBd-Ta-Yqp" secondAttribute="bottom" constant="8" id="JNB-YR-4vv"/>
+                            <constraint firstItem="bBd-Ta-Yqp" firstAttribute="top" secondItem="dyH-cA-vrg" secondAttribute="top" id="ocW-VS-dNe"/>
+                            <constraint firstItem="dyH-cA-vrg" firstAttribute="trailing" secondItem="bBd-Ta-Yqp" secondAttribute="trailing" constant="16" id="qi4-Pq-Ols"/>
+                            <constraint firstItem="dyH-cA-vrg" firstAttribute="bottom" secondItem="2Io-bZ-aQJ" secondAttribute="bottom" id="shb-yJ-MBO"/>
+                            <constraint firstItem="bBd-Ta-Yqp" firstAttribute="leading" secondItem="dyH-cA-vrg" secondAttribute="leading" constant="16" id="uo7-IN-JdC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zvn-as-qi3"/>
+                    <connections>
+                        <outlet property="backButton" destination="FUj-jS-WMp" id="yTT-he-J3E"/>
+                        <outlet property="castButton" destination="WoH-Q8-iMd" id="e1g-Nr-uIk"/>
+                        <outlet property="containerView" destination="2Io-bZ-aQJ" id="mtV-GH-P5j"/>
+                        <outlet property="navLabel" destination="K1U-3l-sAW" id="vBk-Vc-S2y"/>
+                        <outlet property="navView" destination="bBd-Ta-Yqp" id="S5X-eF-Eqr"/>
+                        <outlet property="searchButton" destination="njy-sx-3qL" id="XGN-Zy-kAw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9x-2O-VYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4285" y="2155"/>
+            <point key="canvasLocation" x="5399.2366412213742" y="2154.929577464789"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9UZ-tY-3pa">
@@ -1222,26 +1292,27 @@ resend code after 56 sec.</string>
             <point key="canvasLocation" x="-445" y="1434"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ecG-Nm-2s0">
+        <scene sceneID="BiD-In-i6l">
             <objects>
-                <navigationController storyboardIdentifier="CategoryNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="xm8-og-rbC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CategoryViewNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="QUF-dZ-lfj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OyN-4M-ZbF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Lz-Oo-WU7">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="RwI-Ag-gjc" kind="relationship" relationship="rootViewController" id="UGu-JA-p9g"/>
+                        <segue destination="RwI-Ag-gjc" kind="relationship" relationship="rootViewController" id="AdW-03-OwS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GKO-45-fwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFW-XF-5Vu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3524" y="2155"/>
+            <point key="canvasLocation" x="4472.5190839694651" y="2154.929577464789"/>
         </scene>
     </scenes>
     <resources>
         <image name="Binge Logo" width="129" height="50"/>
+        <image name="Cast" width="22" height="18"/>
         <image name="Ellipse 5" width="16" height="16"/>
         <image name="Group 218" width="93" height="24"/>
         <image name="Group 220" width="80" height="24"/>
@@ -1254,6 +1325,7 @@ resend code after 56 sec.</string>
         <image name="Rectangle 163" width="156" height="48"/>
         <image name="Rectangle 164" width="156" height="48"/>
         <image name="Rectangle 18" width="393" height="852"/>
+        <image name="Search" width="21" height="21"/>
         <image name="Vector 2" width="7" height="4.3333334922790527"/>
         <image name="ant-design_search-outlined" width="32" height="32"/>
         <image name="arrow-left" width="24" height="24"/>

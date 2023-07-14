@@ -59,8 +59,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.register(UINib(nibName: "CustomListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomListCollectionViewCell.identifier)
         
-        collection.register(UINib(nibName: "CustomHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: MyListViewController.headerKind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier)
-        collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: MyListViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
+        collection.register(UINib(nibName: "CustomHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: SearchViewController.headerKind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier)
+        collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: SearchViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
         
         return collection
     }()
@@ -119,8 +119,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         collection.register(UINib(nibName: "CustomNoResultCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomNoResultCollectionViewCell.identifier)
         collection.register(UINib(nibName: "CustomListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomListCollectionViewCell.identifier)
         
-        collection.register(UINib(nibName: "CustomHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: MyListViewController.headerKind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier)
-        collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: MyListViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
+        collection.register(UINib(nibName: "CustomHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: SearchViewController.headerKind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier)
+        collection.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: SearchViewController.footerKind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier)
         
         return collection
     }()

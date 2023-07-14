@@ -195,19 +195,28 @@ class LiveTvViewController: UIViewController {
         
     }
     
+    @IBAction func tvShowsPressed(_ sender: Any) {
+        // pass to new vc / navbar
+        let navbar = storyboard?.instantiateViewController(withIdentifier: "CategoryViewNavigationController") as! UINavigationController
+        navbar.modalPresentationStyle = .overCurrentContext
+        navbar.modalTransitionStyle = .crossDissolve
+        self.present(navbar, animated: true)
+    }
+    
+    @IBAction func moviesPressed(_ sender: Any) {
+        // pass to new vc / navbar
+        let navbar = storyboard?.instantiateViewController(withIdentifier: "CategoryViewNavigationController") as! UINavigationController
+        navbar.modalPresentationStyle = .overCurrentContext
+        navbar.modalTransitionStyle = .crossDissolve
+        self.present(navbar, animated: true)
+    }
+
     
     @IBAction func categoriesPressed(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "CategoriesViewController") as! CategoriesViewController
         vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .coverVertical
-        
-//        present(vc, animated: true)
-//        self.navigationController?.isNavigationBarHidden = true
-        self.navigationController?.pushViewController(vc, animated: false)
-//        self.navigationController?.title = ""
-//        self.navigationController?.navigationBar.backItem?.title = "jdsnjk"
-//        self.navigationController?.navigationItem.hidesBackButton = true
-//        self.navigationController?.present(vc, animated: false)
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
     }
 }
 
