@@ -308,17 +308,13 @@ extension HomeViewController: UICollectionViewDataSource {
 //                header.setup(head: homeSectionsData.sections[indexPath.section].headerFooter.header, imageFlag: false)
 //                return header
                 
-                
             case HomeViewController.footerKind:
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
                 footer.setup(foot: homeSectionsData.sections[indexPath.section].headerFooter.footer, indicatorFlag: false)
                 return footer
                 
-                
             default :
-                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-                header.setup(head: "Default header")
-                return header
+                return UICollectionReusableView()
         }
     }
         

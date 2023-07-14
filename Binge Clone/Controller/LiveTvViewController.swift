@@ -111,6 +111,8 @@ class LiveTvViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+        
         loadCollectionView()
 
         view.addSubview(topView)
@@ -129,6 +131,10 @@ class LiveTvViewController: UIViewController {
         
         collectionView.refreshControl = UIRefreshControl()
         collectionView.refreshControl?.addTarget(self, action: #selector(pullDownToRefresh), for: .valueChanged)
+    }
+    
+    private func setupView() {
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -220,22 +226,19 @@ extension LiveTvViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 //        print("supp indexPath row, section, item", indexPath.row, indexPath.section, indexPath.item)
         switch kind {
-            case HomeViewController.headerKind:
+            case LiveTvViewController.headerKind:
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier, for: indexPath) as! CustomHeaderCollectionReusableView
                 header.setup(head: liveTvSectionsData.sections[indexPath.section].headerFooter.header, imageFlag: false)
                 return header
                 
-                
-            case HomeViewController.footerKind:
+            case LiveTvViewController.footerKind:
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
                 footer.setup(foot: liveTvSectionsData.sections[indexPath.section].headerFooter.footer, indicatorFlag: false)
                 return footer
                 
-                
             default :
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-                header.setup(head: "Default header")
-                return header
+                return UICollectionReusableView()
+
         }
     }
         

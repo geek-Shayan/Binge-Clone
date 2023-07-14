@@ -39,11 +39,18 @@ class CustomListCollectionViewCell: UICollectionViewCell {
 
     }
 
-    func setup(image: String, title: String, progress: Float, duration: String) {
+    func setup(image: String, title: String, progress: Float = 0.0, hideProgress: Bool = false , duration: String) {
         listImage.image = UIImage(named: image)
         listLabel.text = title
-        progressView.progress = progress
         durationLabel.text = duration
+
+        if hideProgress {
+            progressView.isHidden = true
+        }
+        else {
+            progressView.isHidden = false
+            progressView.progress = progress
+        }
     }
 
 }

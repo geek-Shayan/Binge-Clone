@@ -186,20 +186,19 @@ extension OriginalsViewController: UICollectionViewDataSource {
 //        print("supp indexPath row, section, item", indexPath.row, indexPath.section, indexPath.item)
         
         switch kind {
-            case CategoryViewController.headerKind:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier, for: indexPath) as! CustomHeaderCollectionReusableView
-                header.setup(head: originalsSectionsData.sections[indexPath.section].headerFooter.header, imageFlag: true)
-                return header
+            case OriginalsViewController.headerKind:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier, for: indexPath) as! CustomHeaderCollectionReusableView
+                    header.setup(head: originalsSectionsData.sections[indexPath.section].headerFooter.header, imageFlag: true)
+                    return header
                 
-            case CategoryViewController.footerKind:
-            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
-                footer.setup(foot: originalsSectionsData.sections[indexPath.section].headerFooter.footer, indicatorFlag: false)
-                return footer
+            case OriginalsViewController.footerKind:
+                let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
+                    footer.setup(foot: originalsSectionsData.sections[indexPath.section].headerFooter.footer, indicatorFlag: false)
+                    return footer
                 
             default :
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-                header.setup(head: "Default header")
-                return header
+                return UICollectionReusableView()
+
         }
     }
     

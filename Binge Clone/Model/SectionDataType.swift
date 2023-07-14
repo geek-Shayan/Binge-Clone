@@ -10,5 +10,5 @@ import UIKit
 
 struct SectionDataType {
     let headerFooter: SupplementaryDataType
-    let cells: [CellDataType]
+    var cells: [CellDataType]
 }

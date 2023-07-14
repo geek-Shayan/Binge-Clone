@@ -55,7 +55,7 @@ class MyListViewController: UIViewController {
                 section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets.leading = 16
                 section.contentInsets.trailing = 8
-                section.contentInsets.bottom = 16
+                section.contentInsets.bottom = 8
                 
                 let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(30))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: headerKind, alignment: .topLeading)
@@ -70,14 +70,14 @@ class MyListViewController: UIViewController {
                 
                 let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1) , heightDimension: .fractionalHeight(1)))
                 item.contentInsets.trailing = 8
-                item.contentInsets.bottom = 8
+                item.contentInsets.bottom = 15
                 
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(81)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(96)), subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets.leading = 16
                 section.contentInsets.trailing = 4
-                section.contentInsets.bottom = 16
+                section.contentInsets.bottom = 8
                 
                 let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(30))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize, elementKind: headerKind, alignment: .topLeading)
@@ -167,20 +167,18 @@ extension MyListViewController: UICollectionViewDataSource {
         //        print("supp indexPath row, section, item", indexPath.row, indexPath.section, indexPath.item)
         
         switch kind {
-        case CategoryViewController.headerKind:
+        case MyListViewController.headerKind:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderCollectionReusableView.headerIdentifier, for: indexPath) as! CustomHeaderCollectionReusableView
             header.setup(head: myListSectionsData.sections[indexPath.section].headerFooter.header, imageFlag: false)
             return header
             
-        case CategoryViewController.footerKind:
+        case MyListViewController.footerKind:
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.footerIdentifier, for: indexPath) as! FooterCollectionReusableView
             footer.setup(foot: myListSectionsData.sections[indexPath.section].headerFooter.footer, indicatorFlag: false)
             return footer
             
         default :
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.headerIdentifier, for: indexPath) as! HeaderCollectionReusableView
-            header.setup(head: "Default header")
-            return header
+            return UICollectionReusableView()
         }
     }
     

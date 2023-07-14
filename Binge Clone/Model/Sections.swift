@@ -9,5 +9,5 @@ import UIKit
 
 
 struct Sections{
-    let sections: [SectionDataType]
+    var sections: [SectionDataType]
 }

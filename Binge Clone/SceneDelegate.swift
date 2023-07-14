@@ -17,6 +17,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        // MARK: THIS CODE BELOW IS TO SOLVE TABBAR TRANSPARENT ISSUE ON SCENE DELEGATE.
+            
+        // TAB BAR BACKGROUND COLOR HERE.
+//            UITabBar.appearance().barTintColor = UIColor.white
+        
+        // TAB BAR ICONS COLOR HERE.
+//            UITabBar.appearance().tintColor = UIColor.blue
+//            UITabBar.appearance().isTranslucent = true
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithDefaultBackground()
+            
+            // TAB BAR BACKGROUND COLOR HERE. (same as above)
+//                appearance.backgroundColor = UIColor.white
+            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = UITabBar.appearance().standardAppearance
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
