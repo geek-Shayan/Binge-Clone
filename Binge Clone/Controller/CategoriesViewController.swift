@@ -20,7 +20,7 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Binge"
+//        self.title = "Binge"
         
         setupView()
         
@@ -38,7 +38,7 @@ class CategoriesViewController: UIViewController {
     private func setupView() {
 //        self.navigationItem.hidesBackButton = true
 //        self.navigationItem.setHidesBackButton(true, animated: true)
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
 
 
     }

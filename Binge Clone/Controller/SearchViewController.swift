@@ -452,8 +452,8 @@ extension SearchViewController: UITextViewDelegate {
             resultFound = false
             
             if searched /* searched true state*/ {
-                // filter text
-                if  textField.text == "red" /* matched*/ {
+                // filter text function exatcly in here
+                if  textField.text == "red" /* matched*/ {  //
                     searched = true
                     resultFound = true
                     

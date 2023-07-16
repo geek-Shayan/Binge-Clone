@@ -24,7 +24,7 @@ class CustomGenreCollectionViewCell: UICollectionViewCell {
     private func setupView() {
         genreBackgroundView.layer.borderWidth = 1
         genreBackgroundView.layer.cornerRadius = 8
-        genreBackgroundView.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor //white
+        genreBackgroundView.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor //white
     }
     
     func selected() {
