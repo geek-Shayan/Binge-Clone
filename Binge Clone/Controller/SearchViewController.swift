@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Speech
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
     
@@ -28,6 +29,18 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     private var carData = ["BMW", "audi", "TOYOTA", "Benz"]
     
     private var searchedItem = String()
+    
+//    @IBOutlet weak var detectedTextLabel: UILabel!
+//    @IBOutlet weak var colorView: UIView!
+//    @IBOutlet weak var startButton: UIButton!
+    
+    //speech
+    let audioEngine = AVAudioEngine()
+//    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
+    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
+    let request = SFSpeechAudioBufferRecognitionRequest()
+    var recognitionTask: SFSpeechRecognitionTask?
+    var isRecording = false
     
     
     
@@ -132,10 +145,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         loadSearchBar()
         
+        requestSpeechAuthorization()
+        
         loadCollectionViewWithSingleSection()
         
-//        loadCollectionViewWithMultipleSection()
-        
+        dismissKeyboard()
     }
     
     private func loadCollectionViewWithSingleSection() {
@@ -167,7 +181,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         searchTextField.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         searchTextField.addPadding(padding: .left(48))
         searchTextField.addPadding(padding: .right(34))
-        searchTextField.becomeFirstResponder()
+//        searchTextField.becomeFirstResponder()
     }
     
     private func setupView() {
@@ -453,7 +467,7 @@ extension SearchViewController: UITextViewDelegate {
             
             if searched /* searched true state*/ {
                 // filter text function exatcly in here
-                if  textField.text == "red" /* matched*/ {  //
+                if  textField.text == "red" || textField.text == "123" || textField.text == "Hello" /* matched*/ {  //
                     searched = true
                     resultFound = true
                     
@@ -504,12 +518,120 @@ extension SearchViewController: UITextViewDelegate {
         }
     }
     
-    //textfield func for the touch on BG
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        searchTextField.resignFirstResponder()
-        self.view.endEditing(true)
-    }
+
 }
+
+
+
+extension SearchViewController: SFSpeechRecognizerDelegate {
+        
+    //MARK: IBActions and Cancel
+    @IBAction func speechButtonPressed(_ sender: UIButton) {
+        searchTextField.becomeFirstResponder()
+        searchTextField.text = ""
+        recordAndRecognizeSpeech()
+        isRecording = true
+        speechButton.tintColor = .red
+        speechButton.isUserInteractionEnabled = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+            self.searchTextField.resignFirstResponder()
+            self.cancelRecording()
+            self.isRecording = false
+            self.speechButton.tintColor = .lightGray
+            self.speechButton.isUserInteractionEnabled = true
+        }
+
+    }
+    
+    func cancelRecording() {
+        recognitionTask?.finish()
+        recognitionTask = nil
+        
+        // stop audio
+        request.endAudio()
+        audioEngine.stop()
+        audioEngine.inputNode.removeTap(onBus: 0)
+    }
+    
+    //MARK: - Recognize Speech
+    func recordAndRecognizeSpeech() {
+        let node = audioEngine.inputNode
+        let recordingFormat = node.outputFormat(forBus: 0)
+        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+            self.request.append(buffer)
+        }
+        audioEngine.prepare()
+        do {
+            try audioEngine.start()
+        } catch {
+            self.sendAlert(title: "Speech Recognizer Error", message: "There has been an audio engine error.")
+            return print(error)
+        }
+        guard let myRecognizer = SFSpeechRecognizer() else {
+            self.sendAlert(title: "Speech Recognizer Error", message: "Speech recognition is not supported for your current locale.")
+            return
+        }
+        if !myRecognizer.isAvailable {
+            self.sendAlert(title: "Speech Recognizer Error", message: "Speech recognition is not currently available. Check back at a later time.")
+            // Recognizer is not available right now
+            return
+        }
+        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
+
+            if let result = result {
+//                print(result)
+                let bestString = result.bestTranscription.formattedString
+                print(bestString)
+                self.setSearchBarWithResult(resultString: bestString)
+            }
+//            else if let error = error {
+//                self.sendAlert(title: "Speech Recognizer Error", message: "There has been a speech recognition error.\(error)")
+//                print(error)
+//            }
+        })
+    }
+        
+    //MARK: - Check Authorization Status
+    func requestSpeechAuthorization() {
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            OperationQueue.main.addOperation {
+                switch authStatus {
+                case .authorized:
+                    self.speechButton.isEnabled = true
+                case .denied:
+                    self.speechButton.isEnabled = false
+//                    self.detectedTextLabel.text = "User denied access to speech recognition"
+                    print("User denied access to speech recognition")
+                case .restricted:
+                    self.speechButton.isEnabled = false
+//                    self.detectedTextLabel.text = "Speech recognition restricted on this device"
+                    print("Speech recognition restricted on this device")
+                case .notDetermined:
+                    self.speechButton.isEnabled = false
+//                    self.detectedTextLabel.text = "Speech recognition not yet authorized"
+                    print("Speech recognition not yet authorized")
+                @unknown default:
+                    return
+                }
+            }
+        }
+    }
+        
+    //MARK: - UI / Set SearchBar.
+    func setSearchBarWithResult(resultString: String) {
+        self.searchTextField.text = resultString
+    }
+        
+    //MARK: - Alert
+    func sendAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+}
+
 
 
 

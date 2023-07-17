@@ -501,13 +501,14 @@
                                         <rect key="frame" x="16" y="0.0" width="361" height="54"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEI-tF-BMz">
                                         <rect key="frame" x="32" y="11" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fEI-tF-BMz" secondAttribute="height" multiplier="1:1" id="l0b-pi-2LB"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="ant-design_search-outlined"/>
                                     </button>
@@ -516,9 +517,12 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Kpb-t5-Z0w" secondAttribute="height" multiplier="1:1" id="OnE-I3-PSl"/>
                                         </constraints>
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="ic_baseline-mic"/>
+                                        <connections>
+                                            <action selector="speechButtonPressed:" destination="K3m-p8-1AU" eventType="touchUpInside" id="TJD-o5-bFZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
