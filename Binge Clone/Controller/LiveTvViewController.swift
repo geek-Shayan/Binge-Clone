@@ -257,7 +257,7 @@ extension LiveTvViewController: UICollectionViewDataSource {
         
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCarosselCollectionViewCell.identifier, for: indexPath) as! CustomCarosselCollectionViewCell
-            cell.setup(image: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].image, indexPath: indexPath, dataSize: liveTvSectionsData.sections[indexPath.section].cells.count)
+            cell.setup(image: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].image ?? "image", indexPath: indexPath, dataSize: liveTvSectionsData.sections[indexPath.section].cells.count)
             //            cell.backgroundColor = .orange
             cell.layer.cornerRadius = 0
             return cell
@@ -267,12 +267,12 @@ extension LiveTvViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomFilterCollectionViewCell.identifier, for: indexPath) as! CustomFilterCollectionViewCell
             
             if cell.isSelected == true || selectedItem.contains(where: { $0 == liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].label}) {
-                cell.setup(label: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+                cell.setup(label: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].label ?? "label")
                 cell.selected()
                 return cell
             }
             else {
-                cell.setup(label: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+                cell.setup(label: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].label ?? "label")
                 cell.deSelected()
                 return cell
             }
@@ -280,7 +280,7 @@ extension LiveTvViewController: UICollectionViewDataSource {
         
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(image: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].image)
+            cell.setup(image: liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].image ?? "image")
             //            cell.backgroundColor = .orange
             return cell
         }
@@ -310,7 +310,7 @@ extension LiveTvViewController: UICollectionViewDelegate {
                     cell.deSelected()
                     selectedItem.removeAll()
                     
-                    selectedItem.append(liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+                    selectedItem.append(liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].label ?? "label")
                     print("selectedItem changed   \(selectedItem)")
                     selectedSectionIndex = indexPath.item
                     print("selectedSectionIndex  \(selectedSectionIndex)")
@@ -322,7 +322,7 @@ extension LiveTvViewController: UICollectionViewDelegate {
                 else {
                     cell.selected()
 
-                    selectedItem.append(liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+                    selectedItem.append(liveTvSectionsData.sections[indexPath.section].cells[indexPath.item].label ?? "label")
                     print("selectedItem   \(selectedItem)")
                     selectedSectionIndex = indexPath.item
                     print("selectedSectionIndex  \(selectedSectionIndex)")

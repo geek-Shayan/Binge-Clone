@@ -193,12 +193,12 @@ extension MyListViewController: UICollectionViewDataSource {
 //            }
             
             if cell.isSelected == true || selectedItem.contains(where: { $0 == myListSectionsData.sections[indexPath.section].cells[indexPath.item].label}) {
-                cell.setup(label: myListSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+                cell.setup(label: myListSectionsData.sections[indexPath.section].cells[indexPath.item].label ?? "label")
                 cell.selected()
                 return cell
             }
             else {
-                cell.setup(label: myListSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+                cell.setup(label: myListSectionsData.sections[indexPath.section].cells[indexPath.item].label ?? "label")
                 cell.deSelected()
                 return cell
             }
@@ -206,7 +206,7 @@ extension MyListViewController: UICollectionViewDataSource {
         
         else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(image: myListSectionsData.sections[indexPath.section].cells[indexPath.item].image)
+            cell.setup(image: myListSectionsData.sections[indexPath.section].cells[indexPath.item].image ?? "image")
             //            cell.backgroundColor = .orange
             return cell
         }
@@ -214,7 +214,7 @@ extension MyListViewController: UICollectionViewDataSource {
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomListCollectionViewCell.identifier, for: indexPath) as! CustomListCollectionViewCell
             cell.setup(
-                image: myListSectionsData.sections[indexPath.section].cells[indexPath.item].image,
+                image: myListSectionsData.sections[indexPath.section].cells[indexPath.item].image ?? "image",
                 title: myListSectionsData.sections[indexPath.section].cells[indexPath.item].title ?? "Title",
                 progress: myListSectionsData.sections[indexPath.section].cells[indexPath.item].progress ?? 0.5,
                 duration: myListSectionsData.sections[indexPath.section].cells[indexPath.item].duration ?? "Duration"
@@ -249,7 +249,7 @@ extension MyListViewController: UICollectionViewDelegate {
                     cell.deSelected()
                     selectedItem.removeAll()
                     
-                    selectedItem.append(myListSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+                    selectedItem.append(myListSectionsData.sections[indexPath.section].cells[indexPath.item].label ?? "label")
                     print("selectedItem changed   \(selectedItem)")
                     selectedSectionIndex = indexPath.item
                     print("selectedSectionIndex  \(selectedSectionIndex)")
@@ -261,7 +261,7 @@ extension MyListViewController: UICollectionViewDelegate {
                 else {
                     cell.selected()
 
-                    selectedItem.append(myListSectionsData.sections[indexPath.section].cells[indexPath.item].label)
+                    selectedItem.append(myListSectionsData.sections[indexPath.section].cells[indexPath.item].label ?? "label")
                     print("selectedItem   \(selectedItem)")
                     selectedSectionIndex = indexPath.item
                     print("selectedSectionIndex  \(selectedSectionIndex)")

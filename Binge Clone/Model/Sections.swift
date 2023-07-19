@@ -10,4 +10,8 @@ import UIKit
 
 struct Sections{
     var sections: [SectionDataType]
+    
+    init(sections: [SectionDataType]) {
+        self.sections = sections
+    }
 }

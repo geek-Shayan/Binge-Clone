@@ -42,7 +42,7 @@ class SignUpViewController: UIViewController {
         phoneNumberTextField.layer.cornerRadius = 8
         phoneNumberTextField.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor
         phoneNumberTextField.addPadding(padding: .equalSpacing(10))  // equal padding right, left
-        phoneNumberTextField.becomeFirstResponder()
+//        phoneNumberTextField.becomeFirstResponder()
         
         conuntryCodeTextField.layer.borderWidth = 1
         conuntryCodeTextField.layer.cornerRadius = 8

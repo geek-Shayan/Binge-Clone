@@ -11,4 +11,10 @@ import UIKit
 struct SupplementaryDataType {
     let header: String
     let footer: String
+    
+    init(header: String = "nil", footer: String = "nil") {
+        self.header = header
+        self.footer = footer
+    }
+
 }

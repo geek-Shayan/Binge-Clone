@@ -324,13 +324,13 @@ extension HomeViewController: UICollectionViewDataSource {
                 
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCarosselCollectionViewCell.identifier, for: indexPath) as! CustomCarosselCollectionViewCell
-            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image, indexPath: indexPath, dataSize: homeSectionsData.sections[indexPath.section].cells.count)
+            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image ?? "image", indexPath: indexPath, dataSize: homeSectionsData.sections[indexPath.section].cells.count)
             return cell
         }
         
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image)
+            cell.setup(image: homeSectionsData.sections[indexPath.section].cells[indexPath.item].image ?? "image")
             return cell
         }
     }
@@ -361,7 +361,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomActionTableViewCell.identifier, for: indexPath) as! CustomActionTableViewCell
-        cell.setup(label: actionsData.cells[indexPath.item].label, image: actionsData.cells[indexPath.item].image)
+        cell.setup(label: actionsData.cells[indexPath.item].label ?? "label", image: actionsData.cells[indexPath.item].image ?? "image")
         return cell
     }
 }

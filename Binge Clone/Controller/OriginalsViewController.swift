@@ -205,7 +205,7 @@ extension OriginalsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCarosselCollectionViewCell.identifier, for: indexPath) as! CustomCarosselCollectionViewCell
-            cell.setup(image: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].image, indexPath: indexPath, dataSize: originalsSectionsData.sections[indexPath.section].cells.count)
+            cell.setup(image: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].image ?? "image", indexPath: indexPath, dataSize: originalsSectionsData.sections[indexPath.section].cells.count)
 //            self.titleData.append(originalsSectionsData.sections[indexPath.section].cells[indexPath.item].title ?? "Title")
 //            self.yearData.append(originalsSectionsData.sections[indexPath.section].cells[indexPath.item].year ?? "Year")
 //            self.genreData.append(originalsSectionsData.sections[indexPath.section].cells[indexPath.item].genre ?? "Genre")
@@ -243,7 +243,7 @@ extension OriginalsViewController: UICollectionViewDataSource {
         
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCategoryCollectionViewCell.identifier, for: indexPath) as! CustomCategoryCollectionViewCell
-            cell.setup(image: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].image)
+            cell.setup(image: originalsSectionsData.sections[indexPath.section].cells[indexPath.item].image ?? "image")
             //        cell.backgroundColor = .orange
             return cell            
         }

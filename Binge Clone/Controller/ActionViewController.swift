@@ -64,7 +64,7 @@ extension ActionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomActionTableViewCell.identifier, for: indexPath) as! CustomActionTableViewCell
-        cell.setup(label: actionsData.cells[indexPath.item].label, image: actionsData.cells[indexPath.item].image)
+        cell.setup(label: actionsData.cells[indexPath.item].label ?? "label", image: actionsData.cells[indexPath.item].image ?? "image")
         return cell
     }
 }

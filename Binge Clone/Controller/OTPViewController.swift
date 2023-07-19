@@ -37,7 +37,7 @@ class OTPViewController: UIViewController {
         otpTextField1.layer.cornerRadius = 8
         otpTextField1.layer.borderColor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1).cgColor
         otpTextField1.textContentType = .oneTimeCode
-        otpTextField1.becomeFirstResponder()
+//        otpTextField1.becomeFirstResponder()
         
         otpTextField2.delegate = self
         otpTextField2.layer.borderWidth = 1

@@ -225,7 +225,7 @@ extension CategoryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCategoryCollectionViewCell.identifier, for: indexPath) as! CustomCategoryCollectionViewCell
-        cell.setup(image: sectionData3[indexPath.item].image)
+        cell.setup(image: sectionData3[indexPath.item].image ?? "image")
 //        cell.backgroundColor = .orange
         return cell
     }

@@ -21,23 +21,16 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     static let headerKind = "headerKind"
     static let footerKind = "footerKind"
-
+    
+    //search
     private var searched = false  // T/F T- resltFound check, F- load top searches
     private var resultFound = false  // T/F T- load results, F- load not found + recommended
-
-    private var filteredData = [String]()
-    private var carData = ["BMW", "audi", "TOYOTA", "Benz"]
-    
-    private var searchedItem = String()
-    
-//    @IBOutlet weak var detectedTextLabel: UILabel!
-//    @IBOutlet weak var colorView: UIView!
-//    @IBOutlet weak var startButton: UIButton!
+    private var searchedText = String()
     
     //speech
     let audioEngine = AVAudioEngine()
-//    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
-    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
+    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
+//    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
     let request = SFSpeechAudioBufferRecognitionRequest()
     var recognitionTask: SFSpeechRecognitionTask?
     var isRecording = false
@@ -204,11 +197,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @objc private func pullDownToRefresh() {
         print("Refresh")
         
-//        selectedItem = []
-        
-        searchTextField.text = ""
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+            self.searchTextField.text = ""
+            
             self.collectionViewWithSingleSection.reloadData()
             self.collectionViewWithSingleSection.refreshControl?.endRefreshing()
 
@@ -357,7 +349,7 @@ extension SearchViewController: UICollectionViewDataSource {
                 //load results
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomListCollectionViewCell.identifier, for: indexPath) as! CustomListCollectionViewCell
                 cell.setup(
-                    image: resultsData.sections[indexPath.section].cells[indexPath.item].image,
+                    image: resultsData.sections[indexPath.section].cells[indexPath.item].image ?? "image",
                     title: resultsData.sections[indexPath.section].cells[indexPath.item].title ?? "Title",
                     hideProgress: true,
                     duration: resultsData.sections[indexPath.section].cells[indexPath.item].duration ?? "Duration"
@@ -377,7 +369,7 @@ extension SearchViewController: UICollectionViewDataSource {
                 else {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomListCollectionViewCell.identifier, for: indexPath) as! CustomListCollectionViewCell
                     cell.setup(
-                        image: recommendedShowsData.sections[indexPath.section - 1].cells[indexPath.item].image,
+                        image: recommendedShowsData.sections[indexPath.section - 1].cells[indexPath.item].image ?? "image",
                         title: recommendedShowsData.sections[indexPath.section - 1].cells[indexPath.item].title ?? "Title",
                         hideProgress: true,
                         duration: recommendedShowsData.sections[indexPath.section - 1].cells[indexPath.item].duration ?? "Duration"
@@ -391,7 +383,7 @@ extension SearchViewController: UICollectionViewDataSource {
             //load top searches
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomListCollectionViewCell.identifier, for: indexPath) as! CustomListCollectionViewCell
             cell.setup(
-                image: topSearchesData.sections[indexPath.section].cells[indexPath.item].image,
+                image: topSearchesData.sections[indexPath.section].cells[indexPath.item].image ?? "image",
                 title: topSearchesData.sections[indexPath.section].cells[indexPath.item].title ?? "Title",
                 hideProgress: true,
                 duration: topSearchesData.sections[indexPath.section].cells[indexPath.item].duration ?? "Duration"
@@ -439,13 +431,23 @@ extension SearchViewController: UICollectionViewDelegate {
 
 
 extension SearchViewController: UITextViewDelegate {
-//    func textViewDidChange(_ textView: UITextView) {
-//        print("textViewDidChange")
-//    }
+    
+    func search(containingTitle: String) -> [CellDataType] {
+        let filteredResults = topSearchesData.sections[0].cells.filter{ $0.title!.uppercased().contains(containingTitle.uppercased()) }
+//        print("containingTitle in topSearchesData  ", filteredResults)
+        
+        //        if  let resultTest = topSearchesData.sections[0].cells.first(where: {$0.title?.uppercased() == containingTitle.uppercased()}) {
+        //        if  let resultTest = topSearchesData.sections[0].cells.first(where: {$0.title!.uppercased().contains(containingTitle.uppercased())}) {
+        //        if  let resultTest = topSearchesData.sections[0].cells.enumerated().first(where: {$0.element.title!.uppercased().contains(containingTitle.uppercased())}) {
+
+        return filteredResults
+    }
     
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         print("textFieldDidChangeSelection")
+        
+        searchedText = textField.text ?? ""
         
         // logic check for loading collectionview
         
@@ -466,28 +468,23 @@ extension SearchViewController: UITextViewDelegate {
             resultFound = false
             
             if searched /* searched true state*/ {
-                // filter text function exatcly in here
-                if  textField.text == "red" || textField.text == "123" || textField.text == "Hello" /* matched*/ {  //
+                
+                // filter text function
+                let searchedResult = search(containingTitle: searchedText)
+                print("searchedResult   ", searchedResult)
+
+                if  searchedResult.isEmpty == false /* matched*/ {
                     searched = true
                     resultFound = true
                     
-                    //                    for word in carData {
-                    //                        if word.uppercased().contains((textField.text?.uppercased())!) {
-                    //                            filteredData.append(word)
-                    //                        }
-                    //                    }
-                    
                     // append into resultsdata
-                    
-//                    if same thing goes in again dont append
-//                    if not append searched in result
-                    resultsData.sections[0].cells.append(CellDataType(image: "image 16", label: "3",  title: "Red", progress: 0.3, duration: "3h 23 m remaining"))
+                    resultsData.sections[0].cells.removeAll()   //if same thing goes in again dont append so remove first
+                    resultsData.sections[0].cells.append(contentsOf: searchedResult)    // Then append searchedResult in result
                     
                     // load results
                     collectionViewWithMultipleSection.removeFromSuperview()
                     loadCollectionViewWithSingleSection()
                     self.collectionViewWithSingleSection.reloadData()
-                    
                     
                 }
                 
@@ -517,7 +514,6 @@ extension SearchViewController: UITextViewDelegate {
             }
         }
     }
-    
 
 }
 
@@ -601,15 +597,12 @@ extension SearchViewController: SFSpeechRecognizerDelegate {
                     self.speechButton.isEnabled = true
                 case .denied:
                     self.speechButton.isEnabled = false
-//                    self.detectedTextLabel.text = "User denied access to speech recognition"
                     print("User denied access to speech recognition")
                 case .restricted:
                     self.speechButton.isEnabled = false
-//                    self.detectedTextLabel.text = "Speech recognition restricted on this device"
                     print("Speech recognition restricted on this device")
                 case .notDetermined:
                     self.speechButton.isEnabled = false
-//                    self.detectedTextLabel.text = "Speech recognition not yet authorized"
                     print("Speech recognition not yet authorized")
                 @unknown default:
                     return
@@ -631,152 +624,3 @@ extension SearchViewController: SFSpeechRecognizerDelegate {
     }
 
 }
-
-
-
-
-
-
-//if searched {
-//    if resultFound {
-//        //load results
-//    }
-//    else {
-//        //load not found + recommended
-//    }
-//}
-//else {
-//    //load top searches
-//}
-
-
-
-//for word in topSearchesData.sections[0].cells {
-//
-////                    if  textField.text == "red" /* matched*/ {
-//    if  word.title!.uppercased().contains((textField.text?.uppercased())!) /* matched*/ {
-//        resultFound = true
-
-
-
-
-
-
-//
-//if textField.text != "" {
-//    // change flags
-//    searched = true
-//
-////            // load results
-////            collectionViewWithMultipleSection.removeFromSuperview()
-////            loadCollectionViewWithSingleSection()
-////            self.collectionViewWithSingleSection.reloadData()
-//
-//    if searched /* searched true state*/ {
-//        // filter text
-//        for item in topSearchesData.sections[0].cells {
-//            if item.title!.uppercased().contains((textField.text?.uppercased())!) /* matched*/ {
-//                resultFound = true
-//                resultsData.sections[0].cells.append(item)
-//                print(item)
-//
-////                        collectionViewWithMultipleSection.removeFromSuperview()
-////                        loadCollectionViewWithSingleSection()
-//                self.collectionViewWithSingleSection.reloadData()
-//            }
-//            else /* not matched*/{
-//                resultFound = false
-//
-//                // clean resultsdata
-//                resultsData.sections[0].cells.removeAll()
-//
-//                // load emtpty results and recommendation
-//                collectionViewWithSingleSection.removeFromSuperview()
-//                loadCollectionViewWithMultipleSection()
-//                self.collectionViewWithMultipleSection.reloadData()
-//            }
-//        }
-////
-////
-////                if  textField.text == "red" /* matched*/ {
-////                    resultFound = true
-////
-//////                    for word in carData {
-//////                        if word.uppercased().contains((textField.text?.uppercased())!) {
-//////                            filteredData.append(word)
-//////                        }
-//////                    }//for word in topSearchesData.sections[0].cells {
-////                    //
-////                    ////                    if  textField.text == "red" /* matched*/ {
-////                    //    if  word.title!.uppercased().contains((textField.text?.uppercased())!) /* matched*/ {
-////                    //        resultFound = true
-////
-//////
-////                    // append into resultsdata
-////
-//////                    resultsData.sections[0].cells.append(CellDataType(image: "image 16", label: "3",  title: "Red", progress: 0.3, duration: "3h 23 m remaining"))
-////
-////                    // load results
-////                    collectionViewWithMultipleSection.removeFromSuperview()
-////                    loadCollectionViewWithSingleSection()
-////                    self.collectionViewWithSingleSection.reloadData()
-////
-////                }
-////    //
-////                else /* not matched*/ {
-////                    resultFound = false
-////
-////                    // clean resultsdata
-////                    resultsData.sections[0].cells.removeAll()
-////
-////                    // load emtpty results and recommendation
-////                    collectionViewWithSingleSection.removeFromSuperview()
-////                    loadCollectionViewWithMultipleSection()
-////                    self.collectionViewWithMultipleSection.reloadData()
-////
-////                }
-//    }
-//    else /* searched false state*/{
-//        // change flags
-//        searched = false
-//        resultFound = false
-//
-//        // load top searches
-//        collectionViewWithMultipleSection.removeFromSuperview()
-//        loadCollectionViewWithSingleSection()
-//        self.collectionViewWithSingleSection.reloadData()
-//    }
-//
-//
-////            filteredData = []
-//}
-//
-////        for word in carData {
-////            if word.uppercased().contains((textField.text?.uppercased())!) {
-////                filteredData.append(word)
-////            }
-////        }
-////            self.collectionView.reloadData()
-//print(filteredData)
-//
-//}
-//
-////    private func inputValidation() {
-////        if phoneNumberTextField.text?.count == maxLengthPhoneNumber {
-//////            phoneNumberTextField.resignFirstResponder() //
-//////            self.view.endEditing(true)
-////
-////            if termSeletionButton.isSelected {
-////                nextButtonImageView.image = UIImage(named: "Group 229 (3)")
-////                nextButton.isUserInteractionEnabled = true
-////            }
-////            else {
-////                nextButtonImageView.image = UIImage(named: "Group 229")
-////                nextButton.isUserInteractionEnabled = false
-////            }
-////        }
-////        else {
-////            nextButtonImageView.image = UIImage(named: "Group 229")
-////            nextButton.isUserInteractionEnabled = false
-////        }
-////    }

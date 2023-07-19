@@ -11,4 +11,9 @@ import UIKit
 struct SectionDataType {
     let headerFooter: SupplementaryDataType
     var cells: [CellDataType]
+    
+    init(headerFooter: SupplementaryDataType, cells: [CellDataType]) {
+        self.headerFooter = headerFooter
+        self.cells = cells
+    }
 }
